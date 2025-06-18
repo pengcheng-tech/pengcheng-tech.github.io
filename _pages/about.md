@@ -1,13 +1,15 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Recent News"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+Short Bio
+
+Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain and Data Security at Zhejiang University, Hangzhou, China. He received his Ph.D. degree in Computer Science from Lancaster University, Lancaster, UK. He was a visiting researcher at University College Cork, Cork, Ireland, from 2019 to 2020. He was a postdoctoral research associate at the School of Cyber Science and Technology, Zhejiang University, Hangzhou, China.  His research interests include audio deepfake detection, speech privacy preservation, and IoT security. Results have been published in renowned international journals and conferences such as Proc. IEEE, CCS, S&P, and WWW. His research was a finalist for the 2019 Black Hat Conference Pwnie Award for Innovative Research.
 
 A data-driven personal website
 ======
