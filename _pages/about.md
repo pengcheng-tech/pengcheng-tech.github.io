@@ -8,44 +8,89 @@ redirect_from:
 ---
 
 Short Bio
+======
 
 Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain and Data Security at Zhejiang University, Hangzhou, China. He received his Ph.D. degree in Computer Science from Lancaster University, Lancaster, UK. He was a visiting researcher at University College Cork, Cork, Ireland, from 2019 to 2020. He was a postdoctoral research associate at the School of Cyber Science and Technology, Zhejiang University, Hangzhou, China.  His research interests include audio deepfake detection, speech privacy preservation, and IoT security. Results have been published in renowned international journals and conferences such as Proc. IEEE, CCS, S&P, and WWW. His research was a finalist for the 2019 Black Hat Conference Pwnie Award for Innovative Research.
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+## Research Interests
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+- **AI-Generated Content (AIGC) Security**: Developing detection and defense mechanisms for deepfakes, adversarial attacks on text-to-image models, and watermarking systems
+- **Speech Privacy and Security**: Voice assistant security, acoustic side-channel attacks, speech synthesis compliance, and anti-eavesdropping technologies
+- **Multimodal Data Privacy**: Cross-modal security analysis, privacy-preserving technologies for multimedia content, and secure human-computer interaction
+- **IoT Security**: Smart device security, sensor-based attacks, and privacy protection in connected environments
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+## Recent News
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"
+- **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
+- **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
+- **June 2024**: Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University
+- **May 2024**: Paper "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution" accepted at CCS 2024
+- **February 2024**: Paper "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features" accepted at IEEE S&P 2024
+- **January 2025**: Appointed as Program Committee Member for ACM Web Conference (WWW 2025)
+- **January 2025**: Serving as Special Issue Guest Editor for "Intelligent Voice Security and Defense Technologies", Journal of Cyber Security
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+## Selected Publications
 
-**Markdown generator**
+### Five Most Representative Publications
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+1. **Ba, Z., Zhong, J., Lei, J., Cheng, P. (corresponding author), Wang, Q., Qin, Z., Wang, Z., Ren, K.** "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)*, 1166–1180.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+2. **Cheng, P., Wang, Y., Huang, P., Ba, Z., Lin, X., Lin, F., Lu, L., Ren, K.** "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." *IEEE Symposium on Security and Privacy (SP 2024)*, 1628–1645.
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+3. **Ba, Z., Wen, Q., Cheng, P. (corresponding author), Wang, Y., Lin, F., Lu, L., Liu, Z.** "Transferring Audio Deepfake Detection Capability Across Languages." *Proceedings of the ACM Web Conference (WWW 2023)*, 2033–2044.
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+4. **Cheng, P., Wu, Y., Hong, Y., Ba, Z., Lin, F., Lu, L., Ren, K.** "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 21(1), 31–46, 2023.
+
+5. **Cheng, P., Roedig, U.** "Personal Voice Assistant Security and Privacy—A Survey." *Proceedings of the IEEE*, 110(4), 476–507, 2022.
+
+### Recent Publications
+
+- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.* (Accepted)
+
+- **Ba, Z., Gong, B., Wang, Y., Liu, Y., Cheng, P. (corresponding author), Lin, F., Lu, L., Ren, K.** "Indelible 'Footprints' of Inaudible Command Injection." *IEEE Transactions on Information Forensics and Security (TIFS)*, 2024.
+
+- **Huang, P., Wei, Y., Cheng, P., Ba, Z., Lu, L., Lin, F., Wang, Y., Ren, K.** "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2024.
+
+For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en).
+
+## Professional Services
+
+### Editorial Services
+- **Special Issue Guest Editor**: "Intelligent Voice Security and Defense Technologies", *Journal of Cyber Security*, 2025
+
+### Conference Program Committees
+- **Program Committee Member**: ACM Web Conference (WWW 2025)
+
+### Journal Reviewer
+- **International Journals**: Proceedings of the IEEE, ACM Transactions on Internet of Things (TIOT), IEEE Internet of Things Journal (IoT-J)
+- **Chinese Journals**: Journal of Information Network Security
+
+### Mentorship & Supervision
+- Currently co-supervising **5 Ph.D. students** and **5 Master's students** at Zhejiang University
+- Successfully mentored **1 Ph.D. student**, **5 Master's students**, and **5 undergraduate students** to degree completion
+- One co-supervised Master's student won the **National Graduate Scholarship (China)** in October 2024
+
+## Awards & Recognition
+
+- **National Grand Prize** (Top-Tier Award), 19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024), Advisor
+- **Top 5 Nationwide**, 3rd China Artificial Intelligence Competition (2021), Primary Advisor for Audio Deepfake Detection tracks
+- **Finalist for "Most Innovative Research" Pwnie Award**, Black Hat USA 2019, for "SonarSnoop: Active Acoustic Side-Channel Attacks"
+- **Postdoctoral Excellence Grant** (Second Class), Zhejiang Provincial Department of Human Resources and Social Security (2021)
+
+## Industry Impact
+
+My research has made significant contributions to industry security:
+
+- **AI Model Security**: Identified vulnerabilities in commercial text-to-image models (Midjourney, Stability.ai) through SurrogatePrompt attack method
+- **Watermarking Systems**: Developed DiffForge method, recognized by Amazon's Responsible AI Team for identifying critical vulnerabilities
+- **Open-Source Contributions**: ALIF framework adopted by NVIDIA for their official AI security toolkit
+- **Media Recognition**: SonarSnoop research featured in IT media (Motherboard, ZDNet, Sophos) and praised by renowned security experts
+
+## Contact
+
+- **Email**: pengcheng326@hotmail.com
+- **Phone**: (86) 15057169279
+- **Website**: https://pengcheng-tech.github.io/
+- **Location**: Hangzhou, Zhejiang, China
+- **Google Scholar**: https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en
