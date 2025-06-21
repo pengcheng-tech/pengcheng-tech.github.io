@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Recent News"
+title: "Latest Update"
 author_profile: true
 redirect_from: 
   - /about/
