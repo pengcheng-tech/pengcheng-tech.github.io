@@ -1,7 +1,7 @@
 ---
 title: "Transferring Audio Deepfake Detection Capability Across Languages"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2023-audio-deepfake-transfer
 excerpt: 'This paper introduces domain adaptation techniques to transfer deepfake detection capabilities across languages, validated on 137-hour multilingual datasets to address the challenge of detecting deepfakes in low-resource languages.'
 date: 2023-04-01

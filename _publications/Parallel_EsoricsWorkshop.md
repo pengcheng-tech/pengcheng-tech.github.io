@@ -1,7 +1,7 @@
 ---
 title: "Adversarial Command Detection Using Parallel Speech Recognition Systems"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2021-adversarial-command-detection
 excerpt: 'This paper proposes a defense mechanism leveraging parallel speech recognition systems to detect inaudible malicious commands targeting voice assistants, countering adversarial exploitation of voice-controlled systems.'
 date: 2021-10-01

@@ -1,7 +1,7 @@
 ---
 title: "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features"
 collection: publications
-category: Conference Papers
+category: conferences
 permalink: /publication/2024-alif
 excerpt: 'This paper proposes linguistic feature-based attacks using TTS/ASR reciprocity, enabling single-query adversarial samples with 97.7% query cost reduction. Validated on four commercial systems and adopted by NVIDIA for their AI security toolkit.'
 date: 2024-05-01

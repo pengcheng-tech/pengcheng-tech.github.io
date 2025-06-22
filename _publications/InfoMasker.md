@@ -1,7 +1,7 @@
 ---
 title: "InfoMasker: Preventing Eavesdropping Using Phoneme-Based Noise"
 collection: publications
-category: manuscripts
+category: conferences
 permalink: /publication/2023-infomasker
 excerpt: 'This paper designs ultrasonic noise injection systems to disrupt unauthorized recordings while preserving authorized access, reducing speech recognition accuracy to <50% even at low energy levels.'
 date: 2023-02-01

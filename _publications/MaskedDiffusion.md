@@ -1,7 +1,7 @@
 ---
 title: "Masked Diffusion Models Are Fast and Privacy-Aware Learners"
 collection: publications
-category: preprints
+category: undergoing
 permalink: /publication/2023-masked-diffusion
 excerpt: 'This paper explores privacy-preserving capabilities of masked diffusion models, demonstrating their potential for fast learning while maintaining privacy guarantees in generative AI applications.'
 date: 2023-06-01
