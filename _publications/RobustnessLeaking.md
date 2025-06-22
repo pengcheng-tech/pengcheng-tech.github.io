@@ -1,7 +1,7 @@
 ---
 title: "Robust Watermarks Leak: Channel-Aware Feature Extraction Enables Adversarial Watermark Manipulation"
 collection: publications
-category: preprints
+category: undergoing
 permalink: /publication/2025-watermark-leak
 excerpt: 'This paper reveals inherent tradeoffs in watermark robustness, enabling single-image attacks to extract and forge watermarks while maintaining visual fidelity, exposing fundamental vulnerabilities in current watermarking approaches.'
 date: 2025-02-01

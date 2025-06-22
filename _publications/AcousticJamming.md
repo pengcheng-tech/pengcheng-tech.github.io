@@ -1,7 +1,7 @@
 ---
 title: "Towards Reactive Acoustic Jamming for Personal Voice Assistants"
 collection: publications
-category: manuscripts
+category: Conference Papers
 permalink: /publication/2018-reactive-acoustic-jamming
 excerpt: 'This paper develops Reactive Acoustic Jamming, a method that emits ultrasonic signals upon wake-word detection to block unauthorized voice recordings, providing proactive privacy protection for voice assistant users.'
 date: 2018-10-01

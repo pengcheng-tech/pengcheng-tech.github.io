@@ -1,7 +1,7 @@
 ---
 title: "Test-Time Adaptation for Audio Deepfake Detection"
 collection: publications
-category: preprints
+category: undergoing
 permalink: /publication/2025-test-time-adaptation
 excerpt: 'This paper introduces test-time adaptation with self-supervised tasks including codec reconstruction and speed analysis for cross-domain audio deepfake detection, improving generalization across different domains and synthesis methods.'
 date: 2025-01-01
