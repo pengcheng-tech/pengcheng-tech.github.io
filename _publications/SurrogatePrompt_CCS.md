@@ -1,7 +1,7 @@
 ---
 title: "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution"
 collection: publications
-category: manuscripts
+category: Conference Papers
 permalink: /publication/2024-surrogateprompt
 excerpt: 'This paper exposes critical vulnerabilities in commercial text-to-image models through SurrogatePrompt, achieving 88% success rate in bypassing safety filters to generate unsafe content. The findings were acknowledged by Midjourney and Stability.ai.'
 date: 2024-10-01
