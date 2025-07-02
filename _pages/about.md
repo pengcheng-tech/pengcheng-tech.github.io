@@ -24,7 +24,7 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 
 ## Recent News
 
-- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"
+<!--- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"-->
 - **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
 - **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
 - **June 2024**: Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University
@@ -35,27 +35,24 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 
 ## Selected Publications
 
-### Five Most Representative Publications
+-- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.*
 
-1. **Ba, Z., Zhong, J., Lei, J., Cheng, P. (corresponding author), Wang, Q., Qin, Z., Wang, Z., Ren, K.** "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)*, 1166–1180.
-
-2. **Cheng, P., Wang, Y., Huang, P., Ba, Z., Lin, X., Lin, F., Lu, L., Ren, K.** "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." *IEEE Symposium on Security and Privacy (SP 2024)*, 1628–1645.
-
-3. **Ba, Z., Wen, Q., Cheng, P. (corresponding author), Wang, Y., Lin, F., Lu, L., Liu, Z.** "Transferring Audio Deepfake Detection Capability Across Languages." *Proceedings of the ACM Web Conference (WWW 2023)*, 2033–2044.
-
-4. **Cheng, P., Wu, Y., Hong, Y., Ba, Z., Lin, F., Lu, L., Ren, K.** "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 21(1), 31–46, 2023.
-
-5. **Cheng, P., Roedig, U.** "Personal Voice Assistant Security and Privacy—A Survey." *Proceedings of the IEEE*, 110(4), 476–507, 2022.
-
-### Recent Publications
-
-- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.* (Accepted)
+- **Ba, Z., Zhong, J., Lei, J., Cheng, P. (corresponding author), Wang, Q., Qin, Z., Wang, Z., Ren, K.** "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)*, 1166–1180.
 
 - **Ba, Z., Gong, B., Wang, Y., Liu, Y., Cheng, P. (corresponding author), Lin, F., Lu, L., Ren, K.** "Indelible 'Footprints' of Inaudible Command Injection." *IEEE Transactions on Information Forensics and Security (TIFS)*, 2024.
 
+- **Cheng, P., Wang, Y., Huang, P., Ba, Z., Lin, X., Lin, F., Lu, L., Ren, K.** "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." *IEEE Symposium on Security and Privacy (SP 2024)*, 1628–1645.
+
 - **Huang, P., Wei, Y., Cheng, P., Ba, Z., Lu, L., Lin, F., Wang, Y., Ren, K.** "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2024.
 
+- **Ba, Z., Wen, Q., Cheng, P. (corresponding author), Wang, Y., Lin, F., Lu, L., Liu, Z.** "Transferring Audio Deepfake Detection Capability Across Languages." *Proceedings of the ACM Web Conference (WWW 2023)*, 2033–2044.
+
+- **Cheng, P., Wu, Y., Hong, Y., Ba, Z., Lin, F., Lu, L., Ren, K.** "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 21(1), 31–46, 2023.
+
+- **Cheng, P., Roedig, U.** "Personal Voice Assistant Security and Privacy—A Survey." *Proceedings of the IEEE*, 110(4), 476–507, 2022.
+
 For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en).
+
 
 ## Professional Services
 
@@ -74,12 +71,12 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 - Successfully mentored **1 Ph.D. student**, **5 Master's students**, and **5 undergraduate students** to degree completion
 - One co-supervised Master's student won the **National Graduate Scholarship (China)** in October 2024
 
-## Awards & Recognition
+<!--## Awards & Recognition
 
 - **National Grand Prize** (Top-Tier Award), 19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024), Advisor
 - **Top 5 Nationwide**, 3rd China Artificial Intelligence Competition (2021), Primary Advisor for Audio Deepfake Detection tracks
 - **Finalist for "Most Innovative Research" Pwnie Award**, Black Hat USA 2019, for "SonarSnoop: Active Acoustic Side-Channel Attacks"
-- **Postdoctoral Excellence Grant** (Second Class), Zhejiang Provincial Department of Human Resources and Social Security (2021)
+- **Postdoctoral Excellence Grant** (Second Class), Zhejiang Provincial Department of Human Resources and Social Security (2021)-->
 
 ## Industry Impact
 
