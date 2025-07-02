@@ -12,12 +12,15 @@ Short Bio
 
 Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain and Data Security at Zhejiang University, Hangzhou, China. He received his Ph.D. degree in Computer Science from Lancaster University, Lancaster, UK. He was a visiting researcher at University College Cork, Cork, Ireland, from 2019 to 2020. He was a postdoctoral research associate at the School of Cyber Science and Technology, Zhejiang University, Hangzhou, China.  His research interests include audio deepfake detection, speech privacy preservation, and IoT security. Results have been published in renowned international journals and conferences such as Proc. IEEE, CCS, S&P, and WWW. His research was a finalist for the 2019 Black Hat Conference Pwnie Award for Innovative Research.
 
-## Research Interests
+# Research Interests
 
-- **AI-Generated Content (AIGC) Security**: Developing detection and defense mechanisms for deepfakes, adversarial attacks on text-to-image models, and watermarking systems
-- **Speech Privacy and Security**: Voice assistant security, acoustic side-channel attacks, speech synthesis compliance, and anti-eavesdropping technologies
-- **Multimodal Data Privacy**: Cross-modal security analysis, privacy-preserving technologies for multimedia content, and secure human-computer interaction
-- **IoT Security**: Smart device security, sensor-based attacks, and privacy protection in connected environments
+My research focuses on building trustworthy AI ecosystems by addressing security and privacy challenges in artificial intelligence-generated content and intelligent systems. 
+
+**AI-Generated Content Security** forms the core of my current research, investigating the complete AIGC lifecycle through four pillars: privacy preservation, controllability, authenticity, and compliance. I study the robustness of watermarking systems, develop generalizable deepfake detection frameworks, and explore safeguards against adversarial attacks. 
+
+**Speech Privacy and Security** represents my foundational research area, developing solutions for voice-enabled systems from acoustic-channel attacks to privacy-preserving technologies. 
+
+**Multimodal Data Privacy and IoT Security** extends my research to broader human-computer interaction scenarios, investigating cross-modal vulnerabilities and privacy-preserving technologies. This includes novel acoustic side-channel attacks and comprehensive security frameworks for smart devices, bridging theoretical research with practical implementations.
 
 ## Recent News
 
