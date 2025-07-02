@@ -35,7 +35,7 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 
 ## Selected Publications
 
--- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.*
+- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.*
 
 - **Ba, Z., Zhong, J., Lei, J., Cheng, P. (corresponding author), Wang, Q., Qin, Z., Wang, Z., Ren, K.** "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)*, 1166–1180.
 
@@ -87,10 +87,10 @@ My research has made significant contributions to industry security:
 - **Open-Source Contributions**: ALIF framework adopted by NVIDIA for their official AI security toolkit
 - **Media Recognition**: SonarSnoop research featured in IT media (Motherboard, ZDNet, Sophos) and praised by renowned security experts
 
-## Contact
+<!--## Contact
 
 - **Email**: pengcheng326@hotmail.com
 - **Phone**: (86) 15057169279
 - **Website**: https://pengcheng-tech.github.io/
 - **Location**: Hangzhou, Zhejiang, China
-- **Google Scholar**: https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en
+- **Google Scholar**: https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en-->
