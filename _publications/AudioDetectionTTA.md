@@ -8,6 +8,6 @@ date: 2025-01-01
 venue: 'Under Review'
 paperurl: ''
 bibtexurl: ''
-citation: 'Gong, B., Shuai, C., Wen, Q., Cheng, P., Wang, Q., Ba, Z., Wang, Z., Ren, K. (2025). "Test-Time Adaptation for Audio Deepfake Detection." *Under Review*.'
+citation: 'Gong, B., Shuai, C., Wen, Q., **Cheng, P.**, Wang, Q., Ba, Z., Wang, Z., Ren, K. (2025). "Test-Time Adaptation for Audio Deepfake Detection." *Under Review*.'
 ---
 

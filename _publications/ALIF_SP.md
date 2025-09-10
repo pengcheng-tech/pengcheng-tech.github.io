@@ -8,7 +8,7 @@ date: 2024-05-01
 venue: 'IEEE Symposium on Security and Privacy (SP 2024)'
 paperurl: ''
 bibtexurl: ''
-citation: 'Peng Cheng, Yuwei Wang, Peng Huang, Zhongjie Ba, Xiaohong Lin, Feng Lin, Li Lu, Kui Ren. "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." Proceedings of IEEE Symposium on Security and Privacy. San Francisco, CA, USA. 2024. doi: 10.1109/SP54263.2024.00047.'
+citation: '**Peng Cheng**, Yuwei Wang, Peng Huang, Zhongjie Ba, Xiaohong Lin, Feng Lin, Li Lu, Kui Ren. "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." Proceedings of IEEE Symposium on Security and Privacy. San Francisco, CA, USA. 2024. doi: 10.1109/SP54263.2024.00047.'
 ---
 
 Extensive research has revealed that adversarial examples (AE) pose a significant threat to voice-controllable smart devices. Recent studies have proposed black-box adversarial attacks that require only the final transcription from an automatic speech recognition (ASR) system. However, these attacks typically involve many queries to the ASR, resulting in substantial costs. Moreover, AE-based adversarial audio

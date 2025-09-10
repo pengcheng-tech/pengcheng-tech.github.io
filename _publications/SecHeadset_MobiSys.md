@@ -8,7 +8,7 @@ date: 2025-01-01
 venue: 'Proceedings of the ACM MobiSys 2025'
 paperurl: ''
 bibtexurl: ''
-citation: 'Peng Huang, Kun Pan, Qingni Wang, Peng Cheng*, Li Lu, Zhongjie Ba, Kui Ren. "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." Proceedings of the ACM MobiSys. Anaheim, California, US. 2025. doi: to appear.' 
+citation: 'Peng Huang, Kun Pan, Qingni Wang, **Peng Cheng***, Li Lu, Zhongjie Ba, Kui Ren. "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." Proceedings of the ACM MobiSys. Anaheim, California, US. 2025. doi: to appear.' 
 ---
 Voice communication is convenient while also poses risks of privacy leakage, due to potential interception or eavesdropping during voice transmission. Current protections of voice privacy are almost entirely controlled by communication service providers (CSPs), which operate as a black-box to users thus hard to fully trust. To take back the control of user privacy, in this paper, we introduce SecHeadset, an end-to-end solution for secure voice communication based on
 voice obfuscation, which is plug-and-play and compatible with various CSPs. Our solution involves two parts. First, we design a voice-like noise masking scheme for voice obfuscation. The noise,
