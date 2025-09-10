@@ -8,7 +8,7 @@ date: 2024-04-01
 venue: 'IEEE Transactions on Dependable and Secure Computing (TDSC)'
 paperurl: ''
 bibtexurl: ''
-citation: 'Huang, P., Wei, Y., Cheng, P., Ba, Z., Lu, L., Lin, F., Wang, Y., Ren, K. (2024). "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." *IEEE Transactions on Dependable and Secure Computing (TDSC)*.'
+citation: 'Peng Huang, Yao Wei, Peng Cheng*, Zhongjie Ba, Li Lu, Feng Lin, Yuwei Wang, Kui Ren. "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." IEEE Transactions on Dependable and Secure Computing. 22(2), pp. 1074-1090. 2025. doi: 10.1109/TDSC.2024.3408163.'
 ---
 
 The widespread smart devices raise people’s concerns of being eavesdropped on. To enhance voice privacy, recent studies exploit the nonlinearity in microphone to jam audio recorders with inaudible

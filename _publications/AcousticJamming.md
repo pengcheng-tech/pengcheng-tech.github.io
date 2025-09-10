@@ -8,7 +8,7 @@ date: 2018-10-01
 venue: 'Proceedings of the 2nd International Workshop on Multimedia Privacy and Security'
 paperurl: ''
 bibtexurl: ''
-citation: 'Cheng, P., Bagci, I. E., Yan, J., Roedig, U. (2018). "Towards Reactive Acoustic Jamming for Personal Voice Assistants." *Proceedings of the 2nd International Workshop on Multimedia Privacy and Security*, 1–13.'
+citation: 'Cheng, P., Bagci, I. E., Yan, J., Roedig, U. (2018). "Towards Reactive Acoustic Jamming for Personal Voice Assistants." *Proceedings of the 2nd International Workshop on Multimedia Privacy and Security*, Toronto, Canada, 1–13.'
 ---
 
 Personal Voice Assistants (PVAs) such as the Amazon Echo are commonplace and it is now likely to always be in range of at least one PVA . Although the devices are very helpful they are also continuously monitoring conversations. When a PVA detects a wake word,
