@@ -16,6 +16,18 @@ author_profile: true
 - **Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security systems
 - **Impact**: Establishing a new publication venue for emerging threats and defenses in voice-enabled technologies
 
+**Journal Profile:**
+<img src="/images/cyber_security_journal.jpg" alt="Journal of Cyber Security Profile" width="500">
+
+**Journal Recognition:**
+- CCF计算领域高质量期刊 T2类
+- 通信学会信息通信领域高质量科技期刊 T2级
+- 计算机学会会刊
+- CSCD核心期刊
+- 中国科技核心期刊
+- Scopus收录期刊
+- JST收录期刊
+
 ## Conference Program Committees
 
 ### **International Conference Service**
