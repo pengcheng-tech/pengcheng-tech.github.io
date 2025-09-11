@@ -72,8 +72,27 @@ I am honored to work with a group of talented students and researchers dedicated
 ### **Ph.D. Students**
 *To be updated with graduated Ph.D. students and their current positions*
 
-### **Master's Students**  
-*To be updated with graduated Master's students and their current positions*
+### **Master's Students**
+
+**Jiachen Lei** (Fall 2020 - Spring 2023)
+- **Research Interests**: *To be updated*
+- **Current Position**: *To be updated*
+
+**Yuexin Wu** (Fall 2020 - Spring 2023)
+- **Research Interests**: *To be updated*
+- **Current Position**: *To be updated*
+
+**Qiaomu Zheng** (Fall 2021 - Summer 2024)
+- **Research Interests**: *To be updated*
+- **Current Position**: *To be updated*
+
+**Yuwei Wang** (Fall 2021 - Spring 2024)
+- **Research Interests**: *To be updated*
+- **Current Position**: *To be updated*
+
+**Jieming Zhong** (Fall 2022 - Spring 2025)
+- **Research Interests**: *To be updated*
+- **Current Position**: *To be updated*
 
 ### **Undergraduate Students**
 *To be updated with graduated undergraduate students and their current positions*
