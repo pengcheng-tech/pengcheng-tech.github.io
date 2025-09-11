@@ -26,7 +26,7 @@ author_profile: true
 - **Venue**: IJCAI 2025, Montreal/Guangzhou (August 16, 2025)
 
 **Official Certificate:**
-![IJCAI 2025 DDL Challenge Certificate](/images/ijcai_ddl_certificate.jpg)
+<img src="/images/ijcai_ddl_certificate.jpg" alt="IJCAI 2025 DDL Challenge Certificate" width="450">
 
 ### **Top 5 Nationwide**
 **3rd China Artificial Intelligence Competition (2021)**
@@ -83,10 +83,10 @@ author_profile: true
 **Official Amazon Statement (March 28, 2025):**
 > *"We appreciate the researchers from the State Key Laboratory of Blockchain and Data Security at Zhejiang University for reporting this issue and collaborating with us... We are grateful for reports from the security community, and your report was an excellent example of a positive coordinated disclosure."*
 
-![Amazon Official Statement](/images/amazon_statement.png)
+<img src="/images/amazon_statement.png" alt="Amazon Official Statement" width="400">
 
 **AWS Security Team Acknowledgment:**
-![Amazon Thank You Letter](/images/amazon_thank_you.jpg)
+<img src="/images/amazon_thank_you.jpg" alt="Amazon Thank You Letter" width="500">
 
 ### **Open-Source Contributions**
 - **ALIF Framework**: Adopted by NVIDIA for integration into their official AI security toolkit
