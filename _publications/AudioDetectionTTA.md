@@ -8,6 +8,6 @@ date: 2025-01-01
 venue: 'Under Review'
 paperurl: ''
 bibtexurl: ''
-citation: 'Bin Gong, Chengxiang Shuai, Qing Wen, **Peng Cheng**, Qingni Wang, Zhongjie Ba, Zhibo Wang, Kui Ren. (2025). "Test-Time Adaptation for Audio Deepfake Detection." *Under Review*.'
+citation: 'Bin Gong, Chao Shuai, Qing Wen, **Peng Cheng**, Qinglong Wang, Zhongjie Ba, Zhibo Wang, Kui Ren. (2025). "Test-Time Adaptation for Audio Deepfake Detection." *Under Review*.'
 ---
 

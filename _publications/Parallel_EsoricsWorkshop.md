@@ -8,7 +8,7 @@ date: 2021-10-01
 venue: 'Computer Security - ESORICS 2021 International Workshops'
 paperurl: ''
 bibtexurl: ''
-citation: '**Peng Cheng**, Manchikanti Sreedevi Annapureddy Sankar, Ibrahim Ethem Bagci, Utz Roedig. (2021). "Adversarial Command Detection Using Parallel Speech Recognition Systems." *Computer Security - ESORICS 2021 International Workshops*, Darmstadt, Germany (Virtual), 238–255.'
+citation: '**Peng Cheng**, MS Arun Sankar, Ibrahim Ethem Bagci, Utz Roedig. (2021). "Adversarial Command Detection Using Parallel Speech Recognition Systems." *Computer Security - ESORICS 2021 International Workshops*, Darmstadt, Germany (Virtual), 238–255.'
 ---
 
 Personal Voice Assistants (PVAs) such as Apple’s Siri, Amazon’s Alexa and Google Home are now commonplace. PVAs are susceptible to adversarial commands; an attacker is able to modify an audio signal such that humans do not notice this modification but the Speech
