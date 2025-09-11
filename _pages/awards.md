@@ -96,20 +96,9 @@ author_profile: true
 
 ### **International Media Coverage**
 **SonarSnoop Research Impact - The First Active Acoustic Side-Channel Attack**
-- **Major Tech Publications**:
-  - **Motherboard** (Vice Media): Coverage of innovative acoustic attack research
-  - **ZDNet**: Technical analysis of smartphone security vulnerabilities  
-  - **Sophos Naked Security**: Expert commentary on acoustic side-channel threats
-  - **Pocketnow**: Mobile technology analysis and implications
-  - **Slashdot**: Technology community discussions and analysis
-
-- **International Coverage**: Featured in media across multiple languages
-  - **Spanish**: eldiario.es (Spain)
-  - **Chinese**: Various Chinese technology publications
-  - **German**: German-language tech media coverage
-  - **Russian**: Russian cybersecurity publications
-
+- **Media Coverage**: Pocketnow, Motherboard, ZDNet, Naked Security, Slashdot, eldiario.es (Spain), and many more (in various languages including Chinese, German and Russian)
 - **Research Significance**: First active acoustic side-channel attack demonstrating novel smartphone exploitation methods through acoustic profiling
+- **Source**: As documented on [Prof. Jeff Yan's homepage](https://prof-jeffyan.github.io)
 
 ### **Expert Endorsements**
 **Recognition from Security Community Leaders**
@@ -123,35 +112,6 @@ author_profile: true
 - **Technical Achievement**: Demonstrated 70% reduction in Android unlock pattern candidates through acoustic profiling
 - **Security Community Impact**: Established new research direction in acoustic-based side-channel attacks
 
-## Academic Service Recognition
-
-### **Editorial Leadership**
-**Special Issue Initiator and Guest Editor (2025)**
-- **Journal**: *Journal of Cyber Security*
-- **Special Issue Topic**: "Intelligent Voice Security and Defense Technologies"
-- **Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security
-- **Impact**: Establishing new publication venue for emerging threats in voice-enabled systems
-
-### **Conference Program Committees**
-**Program Committee Member**
-- **ACM Web Conference (WWW 2025)**: Serving as expert reviewer for web technology and security research
-- **Expertise Areas**: AI security, voice privacy, and multimodal data protection
-- **Review Scope**: Evaluating submissions on emerging web technologies and security frameworks
-
-### **Journal Reviewer Roles**
-**International Peer Review Service**
-- **Proceedings of the IEEE**: Premier interdisciplinary engineering journal
-- **ACM Transactions on Internet of Things (TIOT)**: Leading venue for IoT research
-- **IEEE Internet of Things Journal (IoT-J)**: Top-tier publication in IoT domain
-
-**Chinese Academic Service**
-- **Journal of Information Network Security**: Key venue for cybersecurity research in China
-
-### **Grant Proposal Contributions**
-**Research Funding Excellence**
-- **Science Foundation Ireland (SFI)**: Co-authored €720,839 grant proposal on "Security and Privacy of Personal Voice Assistants" under Prof. Utz Roedig (2019)
-- **Proposal Impact**: Research anchored in doctoral dissertation findings
-- **Collaborative Excellence**: Demonstrated ability to translate academic research into fundable initiatives
 
 ---
 
