@@ -29,6 +29,11 @@ author_profile: true
 - **Significance**: International recognition at the world's most prestigious cybersecurity conference
 - **Impact**: Praised by renowned security experts including Bruce Schneier and Prof. Ross Anderson
 
+**Official Citation (2019):**
+> *"Ok, you know we're down when the paper reads like it is out of a James Bond book, or at least that in some dark corner of the NSA there is a scientist who's pissed about it. In this paper, the researchers use speakers to emit human inaudible sounds as part of a sonar system to track victim's finger movements. Doing this while the victim unlocks their phone doesn't give them the exact unlock pattern but does greatly reduce the number of patterns to try. Straight off the sci-fi channel when it still played had sci fi shows, the only minor issue is they only tested it against 10 subjects and since it is an academic paper, it's probably entirely impractical."*
+
+**Historical Reference**: [Original Pwnie Award Nominations (Internet Archive)](https://web.archive.org/web/20190919051259/https://pwnies.com/nominations/)
+
 ## Academic Excellence Awards
 
 ### **Postdoctoral Excellence Grant (Second Class)**
@@ -55,9 +60,20 @@ author_profile: true
 - **SurrogatePrompt Research**: Findings acknowledged by leading AI vendors (Midjourney, Stability.ai)
 - **Impact**: Contributed to security improvements in commercial text-to-image AI models
 
-### **Watermarking System Vulnerabilities**
-- **DiffForge Method**: Recognized by Amazon's Responsible AI Team
-- **Achievement**: Led to collaborative improvements in defensive watermarking frameworks
+### **Watermarking System Vulnerabilities - Amazon Collaboration**
+**WMCopier Research Recognition (2025)**
+- **Research Impact**: Developed WMCopier attack method that identified critical vulnerabilities in Amazon's watermarking systems (Titan Image Generator and Amazon Nova Canvas)
+- **Industry Response**: Amazon released security updates on March 28, 2025, to improve watermark detection robustness
+- **Collaborative Partnership**: Amazon's Responsible AI Team acknowledged the research contribution and collaborated on security improvements
+- **Recognition**: Received official statement and thank you letter from AWS Security Outreach Team
+
+**Official Amazon Statement (March 28, 2025):**
+> *"We appreciate the researchers from the State Key Laboratory of Blockchain and Data Security at Zhejiang University for reporting this issue and collaborating with us... We are grateful for reports from the security community, and your report was an excellent example of a positive coordinated disclosure."*
+
+![Amazon Official Statement](/images/amazon_statement.png)
+
+**AWS Security Team Acknowledgment:**
+![Amazon Thank You Letter](/images/amazon_thank_you.jpg)
 
 ### **Open-Source Contributions**
 - **ALIF Framework**: Adopted by NVIDIA for integration into their official AI security toolkit
@@ -66,17 +82,27 @@ author_profile: true
 ## Media Recognition & Expert Endorsement
 
 ### **International Media Coverage**
-**SonarSnoop Research Impact**
-- **Media Outlets**: Featured in prominent IT security publications
+**SonarSnoop Research Impact - The First Active Acoustic Side-Channel Attack**
+- **Major Tech Publications**:
   - **Motherboard** (Vice Media): Coverage of innovative acoustic attack research
-  - **ZDNet**: Technical analysis of smartphone security vulnerabilities
-  - **Sophos**: Expert commentary on acoustic side-channel threats
-- **Research Significance**: First active acoustic side-channel attack demonstrating novel smartphone exploitation methods
+  - **ZDNet**: Technical analysis of smartphone security vulnerabilities  
+  - **Sophos Naked Security**: Expert commentary on acoustic side-channel threats
+  - **Pocketnow**: Mobile technology analysis and implications
+  - **Slashdot**: Technology community discussions and analysis
+
+- **International Coverage**: Featured in media across multiple languages
+  - **Spanish**: eldiario.es (Spain)
+  - **Chinese**: Various Chinese technology publications
+  - **German**: German-language tech media coverage
+  - **Russian**: Russian cybersecurity publications
+
+- **Research Significance**: First active acoustic side-channel attack demonstrating novel smartphone exploitation methods through acoustic profiling
 
 ### **Expert Endorsements**
 **Recognition from Security Community Leaders**
-- **Bruce Schneier** (Renowned Cryptographer & Security Expert): Publicly praised the novelty and impact of SonarSnoop research on social media platform X
-- **Prof. Ross Anderson** (University of Cambridge, Well-known Security Researcher): Academic endorsement highlighting the innovative nature of the acoustic attack methodology
+- **Prof. Ross Anderson** (University of Cambridge, Well-known Security Researcher): *"Truly spooky new method of remote surveillance"* - Academic endorsement highlighting the innovative nature of the acoustic attack methodology
+- **Bruce Schneier** (Renowned Cryptographer & Security Expert): *"It's amazing that this is even possible"* - Recognition of the groundbreaking nature of active acoustic side-channel attacks
+- **Technical Media Recognition**: *"This is the coolest Android hack we've seen"* - Pocketnow
 - **Industry Impact**: Research methodology influenced discussions on smartphone hardware security design
 
 ### **Research Innovation Recognition**
