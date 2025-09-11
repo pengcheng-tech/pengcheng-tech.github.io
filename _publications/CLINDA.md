@@ -8,6 +8,6 @@ date: 2024-12-01
 venue: 'Under Review'
 paperurl: ''
 bibtexurl: ''
-citation: 'Wen, Q., **Cheng, P.**, Ba, Z., Yi, L., Qin, Z., Lu, L., Wang, Q., Ren, K. (2024). "CLINDA: A Cross-lingual Domain Adaptation Framework for Challenging Audio Deepfake Detection Tasks across Languages." *Under Review*.'
+citation: 'Qing Wen, **Peng Cheng**, Zhongjie Ba, Li Yi, Zhan Qin, Li Lu, Qingni Wang, Kui Ren. (2024). "CLINDA: A Cross-lingual Domain Adaptation Framework for Challenging Audio Deepfake Detection Tasks across Languages." *Under Review*.'
 ---
 

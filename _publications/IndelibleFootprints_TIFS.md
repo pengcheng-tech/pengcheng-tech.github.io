@@ -1,5 +1,5 @@
 ---
-title: "Indelible "Footprints" of Inaudible Command Injection"
+title: "Indelible \"Footprints\" of Inaudible Command Injection"
 collection: publications
 category: manuscripts
 permalink: /publication/2024-indelible-footprints

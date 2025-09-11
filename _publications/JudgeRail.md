@@ -8,5 +8,5 @@ date: 2025-01-01
 venue: 'Under Review'
 paperurl: ''
 bibtexurl: ''
-citation: 'Ba, Z., Fu, H., Yang, Y., Chen, H., Wang, Q., **Cheng, P.**, Qin, Z., Ren, K. (2025). "JudgeRail: Harnessing Open-Source LLMs for Fast Harmful Text Detection with Judicial Prompting and Logit Rectification." *Under Review*.'
+citation: 'Zhongjie Ba, Haoyang Fu, Yijun Yang, Hongcheng Chen, Qingni Wang, **Peng Cheng**, Zhan Qin, Kui Ren. (2025). "JudgeRail: Harnessing Open-Source LLMs for Fast Harmful Text Detection with Judicial Prompting and Logit Rectification." *Under Review*.'
 ---
