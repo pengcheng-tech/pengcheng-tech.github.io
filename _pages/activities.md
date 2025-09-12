@@ -31,35 +31,29 @@ author_profile: true
 ## Conference Program Committees
 
 ### **International Conference Service**
-**Program Committee Member - ACM Web Conference (WWW 2025)**
-- **Conference**: Premier international conference on web technologies and applications
-- **Responsibilities**: Expert reviewer for submissions on web technology, security, and AI applications
-- **Expertise Areas**: AI security, voice privacy, multimodal data protection, and web-based security frameworks
-- **Review Scope**: Evaluating cutting-edge research in emerging web technologies and security solutions
+**Program Committee Member**
+- ACM Web Conference (WWW 2025)
+- AAAI Conference on Artificial Intelligence (AAAI 2026)
 
 ## Journal Reviewer Activities
 
 ### **International Peer Review Service**
-**High-Impact Journal Reviews**
-- **Proceedings of the IEEE**: Premier interdisciplinary engineering journal covering advances in electrical engineering, computer science, and technology
-- **ACM Transactions on Internet of Things (TIOT)**: Leading venue for IoT research and applications
-- **IEEE Internet of Things Journal (IoT-J)**: Top-tier publication focusing on IoT technologies, protocols, and security
+**Journal Reviews**
+- **Proceedings of the IEEE** (Impact Factor: 25.9): Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science
+- **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
+- **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
 
 ### **Regional Academic Service**
 **Chinese Journal Reviews**
-- **Journal of Information Network Security**: Key venue for cybersecurity and network security research in China
-- **Focus Areas**: Voice security, AI privacy, and network protection technologies
+- **Journal of Information Network Security**
 
 ## Research Collaboration & Grant Activities
 
 ### **International Grant Proposals**
 **Science Foundation Ireland (SFI) Collaboration (2019)**
 - **Project**: "Security and Privacy of Personal Voice Assistants"
-- **Grant Amount**: €720,839
-- **Role**: Co-author and research contributor
-- **Supervisor**: Prof. Utz Roedig (University College Cork)
-- **Foundation**: Research anchored in doctoral dissertation on acoustic-channel security
-- **Impact**: Demonstrated ability to translate academic research into fundable research initiatives
+- **Role**: Contributed to the preparation of grant proposal
+- **PI**: Prof. Utz Roedig (University College Cork)
 
 ### **Current Research Projects Leadership**
 **National Natural Science Foundation of China (NSFC)**
@@ -72,7 +66,6 @@ author_profile: true
 
 **Industry Collaboration**
 - **Principal Investigator**: Zhejiang University-Alibaba Collaboration on "Active and Passive Security Protection Technologies for the Maojing Voice Interaction System" (2025-2026)
-- **Participant**: Multiple industry partnerships with Ant Group, China Southern Power Grid, and CRRC focusing on AI security and automated detection technologies
 
 ## Academic Mentorship & Supervision
 
@@ -99,7 +92,6 @@ author_profile: true
 **International Academic Exchange**
 - **University College Cork (UCC), Ireland (2019-2020)**: Visiting Scholar at Department of Computer Science
 - **Research Focus**: Advanced voice assistant security and acoustic-channel vulnerabilities
-- **Collaboration**: International research collaboration on voice privacy technologies
 
 ### **Specialized Training & Schools**
 **São Paulo Advanced Science School (ESPCA) - Smart Cities (2017)**
@@ -107,14 +99,6 @@ author_profile: true
 - **Recognition**: Selected as one of 75 global top graduate students and postdoctoral researchers
 - **Sponsorship**: São Paulo Research Foundation (FAPESP) sponsored participation
 - **Focus**: Smart city technologies, IoT security, and urban computing systems
-
-## Professional Development & Training
-
-### **Continuing Education**
-- **Research Methodology**: Advanced training in interdisciplinary cybersecurity research
-- **Grant Writing**: Experience in international and national grant proposal development
-- **Academic Leadership**: Editorial and review experience across multiple high-impact venues
-- **Industry Collaboration**: Active engagement with leading technology companies on practical security solutions
 
 ---
 
