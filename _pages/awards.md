@@ -13,15 +13,13 @@ author_profile: true
 **19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024)**
 - **Role**: Advisor (Ranked 2nd among 3 advisors)  
 - **Project**: "Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform"
-- **Achievement**: Highest level of recognition in China's premier national undergraduate research competition
 
 ### **3rd Place**
 **IJCAI 2025 - Deepfake Detection and Localization Challenge (DDL Challenge)**
-- **Competition**: Workshop on Deepfake Detection, Localization, and Interpretability
+- **Competition**: Workshop on Deepfake Detection, Localization, and Interpretability (co-located with IJCAI 2025)
 - **Track**: Track 2 - Audio-Visual Detection and Localization (DDL-AV)
 - **Team**: 会赢的 (Zhejiang University)
 - **Achievement**: 3rd Place in multi-modal deepfake detection and localization
-- **Challenge Scope**: World's largest multi-modal deepfake dataset (1.8M+ samples, 88 forgery techniques)
 - **Technical Focus**: Complex multi-modal attacks including "forged audio + authentic video" scenarios
 - **Venue**: IJCAI 2025, Montreal/Guangzhou (August 16, 2025)
 
@@ -39,7 +37,7 @@ author_profile: true
 **Black Hat USA 2019**
 - **Role**: First Author (1st of 4 contributors)
 - **Research**: "SonarSnoop: Active Acoustic Side-Channel Attacks"
-- **Significance**: International recognition at the world's most prestigious cybersecurity conference
+- **Significance**: International recognition at one of the world's most prestigious cybersecurity conferences
 - **Impact**: Praised by renowned security experts including Bruce Schneier and Prof. Ross Anderson
 
 **Official Citation (2019):**
@@ -51,8 +49,6 @@ author_profile: true
 
 ### **Postdoctoral Excellence Grant (Second Class)**
 **Zhejiang Provincial Department of Human Resources and Social Security (August 2021)**
-- Recognition of outstanding research contributions during postdoctoral fellowship
-- Competitive provincial-level funding for continued research excellence
 
 ### **Ph.D. Scholarship**
 **Faculty of Science and Technology, Lancaster University, UK (2016–2020)**
@@ -65,7 +61,6 @@ author_profile: true
 **October 2024**
 - **Achievement**: Co-supervised Master's student won the **National Graduate Scholarship (China)**
 - **Significance**: Highest-level scholarship awarded to Master's students in China
-- **Impact**: Recognition of exceptional mentoring capabilities and student development
 
 ## Industry Impact Recognition
 
@@ -76,7 +71,6 @@ author_profile: true
 ### **Watermarking System Vulnerabilities - Amazon Collaboration**
 **WMCopier Research Recognition (2025)**
 - **Research Impact**: Developed WMCopier attack method that identified critical vulnerabilities in Amazon's watermarking systems (Titan Image Generator and Amazon Nova Canvas)
-- **Industry Response**: Amazon released security updates on March 28, 2025, to improve watermark detection robustness
 - **Collaborative Partnership**: Amazon's Responsible AI Team acknowledged the research contribution and collaborated on security improvements
 - **Recognition**: Received official statement and thank you letter from AWS Security Outreach Team
 
@@ -105,12 +99,7 @@ author_profile: true
 - **Prof. Ross Anderson** (University of Cambridge, Well-known Security Researcher): *"Truly spooky new method of remote surveillance"* - Academic endorsement highlighting the innovative nature of the acoustic attack methodology
 - **Bruce Schneier** (Renowned Cryptographer & Security Expert): *"It's amazing that this is even possible"* - Recognition of the groundbreaking nature of active acoustic side-channel attacks
 - **Technical Media Recognition**: *"This is the coolest Android hack we've seen"* - Pocketnow
-- **Industry Impact**: Research methodology influenced discussions on smartphone hardware security design
 
-### **Research Innovation Recognition**
-- **Novelty**: Pioneered the use of smartphone speakers and microphones as sonar systems for data extraction
-- **Technical Achievement**: Demonstrated 70% reduction in Android unlock pattern candidates through acoustic profiling
-- **Security Community Impact**: Established new research direction in acoustic-based side-channel attacks
 
 
 ---
