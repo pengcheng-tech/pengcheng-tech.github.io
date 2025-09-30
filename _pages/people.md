@@ -78,8 +78,8 @@ I am honored to work with a group of talented students and researchers dedicated
 ### Ph.D. Students
 
 **Xinyu Zhang** (Fall 2020 - Spring 2023)
-- **Research Interests**: Large Generative Models
-- **Current Position**: Alibaba Group
+- **Research Interests**: Speech Understanding & Synthesis
+- **Current Position**: Tongyi Lab, Alibaba Group
 
 **Liu Liu** (Fall 2020 - Summer 2025)
 - **Current Position**: Zhejiang Police College
