@@ -13,7 +13,7 @@ I am honored to work with a group of talented students and researchers dedicated
 
 ## Current Students
 
-### **Ph.D. Students (Co-supervised)**
+### Ph.D. Students (Co-supervised)
 
 **Weichen Lian** (Fall 2021 - present)
 - **Research Interests**: Deepfake Detection
@@ -35,7 +35,7 @@ I am honored to work with a group of talented students and researchers dedicated
 - **Research Interests**: AIGC compliance
 - **Affiliation**: Zhejiang University
 
-### **Master's Students (Co-supervised)**
+### Master's Students (Co-supervised)
 
 **Ziping Dong** (Fall 2023 - present)
 - **Research Interests**: Watermark Security
@@ -65,7 +65,7 @@ I am honored to work with a group of talented students and researchers dedicated
 - **Research Interests**: *To be updated*
 - **Affiliation**: Zhejiang University
 
-### **Bachelor's Students (Co-supervised)**
+### Bachelor's Students (Co-supervised)
 
 **Haohao Li** (Fall 2025 - present)
 - **Research Interests**: *To be updated*
@@ -75,7 +75,7 @@ I am honored to work with a group of talented students and researchers dedicated
 
 ## Alumni
 
-### **Ph.D. Students**
+### Ph.D. Students
 
 **Xinyu Zhang** (Fall 2020 - Spring 2023)
 - **Research Interests**: Large Generative Models
@@ -84,7 +84,7 @@ I am honored to work with a group of talented students and researchers dedicated
 **Liu Liu** (Fall 2020 - Summer 2025)
 - **Current Position**: Zhejiang Police College
 
-### **Master's Students**
+### Master's Students
 
 **Jiachen Lei** (Fall 2020 - Spring 2023)
 - **Research Interests**: Large Generative Models
@@ -102,7 +102,7 @@ I am honored to work with a group of talented students and researchers dedicated
 **Jieming Zhong** (Fall 2022 - Spring 2025)
 - **Current Position**: State Grid (Xiamen)
 
-### **Undergraduate Students**
+### Undergraduate Students
 
 **Qile Zhang** (Fall 2024 - Summer 2025)
 - **Current Position**: Master Student at University of California San Diego (UCSD)
@@ -121,16 +121,16 @@ Our lab focuses on several interconnected research areas:
 
 ## Student Achievements
 
-### **Recent Highlights**
+### Recent Highlights
 - **NeurIPS 2025** - Congratulations to Ziping Dong for wmcopier paper acceptance at NeurIPS 2025
-- **IJCAI Competition** - Our team achieved excellent results in IJCAI competition (2025)
+- **IJCAI 2025 DDL Challenge** - Our team achieved 3rd Place in Deepfake Detection and Localization Challenge (2025)
 - **National Graduate Scholarship (China)** - One co-supervised Master's student (October 2024)
 - **National Grand Prize** - 19th "Challenge Cup" National Competition advisor role (2024)
 - **Top 5 Nationwide** - 3rd China Artificial Intelligence Competition advisor role (2021)
 
 ## Opportunities
 
-### **For Prospective Students**
+### For Prospective Students
 We welcome motivated students interested in:
 - **Ph.D. positions**: Full-time research in AI security and privacy
 - **Master's positions**: Project-based research with publication opportunities  
@@ -138,7 +138,7 @@ We welcome motivated students interested in:
 - **Visiting positions**: Short-term and long-term collaboration opportunities
 
 
-### **Contact**
+### Contact
 If you are interested in joining our research group, please contact me with:
 - Your CV and research interests
 - Relevant coursework and project experience

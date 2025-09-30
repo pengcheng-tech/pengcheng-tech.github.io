@@ -1,0 +1,92 @@
+/* ========================================================================
+   CUSTOM HEADING STYLES - Enhanced Visual Hierarchy
+   ======================================================================== */
+
+/* Main content area headings with improved hierarchy */
+.page__content {
+
+  /* H2 - Primary Section Headings */
+  h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #3498db;
+    line-height: 1.3;
+  }
+
+  /* H3 - Secondary Section Headings */
+  h3 {
+    font-size: 1.35em;
+    font-weight: 600;
+    color: #34495e;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    padding-left: 0.5em;
+    border-left: 4px solid #3498db;
+    line-height: 1.4;
+  }
+
+  /* H4 - Tertiary Headings (use sparingly) */
+  h4 {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #555;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+  }
+
+  /* First H2 on page - reduce top margin */
+  h2:first-of-type {
+    margin-top: 0.5em;
+  }
+}
+
+/* Archive page specific adjustments */
+.archive {
+  h2 {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #3498db;
+  }
+
+  h3 {
+    font-size: 1.35em;
+    font-weight: 600;
+    color: #34495e;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    padding-left: 0.5em;
+    border-left: 4px solid #3498db;
+  }
+
+  h4 {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #555;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .page__content h2, .archive h2 {
+    font-size: 1.5em;
+  }
+
+  .page__content h3, .archive h3 {
+    font-size: 1.25em;
+  }
+
+  .page__content h4, .archive h4 {
+    font-size: 1.1em;
+  }
+}

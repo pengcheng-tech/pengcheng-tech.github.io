@@ -26,7 +26,7 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 
 <!--- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"-->
 - **September 2025**: Paper "wmcopier" accepted at NeurIPS 2025, congratulations to Ziping！
-- **September 2025**: Our team achieved excellent results in IJCAI competition
+- **September 2025**: Our team achieved 3rd Place in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)
 - **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
 - **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
 - **June 2024**: Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University
@@ -59,16 +59,13 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 ## Professional Services
 
 ### Editorial Services
-- **Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
+**Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
 
 ### Conference Program Committees
-- **Program Committee Member**: ACM Web Conference (WWW 2025), AAAI Conference on Artificial Intelligence (AAAI 2026)
+**Program Committee Member**: ACM Web Conference (WWW 2025), AAAI Conference on Artificial Intelligence (AAAI 2026)
 
 ### Journal Reviewer
-- **Proceedings of the IEEE** (Impact Factor: 25.9)
-- **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
-- **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
-- **Journal of Information Network Security**
+**Proceedings of the IEEE** (Impact Factor: 25.9), **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5), **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2), **Journal of Information Network Security**
 
 ### Research Projects
 - **Principal Investigator (2025-2028)**: National Natural Science Foundation of China (NSFC) General Program - "Research on Speech Synthesis Data Compliance Management Technology Based on Intrinsic Characteristics of Audio Signals"
@@ -76,9 +73,7 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 - **Participant**: Multiple NSFC projects including Key Projects on cross-chain security and deep learning applications
 
 ### Mentorship & Supervision
-- Currently co-supervising **5 Ph.D. students** and **7 Master's students** at Zhejiang University
-- Successfully co-mentored **1 Ph.D. student**, **5 Master's students**, and **1 undergraduate student** to degree completion
-- **National Graduate Scholarship Winner (2024)**: Co-supervised Master's student received China's highest-level scholarship for graduate students
+Currently co-supervising **5 Ph.D. students** and **7 Master's students** at Zhejiang University. Successfully co-mentored **1 Ph.D. student**, **5 Master's students**, and **1 undergraduate student** to degree completion. **National Graduate Scholarship Winner (2024)**: Co-supervised Master's student received China's highest-level scholarship for graduate students.
 
 <!--## Awards & Recognition
 

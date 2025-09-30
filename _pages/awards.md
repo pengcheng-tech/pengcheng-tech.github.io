@@ -9,13 +9,12 @@ author_profile: true
 
 ## Research Awards & Competition Recognition
 
-### **National Grand Prize (Top-Tier Award)**
-**19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024)**
-- **Role**: Advisor (Ranked 2nd among 3 advisors)  
+### National Grand Prize - 19th "Challenge Cup" National Competition (2024)
+- **Role**: Advisor (Ranked 2nd among 3 advisors)
 - **Project**: "Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform"
+- **Recognition**: Top-Tier Award
 
-### **3rd Place**
-**IJCAI 2025 - Deepfake Detection and Localization Challenge (DDL Challenge)**
+### 3rd Place - IJCAI 2025 Deepfake Detection Challenge
 - **Competition**: Workshop on Deepfake Detection, Localization, and Interpretability (co-located with IJCAI 2025)
 - **Track**: Track 2 - Audio-Visual Detection and Localization (DDL-AV)
 - **Team**: 会赢的 (Zhejiang University)
@@ -26,15 +25,13 @@ author_profile: true
 **Official Certificate:**
 <img src="/images/ijcai_ddl_certificate.jpg" alt="IJCAI 2025 DDL Challenge Certificate" width="450">
 
-### **Top 5 Nationwide**
-**3rd China Artificial Intelligence Competition (2021)**
+### Top 5 Nationwide - 3rd China Artificial Intelligence Competition (2021)
 - **Role**: Primary Advisor (Ranked 1st among 2 advisors)
 - **Track 1**: Audio Deepfake Detection Under Open-Speaker Scenarios
 - **Track 2**: Speaker-Specific Audio Deepfake Detection
 - **Achievement**: Dual track excellence in AI security research
 
-### **Finalist for "Most Innovative Research" Pwnie Award**
-**Black Hat USA 2019**
+### Finalist for "Most Innovative Research" Pwnie Award - Black Hat USA 2019
 - **Role**: First Author (1st of 4 contributors)
 - **Research**: "SonarSnoop: Active Acoustic Side-Channel Attacks"
 - **Significance**: International recognition at one of the world's most prestigious cybersecurity conferences
@@ -47,28 +44,26 @@ author_profile: true
 
 ## Academic Excellence Awards
 
-### **Postdoctoral Excellence Grant (Second Class)**
+### Postdoctoral Excellence Grant (Second Class)
 **Zhejiang Provincial Department of Human Resources and Social Security (August 2021)**
 
-### **Ph.D. Scholarship**
+### Ph.D. Scholarship
 **Faculty of Science and Technology, Lancaster University, UK (2016–2020)**
-- Full doctoral scholarship
+- Full doctoral scholarship covering tuition and living expenses
 
 ## Mentorship & Supervision Awards
 
-### **National Graduate Scholarship Achievement**
-**October 2024**
-- **Achievement**: Co-supervised Master's student won the **National Graduate Scholarship (China)**
+### National Graduate Scholarship Achievement (October 2024)
+- **Achievement**: Co-supervised Master's student won the National Graduate Scholarship (China)
 - **Significance**: Highest-level scholarship awarded to Master's students in China
 
 ## Industry Impact Recognition
 
-### **Commercial AI Model Security**
-- **SurrogatePrompt Research**: Findings acknowledged by leading AI vendors (Midjourney, Stability.ai)
+### Commercial AI Model Security - SurrogatePrompt Research
+- **Findings**: Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)
 - **Impact**: Contributed to security improvements in commercial text-to-image AI models
 
-### **Watermarking System Vulnerabilities - Amazon Collaboration**
-**WMCopier Research Recognition (2025)**
+### Watermarking System Vulnerabilities - Amazon Collaboration (2025)
 - **Research Impact**: Developed WMCopier attack method that identified critical vulnerabilities in Amazon's watermarking systems (Titan Image Generator and Amazon Nova Canvas)
 - **Collaborative Partnership**: Amazon's Responsible AI Team acknowledged the research contribution and collaborated on security improvements
 - **Recognition**: Received official statement and thank you letter from AWS Security Outreach Team
@@ -81,23 +76,21 @@ author_profile: true
 **AWS Security Team Acknowledgment:**
 <img src="/images/amazon_thank_you.jpg" alt="Amazon Thank You Letter" width="500">
 
-### **Open-Source Contributions**
-- **ALIF Framework**: Adopted by NVIDIA for integration into their official AI security toolkit
+### Open-Source Contributions - ALIF Framework
+- **Adoption**: NVIDIA integrated ALIF into their official AI security toolkit
 - **Status**: Under active development for red teaming capabilities enhancement
 
 ## Media Recognition & Expert Endorsement
 
-### **International Media Coverage**
-**SonarSnoop Research Impact - The First Active Acoustic Side-Channel Attack**
+### International Media Coverage - SonarSnoop Research Impact
 - **Media Coverage**: Pocketnow, Motherboard, ZDNet, Naked Security, Slashdot, eldiario.es (Spain), and many more (in various languages including Chinese, German and Russian)
 - **Research Significance**: First active acoustic side-channel attack demonstrating novel smartphone exploitation methods through acoustic profiling
 - **Source**: As documented on [Prof. Jeff Yan's homepage](https://prof-jeffyan.github.io)
 
-### **Expert Endorsements**
-**Recognition from Security Community Leaders**
-- **Prof. Ross Anderson** (University of Cambridge, Well-known Security Researcher): *"Truly spooky new method of remote surveillance"* - Academic endorsement highlighting the innovative nature of the acoustic attack methodology
-- **Bruce Schneier** (Renowned Cryptographer & Security Expert): *"It's amazing that this is even possible"* - Recognition of the groundbreaking nature of active acoustic side-channel attacks
-- **Technical Media Recognition**: *"This is the coolest Android hack we've seen"* - Pocketnow
+### Expert Endorsements from Security Community Leaders
+- **Prof. Ross Anderson** (University of Cambridge): *"Truly spooky new method of remote surveillance"*
+- **Bruce Schneier** (Renowned Cryptographer & Security Expert): *"It's amazing that this is even possible"*
+- **Technical Media**: *"This is the coolest Android hack we've seen"* - Pocketnow
 
 
 
