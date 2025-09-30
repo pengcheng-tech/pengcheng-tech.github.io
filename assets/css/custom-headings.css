@@ -7,7 +7,7 @@
 
   /* H2 - Primary Section Headings */
   h2 {
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 700;
     color: #2c3e50;
     margin-top: 2em;
@@ -19,7 +19,7 @@
 
   /* H3 - Secondary Section Headings */
   h3 {
-    font-size: 1.35em;
+    font-size: 1.2em;
     font-weight: 600;
     color: #34495e;
     margin-top: 1.5em;
@@ -31,7 +31,7 @@
 
   /* H4 - Tertiary Headings (use sparingly) */
   h4 {
-    font-size: 1.15em;
+    font-size: 1.05em;
     font-weight: 600;
     color: #555;
     margin-top: 1.2em;
@@ -48,7 +48,7 @@
 /* Archive page specific adjustments */
 .archive {
   h2 {
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 700;
     color: #2c3e50;
     margin-top: 2em;
@@ -58,7 +58,7 @@
   }
 
   h3 {
-    font-size: 1.35em;
+    font-size: 1.2em;
     font-weight: 600;
     color: #34495e;
     margin-top: 1.5em;
@@ -68,7 +68,7 @@
   }
 
   h4 {
-    font-size: 1.15em;
+    font-size: 1.05em;
     font-weight: 600;
     color: #555;
     margin-top: 1.2em;
@@ -76,17 +76,29 @@
   }
 }
 
+/* Publication/Archive item titles - make them smaller */
+.archive__item-title {
+  font-size: 1.15em !important;
+  font-weight: 600 !important;
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .page__content h2, .archive h2 {
-    font-size: 1.5em;
+    font-size: 1.35em;
   }
 
   .page__content h3, .archive h3 {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
 
   .page__content h4, .archive h4 {
-    font-size: 1.1em;
+    font-size: 1em;
+  }
+
+  .archive__item-title {
+    font-size: 1.05em !important;
   }
 }

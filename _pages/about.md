@@ -14,13 +14,17 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 
 # Research Interests
 
-My research focuses on building trustworthy AI ecosystems by addressing security and privacy challenges in artificial intelligence-generated content and intelligent systems. 
+My research focuses on securing AI systems and AI-generated content across the entire pipeline—from model development to deployment—with particular emphasis on the intersection of security, safety, and privacy in intelligent systems.
 
-**AI-Generated Content Security** forms the core of my current research, investigating the complete AIGC lifecycle through four pillars: privacy preservation, controllability, authenticity, and compliance. I study the robustness of watermarking systems, develop generalizable deepfake detection frameworks, and explore safeguards against adversarial attacks. 
+**AI-Generated Content (AIGC) Security & Safety**: Investigating vulnerabilities in generative AI systems, developing detection methods for synthetic content, and creating attribution mechanisms to ensure trustworthy AI-generated media across text, image, audio, and video modalities.
 
-**Speech Privacy and Security** represents my foundational research area, developing solutions for voice-enabled systems from acoustic-channel attacks to privacy-preserving technologies. 
+**Adversarial Machine Learning**: Developing frameworks to understand and defend against adversarial attacks on AI models, including universal perturbations that can compromise multiple systems and robust defense mechanisms that maintain model performance.
 
-**Multimodal Data Privacy and IoT Security** extends my research to broader human-computer interaction scenarios, investigating cross-modal vulnerabilities and privacy-preserving technologies. This includes novel acoustic side-channel attacks and comprehensive security frameworks for smart devices, bridging theoretical research with practical implementations.
+**Speech and Acoustic Security**: Exploring privacy-preserving technologies for voice-enabled systems, acoustic-channel attack vectors, and anti-eavesdropping mechanisms that protect user privacy while maintaining legitimate functionality.
+
+**IoT and Embedded AI Security**: Addressing security challenges in resource-constrained intelligent devices, focusing on sensor-based vulnerabilities and lightweight protection mechanisms suitable for smart home and wearable technologies.
+
+My work bridges theoretical foundations and practical applications, aiming to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
 
