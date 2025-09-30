@@ -14,19 +14,18 @@ author_profile: true
 - **Special Issue**: "Intelligent Voice Security and Defense Technologies"
 - **Role**: Special Issue Initiator and Guest Editor
 - **Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security systems
-- **Impact**: Establishing a new publication venue for emerging threats and defenses in voice-enabled technologies
 
 **Journal Profile:**
 <img src="/images/cyber_security_journal.jpg" alt="Journal of Cyber Security Profile" width="500">
 
-**Journal Recognition:**
+<!-- **Journal Recognition:**
 - CCF计算领域高质量期刊 T2类
 - 通信学会信息通信领域高质量科技期刊 T2级
 - 计算机学会会刊
 - CSCD核心期刊
 - 中国科技核心期刊
 - Scopus收录期刊
-- JST收录期刊
+- JST收录期刊 -->
 
 ## Conference Program Committees
 
@@ -38,13 +37,11 @@ author_profile: true
 ## Journal Reviewer Activities
 
 ### **International Peer Review Service**
-**Journal Reviews**
 - **Proceedings of the IEEE** (Impact Factor: 25.9): Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science
 - **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
 - **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
 
-### **Regional Academic Service**
-**Chinese Journal Reviews**
+### **Chinese Academic Service**
 - **Journal of Information Network Security**
 
 ## Research Collaboration & Grant Activities
@@ -62,7 +59,7 @@ author_profile: true
 
 **Key R&D Programs of China**
 - **Active Participation**: Multiple national-level research programs in AI security, machine learning model security, and industrial cryptographic systems
-- **Focus Areas**: Multimodal AI security, blockchain technologies, and voice interaction system protection
+- **Focus Areas**: Multimodal AI security and blockchain technologies
 
 **Industry Collaboration**
 - **Principal Investigator**: Zhejiang University-Alibaba Collaboration on "Active and Passive Security Protection Technologies for the Maojing Voice Interaction System" (2025-2026)
@@ -76,9 +73,8 @@ author_profile: true
 - **Research Focus**: AIGC security, multimodal privacy protection, and voice system security
 
 ### **Mentorship Achievements**
-**Student Success Recognition**
 - **National Graduate Scholarship Winner (2024)**: Co-supervised Master's student received China's highest-level scholarship for graduate students
-- **Degree Completion Success**: Successfully mentored 1 Ph.D. student, 5 Master's students, and 6 undergraduate students to degree completion
+- **Degree Completion Success**: Successfully co-mentored 1 Ph.D. student, 5 Master's students, and 6 undergraduate students to degree completion
 - **Guidance Areas**: Thesis design, research execution, publication strategies, and career development
 
 ### **Teaching Experience**

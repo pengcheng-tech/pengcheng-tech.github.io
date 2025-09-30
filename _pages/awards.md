@@ -52,8 +52,7 @@ author_profile: true
 
 ### **Ph.D. Scholarship**
 **Faculty of Science and Technology, Lancaster University, UK (2016–2020)**
-- Full doctoral scholarship for 4-year Ph.D. program
-- Merit-based funding for research in computer science and cybersecurity
+- Full doctoral scholarship
 
 ## Mentorship & Supervision Awards
 

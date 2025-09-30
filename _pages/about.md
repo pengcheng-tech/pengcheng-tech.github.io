@@ -25,6 +25,8 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 ## Recent News
 
 <!--- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"-->
+- **September 2025**: Paper "wmcopier" accepted at NeurIPS 2025, congratulations to Ziping！
+- **September 2025**: Our team achieved excellent results in IJCAI competition
 - **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
 - **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
 - **June 2024**: Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University
