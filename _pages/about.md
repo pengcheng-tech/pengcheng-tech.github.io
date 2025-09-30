@@ -37,21 +37,21 @@ My research focuses on building trustworthy AI ecosystems by addressing security
 
 ## Selected Publications
 
-- **Huang, P., Pan, K., Wang, Q., Cheng, P., Lu, L., Ba, Z., Ren, K.** "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys 2025.*
+- Peng Huang, Kun Pan, Qingni Wang, **Peng Cheng***, Li Lu, Zhongjie Ba, Kui Ren. "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys*. Anaheim, California, US. 2025. doi: to appear.
 
-- **Ba, Z., Zhong, J., Lei, J., Cheng, P. (corresponding author), Wang, Q., Qin, Z., Wang, Z., Ren, K.** "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)*, 1166–1180.
+- Zhongjie Ba, Jieming Zhong, Jiachen Lei, **Peng Cheng***, Qingni Wang, Zhan Qin, Zhibo Wang, Kui Ren. "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution." *Proceedings of the ACM SIGSAC Conference on Computer and Communications Security*. Salt Lake City, UT, USA. 2024. doi: 10.1145/3658644.3670317.
 
-- **Ba, Z., Gong, B., Wang, Y., Liu, Y., Cheng, P. (corresponding author), Lin, F., Lu, L., Ren, K.** "Indelible 'Footprints' of Inaudible Command Injection." *IEEE Transactions on Information Forensics and Security (TIFS)*, 2024.
+- Zhongjie Ba, Bin Gong, Yuwei Wang, Liu Liu, **Peng Cheng***, Fengxiao Lin, Li Lu, Kui Ren. "Indelible 'Footprints' of Inaudible Command Injection." *IEEE Transactions on Information Forensics and Security*. 2024.
 
-- **Cheng, P., Wang, Y., Huang, P., Ba, Z., Lin, X., Lin, F., Lu, L., Ren, K.** "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." *IEEE Symposium on Security and Privacy (SP 2024)*, 1628–1645.
+- **Peng Cheng**, Yuwei Wang, Peng Huang, Zhongjie Ba, Xiaodong Lin, Fengxiao Lin, Li Lu, Kui Ren. "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." *IEEE Symposium on Security and Privacy*. San Francisco, CA, USA. 2024. doi: 10.1109/SP54263.2024.00104.
 
-- **Huang, P., Wei, Y., Cheng, P., Ba, Z., Lu, L., Lin, F., Wang, Y., Ren, K.** "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 2024.
+- Peng Huang, Yihao Wei, **Peng Cheng**, Zhongjie Ba, Li Lu, Fengxiao Lin, Yuwei Wang, Kui Ren. "Phoneme-Based Proactive Anti-Eavesdropping with Controlled Recording Privilege." *IEEE Transactions on Dependable and Secure Computing*. 2024.
 
-- **Ba, Z., Wen, Q., Cheng, P. (corresponding author), Wang, Y., Lin, F., Lu, L., Liu, Z.** "Transferring Audio Deepfake Detection Capability Across Languages." *Proceedings of the ACM Web Conference (WWW 2023)*, 2033–2044.
+- Zhongjie Ba, Qing Wen, **Peng Cheng***, Yuwei Wang, Fengxiao Lin, Li Lu, Zhibo Liu. "Transferring Audio Deepfake Detection Capability Across Languages." *Proceedings of the ACM Web Conference*. Austin, TX, USA. 2023. doi: 10.1145/3543507.3583422.
 
-- **Cheng, P., Wu, Y., Hong, Y., Ba, Z., Lin, F., Lu, L., Ren, K.** "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations." *IEEE Transactions on Dependable and Secure Computing (TDSC)*, 21(1), 31–46, 2023.
+- **Peng Cheng**, Yuexin Wu, Yi Hong, Zhongjie Ba, Fengxiao Lin, Li Lu, Kui Ren. "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations." *IEEE Transactions on Dependable and Secure Computing*. 21(1), 31–46, 2023. doi: 10.1109/TDSC.2023.3288610.
 
-- **Cheng, P., Roedig, U.** "Personal Voice Assistant Security and Privacy—A Survey." *Proceedings of the IEEE*, 110(4), 476–507, 2022.
+- **Peng Cheng**, Utz Roedig. "Personal Voice Assistant Security and Privacy—A Survey." *Proceedings of the IEEE*. 110(4), 476–507, 2022. doi: 10.1109/JPROC.2022.3153167.
 
 For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en).
 
@@ -59,19 +59,26 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 ## Professional Services
 
 ### Editorial Services
-- **Special Issue Guest Editor**: "Intelligent Voice Security and Defense Technologies", *Journal of Cyber Security*, 2025
+- **Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
 
 ### Conference Program Committees
-- **Program Committee Member**: ACM Web Conference (WWW 2025)
+- **Program Committee Member**: ACM Web Conference (WWW 2025), AAAI Conference on Artificial Intelligence (AAAI 2026)
 
 ### Journal Reviewer
-- **International Journals**: Proceedings of the IEEE, ACM Transactions on Internet of Things (TIOT), IEEE Internet of Things Journal (IoT-J)
-- **Chinese Journals**: Journal of Information Network Security
+- **Proceedings of the IEEE** (Impact Factor: 25.9)
+- **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
+- **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
+- **Journal of Information Network Security**
+
+### Research Projects
+- **Principal Investigator (2025-2028)**: National Natural Science Foundation of China (NSFC) General Program - "Research on Speech Synthesis Data Compliance Management Technology Based on Intrinsic Characteristics of Audio Signals"
+- **Principal Investigator (2025-2026)**: Zhejiang University-Alibaba Collaboration - "Active and Passive Security Protection Technologies for the Maojing Voice Interaction System"
+- **Participant**: Multiple NSFC projects including Key Projects on cross-chain security and deep learning applications
 
 ### Mentorship & Supervision
-- Currently co-supervising **5 Ph.D. students** and **5 Master's students** at Zhejiang University
-- Successfully mentored **1 Ph.D. student**, **5 Master's students**, and **5 undergraduate students** to degree completion
-- One co-supervised Master's student won the **National Graduate Scholarship (China)** in October 2024
+- Currently co-supervising **5 Ph.D. students** and **7 Master's students** at Zhejiang University
+- Successfully co-mentored **1 Ph.D. student**, **5 Master's students**, and **1 undergraduate student** to degree completion
+- **National Graduate Scholarship Winner (2024)**: Co-supervised Master's student received China's highest-level scholarship for graduate students
 
 <!--## Awards & Recognition
 
@@ -85,7 +92,7 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 My research has made significant contributions to industry security:
 
 - **AI Model Security**: Identified vulnerabilities in commercial text-to-image models (Midjourney, Stability.ai) through SurrogatePrompt attack method
-- **Watermarking Systems**: Developed DiffForge method, recognized by Amazon's Responsible AI Team for identifying critical vulnerabilities
+- **Watermarking Systems**: Developed wmcopier method, recognized by Amazon's Responsible AI Team for identifying critical vulnerabilities
 - **Open-Source Contributions**: ALIF framework adopted by NVIDIA for their official AI security toolkit
 - **Media Recognition**: SonarSnoop research featured in IT media (Motherboard, ZDNet, Sophos) and praised by renowned security experts
 

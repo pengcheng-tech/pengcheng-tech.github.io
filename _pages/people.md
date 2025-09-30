@@ -100,7 +100,7 @@ I am honored to work with a group of talented students and researchers dedicated
 - **Current Position**: Huawei (Shanghai)
 
 **Jieming Zhong** (Fall 2022 - Spring 2025)
-- **Current Position**: 
+- **Current Position**: State Grid (Xiamen)
 
 ### **Undergraduate Students**
 
