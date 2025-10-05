@@ -10,7 +10,7 @@ author_profile: true
 I am honored to work with a group of talented students and researchers dedicated to advancing AI safety, AI security and multimodal data protection. Our lab focuses on building trustworthy AI ecosystems through innovative research and collaborative learning.
 
 <div style="text-align: center; margin: 30px 0;">
-  <img src="{{ base_path }}/images/group_photo.jpg" alt="Group Photo" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <img src="{{ base_path }}/images/group_photo.jpg" alt="Group Photo" style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 </div>
 
 ---
