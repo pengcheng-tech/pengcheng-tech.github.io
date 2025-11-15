@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:scholar.google.com)",
+      "WebFetch(domain:dblp.org)",
+      "WebSearch",
+      "Read(//Users/chengpeng/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
