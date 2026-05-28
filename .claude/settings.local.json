@@ -4,7 +4,9 @@
       "WebFetch(domain:scholar.google.com)",
       "WebFetch(domain:dblp.org)",
       "WebSearch",
-      "Read(//Users/chengpeng/**)"
+      "Read(//Users/chengpeng/**)",
+      "PowerShell($env:PATH = $env:PATH + \";C:\\\\Program Files\\\\Git\\\\cmd\"; Set-Location \"D:\\\\坚果云数据\\\\坚果云主数据\\\\我的坚果云\\\\portfolio\\\\Personal Page\\\\pengcheng-tech.github.io\"; git status)",
+      "PowerShell(Get-Command *)"
     ],
     "deny": [],
     "ask": []

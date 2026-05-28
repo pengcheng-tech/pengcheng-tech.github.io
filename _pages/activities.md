@@ -26,16 +26,25 @@ author_profile: true
 - Scopus收录期刊
 - JST收录期刊 -->
 
-## Conference Program Committees
+## Conference Reviewer
 
-### Program Committee Member - International Conferences
+### Conference Reviewer - International Conferences
+- **ICML 2026** — International Conference on Machine Learning
+- **ICLR 2026** — International Conference on Learning Representations
+- **ACM MM 2026** — ACM International Conference on Multimedia
+- **IEEE SLT 2026** — IEEE Spoken Language Technology Workshop
+- **AAAI 2026** — AAAI Conference on Artificial Intelligence
 - **ACM Web Conference (WWW 2025)**
-- **AAAI Conference on Artificial Intelligence (AAAI 2026)**
+
+### Reviewer Recognition
+- **ICML 2026 Silver Reviewer** — Top-tier recognition awarded by the ICML 2026 Program Chairs to reviewers who demonstrated exceptional quality in their reviews. This is a highly selective honor recognizing outstanding contribution to the peer review process.
 
 ## Journal Reviewer Activities
 
 ### International Peer Review Service
 - **Proceedings of the IEEE** (Impact Factor: 25.9) - Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science
+- **IEEE Transactions on Information Forensics and Security (TIFS)** (JCR Q1)
+- **IEEE Transactions on Dependable and Secure Computing (TDSC)** (JCR Q1)
 - **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
 - **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
 

@@ -42,6 +42,13 @@ author_profile: true
 
 **Historical Reference**: [Original Pwnie Award Nominations (Internet Archive)](https://web.archive.org/web/20190919051259/https://pwnies.com/nominations/)
 
+## Reviewer Excellence
+
+### ICML 2026 Silver Reviewer
+**International Conference on Machine Learning (ICML 2026)**
+- **Recognition**: Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs
+- **Significance**: Highly selective honor recognizing exceptional quality and contribution to the peer review process at one of the world's premier machine learning conferences
+
 ## Academic Excellence Awards
 
 ### Postdoctoral Excellence Grant (Second Class)

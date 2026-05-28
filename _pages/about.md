@@ -28,8 +28,12 @@ My work bridges theoretical foundations and practical applications, aiming to bu
 
 ## Recent News
 
+- **May 2026**: Congratulations to Qing and Haohao on their paper accepted at ICML 2026!
+- **April 2026**: Congratulations to Qingcao and Yipeng on their paper accepted at ICME 2026 (Spotlight)!
+- **January 2026**: Congratulations to Qingyu and Tao on their paper accepted at ICLR 2026!
+- **November 2025**: Congratulations to Liang and Qingcao on their paper accepted at AAAI 2026!
 <!--- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"-->
-- **September 2025**: Paper "wmcopier" accepted at NeurIPS 2025, congratulations to Ziping！
+- **September 2025**: Paper "WMCopier" accepted at NeurIPS 2025, congratulations to Ziping!
 - **September 2025**: Our team achieved 3rd Place in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)
 - **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
 - **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
@@ -65,8 +69,8 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 ### Editorial Services
 **Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
 
-### Conference Program Committees
-**Program Committee Member**: ACM Web Conference (WWW 2025), AAAI Conference on Artificial Intelligence (AAAI 2026)
+### Conference Reviewer
+**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, AAAI 2026, ACM Web Conference (WWW 2025)
 
 ### Journal Reviewer
 **Proceedings of the IEEE** (Impact Factor: 25.9), **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5), **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2), **Journal of Information Network Security**
