@@ -18,6 +18,7 @@ My research centers on AI-generated content (AIGC) security—securing generativ
 
 ## Recent News
 
+- **May 2026**: Recognized as **Silver Reviewer** at ICML 2026, among the top reviewers of the conference.
 - **May 2026**: Congratulations to Qing and Haohao on their paper accepted at ICML 2026!
 - **April 2026**: Congratulations to Qingcao and Yipeng on their paper accepted at ICME 2026 (Spotlight)!
 - **January 2026**: Congratulations to Qingyu and Tao on their paper accepted at ICLR 2026!
