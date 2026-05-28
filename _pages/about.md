@@ -14,17 +14,7 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 
 # Research Interests
 
-My research focuses on securing AI systems and AI-generated content across the entire pipeline—from model development to deployment—with particular emphasis on the intersection of security, safety, and privacy in intelligent systems.
-
-**AI-Generated Content (AIGC) Security & Safety**: Investigating vulnerabilities in generative AI systems, developing detection methods for synthetic content, examining existing and creating attribution mechanisms to ensure trustworthy AI-generated media.
-
-**Adversarial Machine Learning**: Developing frameworks to understand and defend against adversarial attacks on AI models.
-
-**Speech and Acoustic Security**: Exploring privacy-preserving technologies for voice-enabled systems, acoustic-channel attack vectors, and anti-eavesdropping mechanisms that protect user privacy while maintaining legitimate functionality.
-
-**IoT and Embedded AI Security**: Addressing security challenges in resource-constrained intelligent devices, focusing on sensor-based vulnerabilities and lightweight protection mechanisms suitable for smart home and wearable technologies.
-
-My work bridges theoretical foundations and practical applications, aiming to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
+My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
 
