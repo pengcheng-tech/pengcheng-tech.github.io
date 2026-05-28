@@ -6,7 +6,8 @@
       "WebSearch",
       "Read(//Users/chengpeng/**)",
       "PowerShell($env:PATH = $env:PATH + \";C:\\\\Program Files\\\\Git\\\\cmd\"; Set-Location \"D:\\\\坚果云数据\\\\坚果云主数据\\\\我的坚果云\\\\portfolio\\\\Personal Page\\\\pengcheng-tech.github.io\"; git status)",
-      "PowerShell(Get-Command *)"
+      "PowerShell(Get-Command *)",
+      "WebFetch(domain:letterligo.netlify.app)"
     ],
     "deny": [],
     "ask": []

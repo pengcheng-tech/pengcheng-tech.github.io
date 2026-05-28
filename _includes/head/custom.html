@@ -17,4 +17,24 @@
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- Layout density overrides: smaller font + wider content to match reference density -->
+<style>
+  /* Reduce base font size from 16px to 14px for denser layout */
+  html {
+    font-size: 14px;
+  }
+
+  /* Widen the outer container */
+  #main {
+    max-width: 1440px;
+  }
+
+  /* Reduce the large right padding Susy injects via suffix(2 of 12) ~17% */
+  @media (min-width: 925px) {
+    .page {
+      padding-right: 2% !important;
+    }
+  }
+</style>
+
 <!-- end custom head snippets -->
