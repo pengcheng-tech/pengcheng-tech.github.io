@@ -52,6 +52,10 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
 
+    {% if post.citation %}
+      <p>Recommended citation: {{ post.citation | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+    {% endif %}
+
     {% if post.paperurl or post.codeurl or post.slidesurl %}
       <p class="archive__item-links">
         {% if post.paperurl %}
@@ -64,10 +68,6 @@
           <a href="{{ post.slidesurl }}" class="btn btn--small btn--primary">Slides</a>
         {% endif %}
       </p>
-    {% endif %}
-
-    {% if post.citation %}
-      <p>Recommended citation: {{ post.citation | markdownify | remove: "<p>" | remove: "</p>" }}</p>
     {% endif %}
 
   </article>
