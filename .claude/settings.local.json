@@ -1,13 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:scholar.google.com)",
-      "WebFetch(domain:dblp.org)",
-      "WebSearch",
-      "Read(//Users/chengpeng/**)",
-      "PowerShell($env:PATH = $env:PATH + \";C:\\\\Program Files\\\\Git\\\\cmd\"; Set-Location \"D:\\\\坚果云数据\\\\坚果云主数据\\\\我的坚果云\\\\portfolio\\\\Personal Page\\\\pengcheng-tech.github.io\"; git status)",
-      "PowerShell(Get-Command *)",
-      "WebFetch(domain:letterligo.netlify.app)"
+      "Bash(python3 -c \"from openpyxl import load_workbook; wb = load_workbook(''/Users/chengpeng/Downloads/信息盘点.xlsx''); ws = wb.active; for row in ws.iter_rows(values_only=True): print(row)\")",
+      "Bash(pip3 install openpyxl)",
+      "Bash(python3 /tmp/read_excel.py)",
+      "Bash(git add _pages/research-records.md)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd research records page with patents, projects, and publications\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git rm \"/Users/chengpeng/Nutstore Files/我的坚果云/portfolio/Personal Page/pengcheng-tech.github.io/_pages/research-records.md\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRemove research-records.md for privacy reasons\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nRe-add research records page\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git rm _pages/research-records.md)"
     ],
     "deny": [],
     "ask": []
