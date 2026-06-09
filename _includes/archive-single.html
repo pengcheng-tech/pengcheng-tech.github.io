@@ -51,13 +51,23 @@
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
-    
-    {% if post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation | markdownify | remove: "<p>" | remove: "</p>" }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation %}
+
+    {% if post.paperurl or post.codeurl or post.slidesurl %}
+      <p class="archive__item-links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="btn btn--small btn--primary">Paper</a>
+        {% endif %}
+        {% if post.codeurl %}
+          <a href="{{ post.codeurl }}" class="btn btn--small btn--primary">Code</a>
+        {% endif %}
+        {% if post.slidesurl %}
+          <a href="{{ post.slidesurl }}" class="btn btn--small btn--primary">Slides</a>
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% if post.citation %}
       <p>Recommended citation: {{ post.citation | markdownify | remove: "<p>" | remove: "</p>" }}</p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% endif %}
 
   </article>
