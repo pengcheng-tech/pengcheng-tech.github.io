@@ -8,6 +8,7 @@ date: 2023-06-01
 venue: 'arXiv preprint'
 paperurl: 'https://arxiv.org/abs/2306.11363'
 bibtexurl: ''
+codeurl: 'https://github.com/jiachenlei/maskdm'
 citation: 'Jiachen Lei, Qingni Wang, **Peng Cheng***, Zhongjie Ba, Zhan Qin, Zhibo Wang, Zhiyi Liu, Kui Ren. "Masked Diffusion Models Are Fast and Privacy-Aware Learners." arXiv preprint arXiv:2306.11363. 2023. doi: to appear.'
 ---
 

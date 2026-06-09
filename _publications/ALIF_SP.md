@@ -6,7 +6,7 @@ permalink: /publication/2024-alif
 excerpt: 'This paper proposes linguistic feature-based attacks using TTS/ASR reciprocity, enabling single-query adversarial samples with 97.7% query cost reduction. Validated on four commercial systems and adopted by NVIDIA for their AI security toolkit.'
 date: 2024-05-01
 venue: 'IEEE Symposium on Security and Privacy (SP 2024)'
-paperurl: ''
+paperurl: 'https://arxiv.org/abs/2408.01808'
 bibtexurl: ''
 citation: '**Peng Cheng**, Yuwei Wang, Peng Huang, Zhongjie Ba, Xiaohong Lin, Feng Lin, Li Lu, Kui Ren. "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features." Proceedings of IEEE Symposium on Security and Privacy. San Francisco, CA, USA. 2024. doi: 10.1109/SP54263.2024.00047.'
 ---

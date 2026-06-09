@@ -8,6 +8,7 @@ date: 2026-07-01
 venue: 'IEEE International Conference on Multimedia and Expo (ICME 2026) <strong>[Spotlight]</strong>'
 paperurl: ''
 bibtexurl: ''
+codeurl: 'https://github.com/saltfish233/MixFake'
 citation: 'Qingcao Li, Yipeng Lin, Weichen Lian, Zhongjie Ba, **Peng Cheng**† (corresponding author), Zhichao Lian. "MixFake: Benchmarking and Enhancing Audio Deepfake Detection in Diverse Real-world Mixed Audio." IEEE International Conference on Multimedia and Expo (ICME 2026). [Spotlight]'
 ---
 
