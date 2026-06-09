@@ -38,10 +38,10 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en"
   #impactstory      : # URL
   orcid            : "https://orcid.org/0000-0002-4453-2274"
-  #semantic         : # URL
+  semantic         : "https://www.semanticscholar.org/author/Peng-Cheng/2112625800"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   #researchgate     : # URL
-  #scopus           : # URL
+  scopus           : "https://www.scopus.com/authid/detail.url?authorId=59105707000"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
