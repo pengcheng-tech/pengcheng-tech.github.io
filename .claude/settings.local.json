@@ -5,7 +5,12 @@
       "Bash(while read f)",
       "Bash(do echo \"=== $f ===\")",
       "Bash(head -12 \"$f\")",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:pengcheng-tech.github.io)",
+      "WebFetch(domain:github.com)",
+      "PowerShell(git *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell($git = \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\GitHubDesktop\\\\app-3.5.12\\\\resources\\\\app\\\\git\\\\cmd\\\\git.exe\"; Set-Location \"D:\\\\坚果云数据\\\\坚果云主数据\\\\我的坚果云\\\\portfolio\\\\Personal Page\\\\pengcheng-tech.github.io\"; & $git add \"images/ccf_senior_member.jpg\" \"_pages/about.md\" \"_pages/activities.md\"; & $git commit -m \"Add CCF Senior Member election to news and professional activities\")"
     ],
     "deny": [],
     "ask": []
