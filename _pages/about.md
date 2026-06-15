@@ -18,6 +18,7 @@ My research centers on AI-generated content (AIGC) security—securing generativ
 
 ## Recent News
 - **June 2026**: Congratulations to Miao on her paper accepted at Interspeech 2026!
+- **May 2026**: Elected as **Senior Member** of the China Computer Federation (CCF). [[Certificate]](/images/ccf_senior_member.jpg)
 - **May 2026**: Recognized as **Silver Reviewer** at ICML 2026, among the top reviewers of the conference.
 - **May 2026**: Congratulations to Qing and Haohao on their paper accepted at ICML 2026!
 - **April 2026**: Congratulations to Qingcao and Yipeng on their paper accepted at ICME 2026 (Spotlight)!

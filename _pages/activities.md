@@ -7,6 +7,18 @@ author_profile: true
 
 {% include base_path %}
 
+## Professional Membership
+
+### China Computer Federation (CCF) - Senior Member
+
+- **Status**: Elected Senior Member of the China Computer Federation (CCF)
+- **Elected**: May 2026
+- **Organization**: CCF is China's leading professional computing society, affiliated with the China Association for Science and Technology (CAST)
+
+<img src="/images/ccf_senior_member.jpg" alt="CCF Senior Member Certificate" width="500">
+
+---
+
 ## Editorial Services
 
 ### Guest Editor - Journal of Cyber Security (2025)
