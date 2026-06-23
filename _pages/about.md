@@ -18,6 +18,7 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
+- **June 2026**: Invited to serve as **Program Committee (PC) Member** for AAAI 2027.
 - **June 2026**: Congratulations to Miao on her paper accepted at Interspeech 2026!
 - **May 2026**: Elected as **Senior Member** of the China Computer Federation (CCF). [[Certificate]](/images/ccf_senior_member.jpg)
 - **May 2026**: Recognized as **Silver Reviewer** at ICML 2026, among the top reviewers of the conference.
@@ -63,6 +64,8 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 **Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
 
 ### Conference Reviewer
+**Program Committee Member**: AAAI 2027
+
 **Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, AAAI 2026, ACM Web Conference (WWW 2025)
 
 ### Journal Reviewer

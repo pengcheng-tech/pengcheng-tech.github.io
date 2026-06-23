@@ -39,6 +39,9 @@ author_profile: true
 
 ## Conference Reviewer
 
+### Program Committee Membership
+- **AAAI 2027** — AAAI Conference on Artificial Intelligence (Program Committee Member)
+
 ### Conference Reviewer - International Conferences
 - **ICML 2026** — International Conference on Machine Learning
 - **ICLR 2026** — International Conference on Learning Representations
