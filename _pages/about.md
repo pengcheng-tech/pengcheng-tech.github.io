@@ -6,6 +6,9 @@ redirect_from:
   - /about.html
 ---
 
+## Latest Update
+- 📢 **Postdoc Opening — Computer Vision & Deep Learning at HBKU, Qatar**. The A-Sense: Autism Sensing Center of Excellence at the College of Science and Engineering (https://www.hbku.edu.qa/en/cse/a-sense), Hamad Bin Khalifa University (Doha, Qatar) is recruiting a Postdoctoral Researcher with strong expertise in Computer Vision, Deep Learning, and Machine Learning, focused on behavioral analysis from video data for autism assessment, classification, detection, and intervention. Requirements include a PhD in Computer Science or related field with a strong expertise on Computer Vision and Deep Learning/Machine Learning, proficiency in Python (PyTorch/TensorFlow/Keras/OpenCV), and a strong publication record. Initial 1-year appointment, renewable, based in Doha. Apply portal: https://lnkd.in/dAyYsdy5 — please share with anyone who might be interested.
+
 Short Bio
 ======
 
@@ -14,9 +17,6 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 # Research Interests
 
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
-
-## Latest Update
-- 📢 **Postdoc Opening — Computer Vision & Deep Learning at HBKU, Qatar**. The A-Sense: Autism Sensing Center of Excellence at the College of Science and Engineering (https://www.hbku.edu.qa/en/cse/a-sense), Hamad Bin Khalifa University (Doha, Qatar) is recruiting a Postdoctoral Researcher with strong expertise in Computer Vision, Deep Learning, and Machine Learning, focused on behavioral analysis from video data for autism assessment, classification, detection, and intervention. Requirements include a PhD in Computer Science or related field with a strong expertise on Computer Vision and Deep Learning/Machine Learning, proficiency in Python (PyTorch/TensorFlow/Keras/OpenCV), and a strong publication record. Initial 1-year appointment, renewable, based in Doha. Apply portal: https://lnkd.in/dAyYsdy5 — please share with anyone who might be interested.
 
 ## Recent News
 - **June 2026**: Congratulations to Miao on her paper accepted at Interspeech 2026!
