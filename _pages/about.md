@@ -18,6 +18,7 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
+- **July 2026**: Received **Reviewer Certificate** from Interspeech 2026. [[Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)
 - **June 2026**: Invited to serve as **Program Committee (PC) Member** for AAAI 2027.
 - **June 2026**: Congratulations to Miao on her paper accepted at Interspeech 2026!
 - **May 2026**: Elected as **Senior Member** of the China Computer Federation (CCF). [[Certificate]](/images/ccf_senior_member.jpg)
@@ -66,7 +67,7 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 ### Conference Reviewer
 **Program Committee Member**: AAAI 2027
 
-**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, AAAI 2026, ACM Web Conference (WWW 2025)
+**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)
 
 ### Journal Reviewer
 **Proceedings of the IEEE** (Impact Factor: 25.9), **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5), **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2), **Journal of Information Network Security**

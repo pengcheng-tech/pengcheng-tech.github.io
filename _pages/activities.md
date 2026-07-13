@@ -47,6 +47,7 @@ author_profile: true
 - **ICLR 2026** — International Conference on Learning Representations
 - **ACM MM 2026** — ACM International Conference on Multimedia
 - **IEEE SLT 2026** — IEEE Spoken Language Technology Workshop
+- **Interspeech 2026** — ISCA Interspeech 2026 [[Reviewer Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)
 - **AAAI 2026** — AAAI Conference on Artificial Intelligence
 - **ACM Web Conference (WWW 2025)**
 
