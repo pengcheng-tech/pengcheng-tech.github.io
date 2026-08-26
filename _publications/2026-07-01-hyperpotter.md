@@ -8,6 +8,5 @@ date: 2026-07-01
 venue: 'International Conference on Machine Learning (ICML 2026)'
 paperurl: 'https://arxiv.org/abs/2602.05670'
 bibtexurl: ''
-citation: 'Qing Wen, Hao Li, Zhongjie Ba, **Peng Cheng*** (corresponding author), Mingyi He, Li Lu, Kui Ren. "HyperPotter: Spell the Charm of High-Order Interactions in Audio Deepfake Detection." International Conference on Machine Learning (ICML 2026).'
+citation: 'Qing Wen, Haohao Li, Zhongjie Ba, **Peng Cheng*** (corresponding author), Miao He, Li Lu, Kui Ren. "HyperPotter: Spell the Charm of High-Order Interactions in Audio Deepfake Detection." International Conference on Machine Learning (ICML 2026).'
 ---
-
