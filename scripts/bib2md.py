@@ -3,6 +3,10 @@
 """
 bib2md.py — Generate AcademicPages publication markdown from publications.bib.
 
+publications.bib is the single source of truth. Manually editing it works
+exactly like running scripts/sync_orcid.py: after editing, regenerate the
+markdown and commit the result.
+
 For every entry in publications.bib this script writes
     _publications/YYYY-MM-DD-<key>.md
 whose front matter follows the AcademicPages spec as used in this repository:
@@ -11,12 +15,23 @@ bibtexurl, citation (plus optional codeurl).
 
 Custom bib fields understood (in addition to standard BibTeX fields):
   category   -> collection category: conferences | manuscripts | undergoing
-  date       -> display date YYYY-MM-DD (used for the filename and front matter)
-  venue      -> human-readable venue string (falls back to booktitle/journal)
-  excerpt    -> one-line teaser shown on list pages
-  citation   -> full formatted citation string
+                (default: conferences)
+  date       -> display date YYYY-MM-DD; decides the filename and front matter
+                (default: <year>-01-01)
+  venue      -> human-readable venue string (default: booktitle/journal)
+  excerpt    -> one-line teaser shown on list pages (default: empty)
+  citation   -> full formatted citation string (default: empty)
   codeurl    -> optional code repository link
   permalink  -> optional explicit permalink (default: /publication/<year>-<key>)
+
+A ready-to-fill template for a manually added entry lives at
+scripts/new-entry-template.bib.
+
+Manual workflow (same effect as sync_orcid.py):
+  1. edit publications.bib (add/change/remove entries)
+  2. python3 scripts/bib2md.py --prune     # regenerate _publications/
+  3. bundle exec jekyll build              # verify
+  4. commit and open a PR
 
 Usage:
   python3 scripts/bib2md.py --dry-run

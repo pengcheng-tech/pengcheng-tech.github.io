@@ -1,0 +1,42 @@
+% =====================================================================
+% new-entry-template.bib — 手动新增条目的模板
+% =====================================================================
+% 用法：把下面的条目复制到 publications.bib 末尾，填好各字段后运行
+%   python3 scripts/bib2md.py --prune
+% 再 bundle exec jekyll build 验证，最后提交并提 PR。
+% 生成的文件名：_publications/<date>-<key>.md（key 必须唯一，无特殊字符）
+%
+% 必填/推荐字段说明：
+%   title    论文标题
+%   author   作者，用 and 分隔（不要加粗/通讯标记，标记放 citation 里）
+%   booktitle 会议名（期刊用 journal）
+%   year     出版年份
+%   doi      强烈建议：先验证 https://doi.org/<doi> 能解析（很多手写 DOI 无效）
+%   url      paperurl（论文链接，缺省空）
+%   category conferences | manuscripts | undergoing（缺省 conferences）
+%   date     YYYY-MM-DD：决定文件名与列表排序（缺省当年 01-01）
+%   venue    列表页显示 venue（缺省回退到 booktitle/journal）
+%   excerpt  一句话摘要（缺省空）
+%   citation 引用字符串，**Peng Cheng** 加粗、通讯作者加 * 或 †（缺省空）
+%   codeurl  可选代码仓库链接
+%   permalink 可选固定链接（缺省 /publication/<year>-<key>）
+%
+% sync_orcid.py 按 DOI/标题匹配已有条目，不会覆盖手写字段。
+% =====================================================================
+
+@inproceedings{example-key,
+  title     = {Example Title of the Paper},
+  author    = {First Author and Second Author and Peng Cheng and Last Author},
+  booktitle = {Proceedings of the Example Conference},
+  year      = {2026},
+  pages     = {100--110},
+  doi       = {10.xxxx/example.doi},
+  publisher = {ACM},
+  url       = {https://doi.org/10.xxxx/example.doi},
+  category  = {conferences},
+  date      = {2026-07-01},
+  venue     = {Proceedings of the Example Conference (EXC 2026)},
+  permalink = {/publication/2026-example-key},
+  excerpt   = {One-sentence teaser shown on the publications list page.},
+  citation  = {First Author, Second Author, **Peng Cheng***, Last Author. "Example Title of the Paper." Proceedings of the Example Conference. 2026. doi: 10.xxxx/example.doi.}
+}
