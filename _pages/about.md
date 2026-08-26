@@ -18,26 +18,13 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
-- **July 2026**: Received **Reviewer Certificate** from Interspeech 2026. [[Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)
-- **June 2026**: Invited to serve as **Program Committee (PC) Member** for AAAI 2027.
-- **June 2026**: Congratulations to Miao on her paper accepted at Interspeech 2026!
-- **May 2026**: Elected as **Senior Member** of the China Computer Federation (CCF). [[Certificate]](/images/ccf_senior_member.jpg)
-- **May 2026**: Recognized as **Silver Reviewer** at ICML 2026, among the top reviewers of the conference.
-- **May 2026**: Congratulations to Qing and Haohao on their paper accepted at ICML 2026!
-- **April 2026**: Congratulations to Qingcao and Yipeng on their paper accepted at ICME 2026 (Spotlight)!
-- **January 2026**: Congratulations to Qingyu and Tao on their paper accepted at ICLR 2026!
-- **November 2025**: Congratulations to Liang and Qingcao on their paper accepted at AAAI 2026!
-<!--- **December 2024**: Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"-->
-- **September 2025**: Paper "WMCopier" accepted at NeurIPS 2025, congratulations to Ziping!
-- **September 2025**: Our team achieved 3rd Place in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)
-- **October 2024**: Co-supervised Master's student won the National Graduate Scholarship (China)
-- **October 2024**: Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project
-- **June 2024**: Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University
-- **May 2024**: Paper "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution" accepted at CCS 2024
-- **February 2024**: Paper "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features" accepted at IEEE S&P 2024
-- **January 2025**: Appointed as Program Committee Member for ACM Web Conference (WWW 2025)
-- **January 2025**: Serving as Special Issue Guest Editor for "Intelligent Voice Security and Defense Technologies", Journal of Cyber Security
-
+{% for item in site.data.news %}
+{%- if item.commented -%}
+<!--- **{{ item.date_display }}**: {{ item.text }}-->
+{%- else -%}
+- **{{ item.date_display }}**: {{ item.text }}{% if item.links %}{% for link in item.links %} [[{{ link.label }}]]({{ link.url }}){% endfor %}{% endif %}
+{%- endif %}
+{% endfor %}
 ## Selected Publications
 
 - Peng Huang, Kun Pan, Qingni Wang, **Peng Cheng***, Li Lu, Zhongjie Ba, Kui Ren. "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication." *Proceedings of the ACM MobiSys*. Anaheim, California, US. 2025. doi: to appear.
