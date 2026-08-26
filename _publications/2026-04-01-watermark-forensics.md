@@ -8,6 +8,5 @@ date: 2026-04-01
 venue: 'The 14th International Conference on Learning Representations (ICLR 2026)'
 paperurl: 'https://arxiv.org/abs/2601.06639'
 bibtexurl: ''
-citation: 'Qian Liu, Yaoxin Zhang, Zhongjie Ba, Chao Shuai, **Peng Cheng**, Tianwei Zheng, Zhibo Wang. "Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection." The 14th International Conference on Learning Representations (ICLR 2026).'
+citation: 'Qingyu Liu, Yitao Zhang, Zhongjie Ba, Chao Shuai, **Peng Cheng**, Tianhang Zheng, Zhibo Wang. "Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection." The 14th International Conference on Learning Representations (ICLR 2026).'
 ---
-

@@ -8,6 +8,5 @@ date: 2026-02-01
 venue: 'The 40th AAAI Conference on Artificial Intelligence (AAAI 2026)'
 paperurl: 'https://ojs.aaai.org/index.php/AAAI/article/view/36960'
 bibtexurl: ''
-citation: 'Zhongjie Ba, Lixiang Yi, **Peng Cheng*** (corresponding author), Qiwei Li, Qinglong Wang, Li Lu. "Beyond Content: A Comprehensive Speech Toxicity Dataset and Detection Framework Incorporating Paralinguistic Cues." The 40th AAAI Conference on Artificial Intelligence (AAAI 2026).'
+citation: 'Zhongjie Ba, Liang Yi, **Peng Cheng*** (corresponding author), Qingcao Li, Qinglong Wang, Li Lu. "Beyond Content: A Comprehensive Speech Toxicity Dataset and Detection Framework Incorporating Paralinguistic Cues." The 40th AAAI Conference on Artificial Intelligence (AAAI 2026).'
 ---
-
