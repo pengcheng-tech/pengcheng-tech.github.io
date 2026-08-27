@@ -1,0 +1,24 @@
+# patents.yml — patent portfolio. Currently NOT rendered on the homepage
+# (by design; reserved for the future cv.json and an independent /patents/
+# page). Populate entries via structured input (type: patent) — the Obsidian
+# research record is never parsed for this file.
+#
+# Fields:
+#   title        patent name
+#   number       application number (申请号, e.g. 2022109965917)
+#   grant_number publication/grant number (授权公告号 or 申请公布号, e.g. CN 115208507 B)
+#   status       granted | published (已授权 | 已公布/审查中)
+#   grant_date   grant/publication date (YYYY-MM or YYYY-MM-DD)
+#   apply_date   application date (YYYY-MM-DD, optional)
+#   rank         inventor rank (e.g. "1/6")
+#
+# Example:
+# - title: "基于白盒语音对抗样本的隐私保护方法与装置"
+#   number: "2022109965917"
+#   grant_number: "CN 115208507 B"
+#   status: granted
+#   grant_date: "2024-12-03"
+#   apply_date: "2022-08-19"
+#   rank: "1/6"
+
+patents: []

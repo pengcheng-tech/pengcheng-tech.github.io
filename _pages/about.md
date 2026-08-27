@@ -48,24 +48,19 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 ## Professional Services
 
-### Editorial Services
-**Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
+{% capture listsep %}
+- {% endcapture %}
+{% for section in site.data.service.sections %}
+### {{ section.heading }}
+{% for entry in section.entries %}
+{%- if entry.type == "list" -%}
+- {{ entry.items | join: listsep }}
+{%- else -%}
+{{ entry.text }}
+{%- endif %}
 
-### Conference Reviewer
-**Program Committee Member**: AAAI 2027, USENIX Security 2027
-
-**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)
-
-### Journal Reviewer
-**Proceedings of the IEEE** (Impact Factor: 25.9), **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5), **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2), **Journal of Information Network Security**
-
-### Research Projects
-- **Principal Investigator (2025-2028)**: National Natural Science Foundation of China (NSFC) General Program - "Research on Speech Synthesis Data Compliance Management Technology Based on Intrinsic Characteristics of Audio Signals"
-- **Principal Investigator (2025-2026)**: Zhejiang University-Alibaba Collaboration - "Active and Passive Security Protection Technologies for the Maojing Voice Interaction System"
-- **Participant**: Multiple NSFC projects including Key Projects on cross-chain security and deep learning applications
-
-### Mentorship & Supervision
-Currently co-supervising **5 Ph.D. students** and **7 Master's students** at Zhejiang University. Successfully co-mentored **1 Ph.D. student**, **5 Master's students**, and **1 undergraduate student** to degree completion. **National Graduate Scholarship Winner (2024)**: Co-supervised Master's student received China's highest-level scholarship for graduate students.
+{% endfor %}
+{% endfor %}
 
 <!--## Awards & Recognition
 
