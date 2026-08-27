@@ -52,7 +52,7 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 **Guest Editor**, Journal of Cyber Security (2025) - Special Issue: "Intelligent Voice Security and Defense Technologies"
 
 ### Conference Reviewer
-**Program Committee Member**: AAAI 2027
+**Program Committee Member**: AAAI 2027, USENIX Security 2027
 
 **Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)
 

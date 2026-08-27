@@ -1,3 +1,15 @@
+- date_display: "August 2026"
+  date_sort: "2026-08"
+  text: "Invited to serve as **Program Committee (PC) Member** for USENIX Security 2027."
+  links:
+    - label: "Organizers"
+      url: "https://www.usenix.org/conference/usenixsecurity27#organizers"
+- date_display: "August 2026"
+  date_sort: "2026-08"
+  text: "Our team achieved **Silver Award** in IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)."
+  links:
+    - label: "Certificate"
+      url: "/files/ijcai2026_ddl_certificate.pdf"
 - date_display: "July 2026"
   date_sort: "2026-07"
   text: "Received **Reviewer Certificate** from Interspeech 2026."
