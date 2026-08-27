@@ -15,7 +15,7 @@ description: 更新本学术主页的内容（news / publications / awards / ser
 | `publications.bib` | 论文（唯一真相源） | 由 `scripts/bib2md.py --prune` 生成 `_publications/*.md` |
 | `_data/service.yml` | 学术服务（PC/Editor/Reviewer/项目/指导） | about.md `## Professional Services`（Liquid）|
 | `_data/awards.yml` | 奖项（**不上首页**，供未来 cv.json / 独立页） | 不渲染 |
-| `_data/patents.yml` | 专利（**不上首页**，供未来 cv.json / /patents/ 页） | 不渲染 |
+| `_data/patents.yml` | 专利（**不上首页**；**本地保留、已 gitignore、绝不提交**——含私有申请号，仅个人备份与本地工具用） | 不渲染 |
 
 `_data/news.yml` 条目字段：`date_display`（Month YYYY）、`date_sort`（YYYY-MM）、`text`（支持 **加粗**）、`links`（可选 label+url）、`type`（可选：service/award/publication）、`paper`（type=publication 时的 bib key）、`commented`（true 则按注释隐藏）。
 

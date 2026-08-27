@@ -58,8 +58,11 @@ def load_env(path: Path):
 
 
 def load_yaml(name):
-    with open(ROOT / "_data" / name, "r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh) or []
+    path = ROOT / "_data" / name
+    if not path.exists():
+        return {}  # optional data file (e.g. gitignored patents.yml) may be absent
+    with open(path, "r", encoding="utf-8") as fh:
+        return yaml.safe_load(fh) or {}
 
 
 def strip_md(text):
@@ -88,7 +91,7 @@ def render_news(news):
 
 
 def awards():
-    return load_yaml("awards.yml")
+    return load_yaml("awards.yml") or []
 
 
 def render_patents(patents):
@@ -137,7 +140,7 @@ def main():
 
     out_dir = Path(target) / AUTO_DIR
     files = {
-        "成果总览.md": render_news(load_yaml("news.yml")),
+        "成果总览.md": render_news(load_yaml("news.yml") or []),
         "专利清单.md": render_patents(load_yaml("patents.yml")),
         "学术服务.md": render_service(load_yaml("service.yml")),
     }

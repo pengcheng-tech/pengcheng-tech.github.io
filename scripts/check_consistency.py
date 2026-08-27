@@ -39,8 +39,11 @@ DATA = ROOT / "_data"
 
 
 def load_yaml(name):
-    with open(DATA / name, "r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh) or []
+    path = DATA / name
+    if not path.exists():
+        return {}  # optional data file (e.g. gitignored patents.yml) may be absent
+    with open(path, "r", encoding="utf-8") as fh:
+        return yaml.safe_load(fh) or {}
 
 
 def normalize(text):
@@ -157,10 +160,10 @@ def main():
     site_dir = Path(args.site) if args.site else ROOT / "_site"
     bib_path = Path(args.bib) if args.bib else ROOT / "publications.bib"
 
-    news = load_yaml("news.yml")
-    awards = load_yaml("awards.yml")
-    service = load_yaml("service.yml")
-    patents = load_yaml("patents.yml")
+    news = load_yaml("news.yml") or []
+    awards = load_yaml("awards.yml") or []
+    service = load_yaml("service.yml") or {}
+    patents = load_yaml("patents.yml") or {}
 
     errors = []
     bib_keys = set(parse_bib(bib_path))

@@ -19,3 +19,7 @@ vendor/
 # Local environment (machine-specific paths; never commit)
 .env
 .env.local
+
+# Patent portfolio: real patent data contains application/publication
+# numbers and is private (user backup only) — keep local, never commit.
+_data/patents.yml
