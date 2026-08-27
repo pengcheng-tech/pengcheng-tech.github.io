@@ -1,0 +1,58 @@
+# Awards & recognition entries. Currently NOT rendered on the homepage
+# (kept hidden by design); data is reserved for the future cv.json and an
+# independent awards page. Entries are verified by scripts/check_consistency.py
+# against news entries typed "award".
+#
+# Fields:
+#   title  : award/prize name (as displayed)
+#   event  : competition/organization context (optional)
+#   year   : year of the award
+#   date   : YYYY-MM or YYYY-MM-DD (optional)
+#   role   : e.g. "Advisor" (optional)
+#   detail : one-line detail (optional)
+#   evidence: URL or file path under /files/ (optional)
+
+- title: "National Grand Prize (Top-Tier Award)"
+  event: '19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works'
+  year: 2024
+  date: "2024-10"
+  role: "Advisor"
+  detail: "For the 'Multimodal AI Audit Matrix' project"
+
+- title: "Silver Award, DDL 2.0"
+  event: "IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0) - General AIGC Audio-Video Detection"
+  year: 2026
+  date: "2026-08"
+  detail: "Team AIGVDete (Zhejiang University)"
+  evidence: "/files/ijcai2026_ddl_certificate.pdf"
+
+- title: "3rd Place, DDL Challenge"
+  event: "IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)"
+  year: 2025
+  date: "2025-09"
+
+- title: "Senior Member"
+  event: "China Computer Federation (CCF)"
+  year: 2026
+  date: "2026-05"
+  evidence: "/images/ccf_senior_member.jpg"
+
+- title: "National Graduate Scholarship (China)"
+  event: "Co-supervised Master's student"
+  year: 2024
+  date: "2024-10"
+  role: "Advisor"
+
+- title: "Top 5 Nationwide"
+  event: "3rd China Artificial Intelligence Competition"
+  year: 2021
+  role: "Primary Advisor for Audio Deepfake Detection tracks"
+
+- title: "Finalist for 'Most Innovative Research' Pwnie Award"
+  event: "Black Hat USA 2019"
+  year: 2019
+  detail: "For 'SonarSnoop: Active Acoustic Side-Channel Attacks'"
+
+- title: "Postdoctoral Excellence Grant (Second Class)"
+  event: "Zhejiang Provincial Department of Human Resources and Social Security"
+  year: 2021

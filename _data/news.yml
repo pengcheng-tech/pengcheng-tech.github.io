@@ -1,35 +1,52 @@
+# Recent News — rendered newest-first in file order on the homepage.
+# Fields:
+#   date_display : bold "Month YYYY" shown to visitors
+#   date_sort    : YYYY-MM for ordering
+#   text         : body, markdown allowed (**bold**)
+#   links        : optional list of {label, url}
+#   type         : optional classification for scripts/check_consistency.py —
+#                  service | award | publication | patent (patent never in news)
+#   paper        : for type=publication, the publications.bib key to verify
+#   commented    : render this entry as an HTML comment (hidden)
+
 - date_display: "August 2026"
   date_sort: "2026-08"
+  type: service
   text: "Invited to serve as **Program Committee (PC) Member** for USENIX Security 2027."
   links:
     - label: "Organizers"
       url: "https://www.usenix.org/conference/usenixsecurity27#organizers"
 - date_display: "August 2026"
   date_sort: "2026-08"
+  type: award
   text: "Our team achieved **Silver Award** in IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)."
   links:
     - label: "Certificate"
       url: "/files/ijcai2026_ddl_certificate.pdf"
 - date_display: "July 2026"
   date_sort: "2026-07"
+  type: service
   text: "Received **Reviewer Certificate** from Interspeech 2026."
   links:
     - label: "Certificate"
       url: "/files/Interspeech2026_ReviewerCertificate.pdf"
 - date_display: "June 2026"
   date_sort: "2026-06"
+  type: service
   text: "Invited to serve as **Program Committee (PC) Member** for AAAI 2027."
 - date_display: "June 2026"
   date_sort: "2026-06"
   text: "Congratulations to Miao on her paper accepted at Interspeech 2026!"
 - date_display: "May 2026"
   date_sort: "2026-05"
+  type: award
   text: "Elected as **Senior Member** of the China Computer Federation (CCF)."
   links:
     - label: "Certificate"
       url: "/images/ccf_senior_member.jpg"
 - date_display: "May 2026"
   date_sort: "2026-05"
+  type: service
   text: "Recognized as **Silver Reviewer** at ICML 2026, among the top reviewers of the conference."
 - date_display: "May 2026"
   date_sort: "2026-05"
@@ -49,28 +66,39 @@
   text: 'Patent granted for "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"'
 - date_display: "September 2025"
   date_sort: "2025-09"
+  type: publication
+  paper: wmcopier
   text: 'Paper "WMCopier" accepted at NeurIPS 2025, congratulations to Ziping!'
 - date_display: "September 2025"
   date_sort: "2025-09"
+  type: award
   text: "Our team achieved 3rd Place in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)"
 - date_display: "October 2024"
   date_sort: "2024-10"
+  type: award
   text: "Co-supervised Master's student won the National Graduate Scholarship (China)"
 - date_display: "October 2024"
   date_sort: "2024-10"
+  type: award
   text: 'Won National Grand Prize in 19th "Challenge Cup" National Competition as advisor for "Multimodal AI Audit Matrix" project'
 - date_display: "June 2024"
   date_sort: "2024-06"
   text: "Started position as tenure-track researcher at State Key Laboratory of Blockchain and Data Security, Zhejiang University"
 - date_display: "May 2024"
   date_sort: "2024-05"
+  type: publication
+  paper: surrogateprompt
   text: 'Paper "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution" accepted at CCS 2024'
 - date_display: "February 2024"
   date_sort: "2024-02"
+  type: publication
+  paper: alif
   text: 'Paper "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features" accepted at IEEE S&P 2024'
 - date_display: "January 2025"
   date_sort: "2025-01"
+  type: service
   text: "Appointed as Program Committee Member for ACM Web Conference (WWW 2025)"
 - date_display: "January 2025"
   date_sort: "2025-01"
+  type: service
   text: 'Serving as Special Issue Guest Editor for "Intelligent Voice Security and Defense Technologies", Journal of Cyber Security'
