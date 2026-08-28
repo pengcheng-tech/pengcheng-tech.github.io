@@ -845,6 +845,15 @@
       "doi": "10.48550/arXiv.2306.11363",
       "website": "https://arxiv.org/abs/2306.11363",
       "group": "preprint"
+    },
+    {
+      "name": "Acoustic-Channel Attack and Defence Methods for Personal Voice Assistants",
+      "authors": [
+        "Peng Cheng"
+      ],
+      "publisher": "Ph.D. Dissertation, Lancaster University",
+      "year": "2020",
+      "group": "thesis"
     }
   ],
   "presentations": [],

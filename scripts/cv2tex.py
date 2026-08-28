@@ -283,8 +283,9 @@ def render(cv, bib, include_patents):
     section("Publications")
     groups = [
         ("Representative Publications", "representative"),
-        ("Other Publications", "other"),
+        ("Other Publications (Reverse Chronological Order)", "other"),
         ("Preprints / Under Review", "preprint"),
+        ("Thesis", "thesis"),
     ]
     for heading, g in groups:
         items = [p for p in cv.get("publications", []) if p.get("group") == g]
