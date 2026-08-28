@@ -20,6 +20,8 @@ vendor/
 .env
 .env.local
 
-# Patent portfolio: real patent data contains application/publication
-# numbers and is private (user backup only) — keep local, never commit.
-_data/patents.yml.DS_Store
+# Draft build artifacts (e.g. CV draft PDFs from scripts/cv2tex.py)
+build/
+
+# macOS
+.DS_Store

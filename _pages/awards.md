@@ -14,11 +14,11 @@ author_profile: true
 - **Project**: "Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform"
 - **Recognition**: Top-Tier Award
 
-### 3rd Place - IJCAI 2025 Deepfake Detection Challenge
+### 3rd Place Award - IJCAI 2025 Deepfake Detection Challenge
 - **Competition**: Workshop on Deepfake Detection, Localization, and Interpretability (co-located with IJCAI 2025)
 - **Track**: Track 2 - Audio-Visual Detection and Localization (DDL-AV)
 - **Team**: 会赢的 (Zhejiang University)
-- **Achievement**: 3rd Place in multi-modal deepfake detection and localization
+- **Achievement**: 3rd Place Award in Audio-Video Detection and Localization Track
 - **Technical Focus**: Complex multi-modal attacks including "forged audio + authentic video" scenarios
 - **Venue**: IJCAI 2025, Montreal/Guangzhou (August 16, 2025)
 

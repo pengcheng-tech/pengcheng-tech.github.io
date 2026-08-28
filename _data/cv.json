@@ -1,152 +1,881 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Peng Cheng",
+    "label": "Researcher, State Key Laboratory of Blockchain and Data Security, Zhejiang University",
+    "email": "pengcheng326@hotmail.com",
+    "phone": "(86) 15057169279",
+    "website": "https://pengcheng-tech.github.io/",
+    "summary": "Research Interests: AIGC security, IoT security",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Hangzhou",
+      "region": "Zhejiang",
+      "countryCode": "CN"
     },
     "profiles": [
       {
+        "network": "Website",
+        "url": "https://pengcheng-tech.github.io/"
+      },
+      {
         "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en"
       },
       {
         "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0000-0002-4453-2274"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "url": "https://github.com/pengcheng-tech"
+      },
+      {
+        "network": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/author/Peng-Cheng/2112625800"
+      },
+      {
+        "network": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.url?authorId=59105707000"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "position": "Researcher",
+      "organization": "State Key Laboratory of Blockchain and Data Security, Zhejiang University",
+      "startDate": "2024-06",
+      "endDate": "Present",
+      "summary": "Member of the AI Data Security Team",
+      "highlights": [
+        "Conducting research on AI-generated content (AIGC) security",
+        "Developing the DFscan platform for multimodal deepfake detection; leading the technical team in platform design and development"
+      ]
+    },
+    {
+      "position": "Qiushi Research Fellow",
+      "organization": "ZJU-Hangzhou Global Scientific and Technological Innovation Center",
+      "startDate": "2023-12",
+      "endDate": "2024-05",
+      "summary": "Member of the Cyberspace Security Research Institute",
+      "highlights": [
+        "Conducted research on multimodal data security and privacy protection technologies",
+        "Developed multimodal deepfake detection systems"
+      ]
+    },
+    {
+      "position": "Postdoctoral Researcher",
+      "organization": "Zhejiang University",
+      "startDate": "2021-01",
+      "endDate": "2023-11",
+      "summary": "College of Computer Science and Technology",
+      "highlights": [
+        "Researched voice security and privacy protection in human-computer interaction scenarios",
+        "Postdoctoral supervisor: Prof. Kui Ren (Qiushi Chair Professor, AAAS/ACM/CCF/IEEE Fellow, Dean of the College of Computer Science and Technology of Zhejiang University)"
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
+      "institution": "Lancaster University, UK",
+      "area": "Ph.D. in Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "2016-10",
+      "endDate": "2020-12",
+      "summary": "School of Computing and Communications. Thesis: Acoustic-channel Attack and Defence Methods for Personal Voice Assistants. Supervisors: Prof. Utz Roedig (University College Cork) and Prof. Jeff Yan (University of Southampton)"
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
+      "institution": "KU Leuven, Belgium & Tsinghua University, China",
+      "area": "Dual Master's Degree (Electrical Engineering / Integrated Circuit Engineering)",
+      "studyType": "M.S.",
+      "startDate": "2012-09",
+      "endDate": "2015-09",
+      "summary": "Department of Electrical Engineering, KU Leuven & School of Integrated Circuits, Tsinghua University. Supervisor: Prof. Guoqiang Bai (Tsinghua University)"
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
+      "institution": "Beijing University of Posts and Telecommunications, China",
+      "area": "B.Eng. in Electronic Science and Technology",
+      "studyType": "B.Eng.",
+      "startDate": "2008-09",
+      "endDate": "2012-06",
+      "summary": "School of Electronic Engineering"
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "skills": [
+    {
+      "name": "Research Areas",
+      "keywords": [
+        "AIGC Security",
+        "Deepfake Detection",
+        "AIGC Watermarking",
+        "Speech Privacy",
+        "IoT Security",
+        "Adversarial Machine Learning"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Research on Speech Synthesis Data Compliance Management Technology Based on Intrinsic Characteristics of Audio Signals",
+      "organization": "National Natural Science Foundation of China (NSFC)",
+      "role": "Principal Investigator",
+      "startDate": "2025",
+      "endDate": "2028",
+      "summary": "¥500K",
+      "highlights": []
+    },
+    {
+      "name": "High-Performance Visual Perception Models Using Deep Learning",
+      "organization": "National Natural Science Foundation of China (NSFC)",
+      "role": "Participant",
+      "startDate": "2023",
+      "endDate": "2026",
+      "summary": "¥590K",
+      "highlights": []
+    },
+    {
+      "name": "Cross-Chain Security in Heterogeneous Blockchain Networks",
+      "organization": "National Natural Science Foundation of China (NSFC)",
+      "role": "Participant",
+      "startDate": "2023",
+      "endDate": "2027",
+      "summary": "¥2.83M",
+      "highlights": []
+    },
+    {
+      "name": "Research on Voice Attack and Defense Based on the Physical Characteristics of Smart Device Sensing Components",
+      "organization": "National Natural Science Foundation of China (NSFC)",
+      "role": "Participant",
+      "startDate": "2022",
+      "endDate": "2025",
+      "summary": "¥590K",
+      "highlights": []
+    },
+    {
+      "name": "Multimodal Network Environment Construction Technology Based on Public Cloud-Network Resources",
+      "organization": "Key R&D Programs of China",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2027",
+      "summary": "¥36M",
+      "highlights": []
+    },
+    {
+      "name": "Aggregation and Transfer of Machine Learning Models (National Science and Technology Innovation 2030 Initiative - New Generation Artificial Intelligence)",
+      "organization": "Key R&D Programs of China",
+      "role": "Participant",
+      "startDate": "2021",
+      "endDate": "2025",
+      "summary": "¥13.82M",
+      "highlights": []
+    },
+    {
+      "name": "Security Protection Technology for Industrial Control Programming Platforms Based on Domestic Cryptographic Algorithms",
+      "organization": "Key R&D Programs of China",
+      "role": "Participant",
+      "startDate": "2022",
+      "endDate": "2024",
+      "summary": "¥14.64M",
+      "highlights": []
+    },
+    {
+      "name": "Key R&D Programme of Zhejiang Province",
+      "organization": "Provincial, Municipal, and University-Level Projects",
+      "role": "Participant",
+      "startDate": "2024",
+      "summary": "¥2.5M",
+      "highlights": [],
+      "endDate": "2026"
+    },
+    {
+      "name": "Key Technologies and Platform Development for Security Detection of Large AI Models",
+      "organization": "Hangzhou Key R&D Program",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2027",
+      "summary": "¥16.74M",
+      "highlights": []
+    },
+    {
+      "name": "Toolchain for Deep Synthetic Content Analysis Based on Physical Attribute Attribution",
+      "organization": "Hangzhou West Innovation Corridor Development Special Fund",
+      "role": "Principal Investigator",
+      "startDate": "2024",
+      "endDate": "2026",
+      "summary": "¥300K",
+      "highlights": []
+    },
+    {
+      "name": "Active and Passive Security Protection Technologies for the Maojing Voice Interaction System",
+      "organization": "Zhejiang University-Alibaba Collaboration Project",
+      "role": "Principal Investigator",
+      "startDate": "2025",
+      "endDate": "2026",
+      "summary": "¥377K",
+      "highlights": []
+    },
+    {
+      "name": "Security Risk Detection and Alignment Strategies for Large Model-based AI Agents",
+      "organization": "Zhejiang University-Ant Group Joint Laboratory",
+      "role": "Participant",
+      "startDate": "2025",
+      "summary": "¥300K",
+      "highlights": [],
+      "endDate": "2025"
+    },
+    {
+      "name": "Research and Development of AI-Driven Automated Security Detection Technologies and Components for Power Systems",
+      "organization": "China Southern Power Grid Research Institute Co., Ltd.",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2026",
+      "summary": "¥2.34M",
+      "highlights": []
+    },
+    {
+      "name": "Deep Learning Algorithm Evaluation and Security Verification Platform",
+      "organization": "CRRC Zhuzhou Electric Locomotive Research Institute Co., Ltd.",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2027",
+      "summary": "¥1.16M",
+      "highlights": []
+    },
+    {
+      "name": "Research on AI Attack-Defense Library Design and Test Component Development for New Power System Scenarios (2023)",
+      "organization": "China Southern Power Grid Research Institute Co., Ltd.",
+      "role": "Participant",
+      "startDate": "2023",
+      "endDate": "2025",
+      "summary": "¥1.49M",
+      "highlights": []
+    },
+    {
+      "name": "Multidimensional Protocol Carrying and Endogenous Security Access Technologies for Multimodal Networks",
+      "organization": "Key R&D Programs of China",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2027",
+      "summary": "¥15M",
+      "highlights": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Silver Award",
+      "event": "IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)",
+      "date": "2026-08",
+      "summary": "Team AIGVDete (Zhejiang University)"
+    },
+    {
+      "title": "3rd Place Award",
+      "event": "Workshop & Challenge on Deepfake Detection, Localization, and Interpretability, IJCAI 2025",
+      "date": "2025",
+      "role": "Advisor",
+      "summary": "Track: Audio-Video Detection and Localization (DDL-AV)"
+    },
+    {
+      "title": "National Grand Prize (Top-Tier Award)",
+      "event": "19th “Challenge Cup” National Competition for Extracurricular Academic Science and Technology Works",
+      "date": "2024",
+      "role": "Advisor (Ranked 2nd among 3 advisors)",
+      "summary": "Project: “Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform”"
+    },
+    {
+      "title": "Top 5 Nationwide",
+      "event": "3rd China Artificial Intelligence Competition",
+      "date": "2021",
+      "role": "Primary Advisor (Ranked 1st among 2 advisors)",
+      "summary": "Track: Audio Deepfake Detection Under Open-Speaker Scenarios"
+    },
+    {
+      "title": "Top 5 Nationwide",
+      "event": "3rd China Artificial Intelligence Competition",
+      "date": "2021",
+      "role": "Primary Advisor (Ranked 1st among 2 advisors)",
+      "summary": "Track: Speaker-Specific Audio Deepfake Detection"
+    },
+    {
+      "title": "Finalist for “Most Innovative Research” Pwnie Award",
+      "event": "Black Hat USA",
+      "date": "2019",
+      "role": "First Author (1st of 4 contributors)",
+      "summary": "Research: “SonarSnoop: Active Acoustic Side-Channel Attacks”"
+    },
+    {
+      "title": "Postdoctoral Excellence Grant (Second Class)",
+      "event": "Zhejiang Provincial Department of Human Resources and Social Security",
+      "date": "2021-08",
+      "summary": ""
+    },
+    {
+      "title": "Ph.D. Scholarship",
+      "event": "Faculty of Science and Technology, Lancaster University, UK",
+      "date": "2016",
+      "endDate": "2020",
+      "summary": ""
+    }
+  ],
+  "service": {
+    "editorial": [
+      "Special Issue Initiator and Guest Editor-in-Chief: “Intelligent Voice Security and Defense Technologies”, Journal of Cyber Security, 2025"
+    ],
+    "program_committees": [
+      "Program Committee Member: AAAI 2027, USENIX Security 2027"
+    ],
+    "conference_reviewer": [
+      "ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
+    ],
+    "journal_reviewer": [
+      "English Journals: Proceedings of the IEEE, IEEE Transactions on Information Forensics and Security (TIFS), IEEE Transactions on Dependable and Secure Computing (TDSC), IEEE Internet of Things Journal (IoT-J), ACM Transactions on Internet of Things (TIOT)",
+      "Chinese Journal: Journal of Information Network Security"
+    ],
+    "recognition": [
+      "ICML 2026 Silver Reviewer — top-tier recognition awarded by the ICML 2026 Program Chairs"
+    ]
+  },
+  "supervision": [
+    "Co-supervising 5 Ph.D. students, 7 Master’s students and one undergraduate student at Zhejiang University on research projects in AIGC security and multimodal privacy",
+    "Co-supervised a Zhejiang University Master’s student to win the National Graduate Scholarship (China) — the highest-level scholarship awarded to Master’s students in China (Oct 2024)",
+    "Successfully mentored 1 PhD student, 5 Master’s students, and 5 undergraduates to degree completion, guiding thesis design, research execution, and publication strategies",
+    "Teaching Assistant for lab/practical sessions: CS4615: Computer Systems Security, University College Cork, Ireland; SCC110: Software Development, Lancaster University, UK"
+  ],
+  "impacts": {
+    "industry": [
+      "Proposed SurrogatePrompt, a prompt attack method to bypass safeguards of commercial large-scale AI models (e.g., Midjourney, Stability.ai), enabling systematic generation of policy-violating content. Findings were acknowledged by these leading vendors.",
+      "Developed WMCopier, an adversarial watermark forgery method that compromises commercial watermarking systems; recognized by Amazon’s Responsible AI Team for identifying critical vulnerabilities (official thank-you letter).",
+      "Developed and open-sourced ALIF, the first black-box adversarial attack framework leveraging linguistic features; adopted by NVIDIA for integration into their official AI security toolkit."
+    ],
+    "media": [
+      "SonarSnoop: Active Acoustic Side-Channel Attacks — garnered attention from IT media (Motherboard, ZDNet, Sophos); praised by Bruce Schneier and Prof. Ross Anderson."
+    ]
+  },
+  "activities": [
+    "Contributed to the preparation of a €720,839 grant proposal (Science Foundation Ireland – SFI) on Security and Privacy of Personal Voice Assistants under Prof. Utz Roedig (2019)",
+    "Visiting Scholar at the Department of Computer Science, University College Cork (UCC), Ireland (2019–2020)",
+    "Participated in the São Paulo Advanced Science School (ESPCA) on Smart Cities, hosted by the University of São Paulo (2017); selected as one of 75 global top graduate students and postdoctoral researchers (sponsored by FAPESP)"
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "bib_key": "surrogateprompt",
+      "name": "SurrogatePrompt: Bypassing the Safety Filter of Text-to-Image Models via Substitution",
+      "authors": [
+        "Zhongjie Ba",
+        "Jieming Zhong",
+        "Jiachen Lei",
+        "Peng Cheng",
+        "Qinglong Wang",
+        "Zhan Qin",
+        "Zhibo Wang",
+        "Kui Ren"
+      ],
+      "publisher": "Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS 2024)",
+      "releaseDate": "2024-01-01",
+      "year": "2024",
+      "doi": "10.1145/3658644.3690346",
+      "website": "https://arxiv.org/abs/2309.14122",
+      "group": "representative"
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "bib_key": "alif",
+      "name": "ALIF: Low-Cost Adversarial Audio Attacks on Black-Box Speech Platforms Using Linguistic Features",
+      "authors": [
+        "Peng Cheng",
+        "Yuwei Wang",
+        "Peng Huang",
+        "Zhongjie Ba",
+        "Xiaodong Lin",
+        "Feng Lin",
+        "Li Lu",
+        "Kui Ren"
+      ],
+      "publisher": "2024 IEEE Symposium on Security and Privacy (SP)",
+      "releaseDate": "2024-01-01",
+      "year": "2024",
+      "doi": "10.1109/SP54263.2024.00056",
+      "website": "https://arxiv.org/abs/2408.01808",
+      "group": "representative"
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "bib_key": "transferring-deepfake",
+      "name": "Transferring Audio Deepfake Detection Capability Across Languages",
+      "authors": [
+        "Zhongjie Ba",
+        "Qing Wen",
+        "Peng Cheng",
+        "Yuwei Wang",
+        "Feng Lin",
+        "Li Lu",
+        "Zhenguang Liu"
+      ],
+      "publisher": "Proceedings of the ACM Web Conference 2023",
+      "releaseDate": "2023-01-01",
+      "year": "2023",
+      "doi": "10.1145/3543507.3583222",
+      "website": "https://dl.acm.org/doi/10.1145/3543507.3583222",
+      "group": "representative"
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "bib_key": "uniap",
+      "name": "UniAP: Protecting Speech Privacy With Non-Targeted Universal Adversarial Perturbations",
+      "authors": [
+        "Peng Cheng",
+        "Yuexin Wu",
+        "Yuan Hong",
+        "Zhongjie Ba",
+        "Feng Lin",
+        "Li Lu",
+        "Kui Ren"
+      ],
+      "publisher": "IEEE Transactions on Dependable and Secure Computing",
+      "releaseDate": "2024-01-01",
+      "year": "2024",
+      "doi": "10.1109/TDSC.2023.3242292",
+      "website": "https://doi.org/10.1109/TDSC.2023.3242292",
+      "group": "representative"
+    },
+    {
+      "bib_key": "pva-survey",
+      "name": "Personal Voice Assistant Security and Privacy—A Survey",
+      "authors": [
+        "Peng Cheng",
+        "Utz Roedig"
+      ],
+      "publisher": "Proceedings of the IEEE",
+      "releaseDate": "2022-01-01",
+      "year": "2022",
+      "doi": "10.1109/JPROC.2022.3153167",
+      "website": "https://ieeexplore.ieee.org/abstract/document/9733178",
+      "group": "representative"
+    },
+    {
+      "bib_key": "hyperpotter",
+      "name": "HyperPotter: Spell the Charm of High-Order Interactions in Audio Deepfake Detection",
+      "authors": [
+        "Qing Wen",
+        "Haohao Li",
+        "Zhongjie Ba",
+        "Peng Cheng",
+        "Miao He",
+        "Li Lu",
+        "Kui Ren"
+      ],
+      "publisher": "International Conference on Machine Learning (ICML 2026)",
+      "releaseDate": "2026-01-01",
+      "year": "2026",
+      "doi": "10.48550/arXiv.2602.05670",
+      "website": "https://arxiv.org/abs/2602.05670",
+      "group": "other"
+    },
+    {
+      "bib_key": "mixfake",
+      "name": "MixFake: Benchmarking and Enhancing Audio Deepfake Detection in Diverse Real-world Mixed Audio",
+      "authors": [
+        "Qingcao Li",
+        "Yipeng Lin",
+        "Weichen Lian",
+        "Zhongjie Ba",
+        "Peng Cheng",
+        "Zhichao Lian"
+      ],
+      "publisher": "IEEE International Conference on Multimedia and Expo (ICME 2026)",
+      "releaseDate": "2026-01-01",
+      "year": "2026",
+      "doi": "10.48550/arXiv.2605.23201",
+      "website": "https://arxiv.org/abs/2605.23201",
+      "group": "other"
+    },
+    {
+      "bib_key": "watermark-forensics",
+      "name": "Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection",
+      "authors": [
+        "Qingyu Liu",
+        "Yitao Zhang",
+        "Zhongjie Ba",
+        "Chao Shuai",
+        "Peng Cheng",
+        "Tianhang Zheng",
+        "Zhibo Wang"
+      ],
+      "publisher": "The 14th International Conference on Learning Representations (ICLR 2026)",
+      "releaseDate": "2026-01-01",
+      "year": "2026",
+      "doi": "10.48550/arXiv.2601.06639",
+      "website": "https://arxiv.org/abs/2601.06639",
+      "group": "other"
+    },
+    {
+      "bib_key": "beyond-content",
+      "name": "Beyond Content: A Comprehensive Speech Toxicity Dataset and Detection Framework Incorporating Paralinguistic Cues",
+      "authors": [
+        "Zhongjie Ba",
+        "Liang Yi",
+        "Peng Cheng",
+        "Qingcao Li",
+        "Qinglong Wang",
+        "Li Lu"
+      ],
+      "publisher": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "releaseDate": "2026-01-01",
+      "year": "2026",
+      "doi": "10.1609/aaai.v40i1.36960",
+      "website": "https://ojs.aaai.org/index.php/AAAI/article/view/36960",
+      "group": "other"
+    },
+    {
+      "bib_key": "deepfake-survey-ccf",
+      "name": "Deepfake Detection: Key Challenges and Technical Approaches",
+      "authors": [
+        "Kui Ren",
+        "Feng Lin",
+        "Zhongjie Ba",
+        "Zhuotao Liu",
+        "Peng Cheng"
+      ],
+      "publisher": "Computing Magazine of the CCF",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.11991/cccf.202506003",
+      "website": "https://doi.org/10.11991/cccf.202506003",
+      "group": "other"
+    },
+    {
+      "bib_key": "wmcopier",
+      "name": "WMCopier: Forging Invisible Image Watermarks on Arbitrary Images",
+      "authors": [
+        "Ziping Dong",
+        "Chao Shuai",
+        "Zhongjie Ba",
+        "Peng Cheng",
+        "Zhan Qin",
+        "Qinglong Wang",
+        "Kui Ren"
+      ],
+      "publisher": "The 39th Conference on Neural Information Processing Systems (NeurIPS 2025)",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.48550/arXiv.2503.22330",
+      "website": "https://arxiv.org/abs/2503.22330",
+      "group": "other"
+    },
+    {
+      "bib_key": "secheadset",
+      "name": "SecHeadset: A Practical Privacy Protection System for Real-time Voice Communication",
+      "authors": [
+        "Peng Huang",
+        "Kun Pan",
+        "Qinglong Wang",
+        "Peng Cheng",
+        "Li Lu",
+        "Zhongjie Ba",
+        "Kui Ren"
+      ],
+      "publisher": "Proceedings of the 23rd Annual International Conference on Mobile Systems, Applications and Services (MobiSys 2025)",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.1145/3711875.3729142",
+      "website": "https://doi.org/10.1145/3711875.3729142",
+      "group": "other"
+    },
+    {
+      "bib_key": "phoneme-anti-eavesdropping",
+      "name": "Phoneme-Based Proactive Anti-Eavesdropping With Controlled Recording Privilege",
+      "authors": [
+        "Peng Huang",
+        "Yao Wei",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Li Lu",
+        "Feng Lin",
+        "Yang Wang",
+        "Kui Ren"
+      ],
+      "publisher": "IEEE Transactions on Dependable and Secure Computing",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.1109/TDSC.2024.3473695",
+      "website": "https://doi.org/10.1109/TDSC.2024.3473695",
+      "group": "other"
+    },
+    {
+      "bib_key": "spoofed-speech-detection",
+      "name": "Spoofed Speech Detection in Real-World Fraudulent Communication Scenarios",
+      "authors": [
+        "Zhe Xu",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Peng Huang",
+        "Kui Ren"
+      ],
+      "publisher": "Journal of Cyber Security",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.19363/J.cnki.cn10-1380/tn.2025.11.14",
+      "website": "https://doi.org/10.19363/J.cnki.cn10-1380/tn.2025.11.14",
+      "group": "other"
+    },
+    {
+      "bib_key": "indelible-footprints",
+      "name": "Indelible \"Footprints\" of Inaudible Command Injection",
+      "authors": [
+        "Zhongjie Ba",
+        "Bin Gong",
+        "Yuwei Wang",
+        "Yuxuan Liu",
+        "Peng Cheng",
+        "Feng Lin",
+        "Li Lu",
+        "Kui Ren"
+      ],
+      "publisher": "IEEE Transactions on Information Forensics and Security",
+      "releaseDate": "2024-01-01",
+      "year": "2024",
+      "doi": "10.1109/TIFS.2024.3459728",
+      "website": "https://doi.org/10.1109/TIFS.2024.3459728",
+      "group": "other"
+    },
+    {
+      "bib_key": "infomasker",
+      "name": "InfoMasker: Preventing Eavesdropping Using Phoneme-Based Noise",
+      "authors": [
+        "Peng Huang",
+        "Yao Wei",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Li Lu",
+        "Feng Lin",
+        "Fan Zhang",
+        "Kui Ren"
+      ],
+      "publisher": "Proceedings 2023 Network and Distributed System Security Symposium",
+      "releaseDate": "2023-01-01",
+      "year": "2023",
+      "doi": "10.14722/ndss.2023.24457",
+      "website": "https://www.ndss-symposium.org/ndss-paper/infomasker-preventing-eavesdropping-using-phoneme-based-noise/",
+      "group": "other"
+    },
+    {
+      "bib_key": "adversarial-command-detection",
+      "name": "Adversarial Command Detection Using Parallel Speech Recognition Systems",
+      "authors": [
+        "Peng Cheng",
+        "M. S. Arun Sankar",
+        "Ibrahim Ethem Bagci",
+        "Utz Roedig"
+      ],
+      "publisher": "Lecture Notes in Computer Science",
+      "releaseDate": "2022-01-01",
+      "year": "2022",
+      "doi": "10.1007/978-3-030-95484-0_15",
+      "website": "https://cora.ucc.ie/items/295968fc-c85b-407b-93ae-a61cf5992da0",
+      "group": "other"
+    },
+    {
+      "bib_key": "sonarsnoop",
+      "name": "SonarSnoop: Active Acoustic Side-Channel Attacks",
+      "authors": [
+        "Peng Cheng",
+        "Ibrahim Ethem Bagci",
+        "Utz Roedig",
+        "Jeff Yan"
+      ],
+      "publisher": "International Journal of Information Security",
+      "releaseDate": "2020-01-01",
+      "year": "2020",
+      "doi": "10.1007/s10207-019-00449-8",
+      "website": "https://arxiv.org/abs/1808.10250",
+      "group": "other"
+    },
+    {
+      "bib_key": "acoustic-tagging",
+      "name": "Smart Speaker Privacy Control—Acoustic Tagging for Personal Voice Assistants",
+      "authors": [
+        "Peng Cheng",
+        "Ibrahim Ethem Bagci",
+        "Jeff Yan",
+        "Utz Roedig"
+      ],
+      "publisher": "2019 IEEE Security and Privacy Workshops (SPW)",
+      "releaseDate": "2019-01-01",
+      "year": "2019",
+      "doi": "10.1109/SPW.2019.00035",
+      "website": "https://www.ieee-security.org/TC/SPW2019/SafeThings/papers/SmartSpeakerPrivacyControlAcousticTaggingforPerson.pdf",
+      "group": "other"
+    },
+    {
+      "bib_key": "acoustic-jamming",
+      "name": "Towards Reactive Acoustic Jamming for Personal Voice Assistants",
+      "authors": [
+        "Peng Cheng",
+        "Ibrahim Ethem Bagci",
+        "Jeff Yan",
+        "Utz Roedig"
+      ],
+      "publisher": "Proceedings of the 2nd International Workshop on Multimedia Privacy and Security",
+      "releaseDate": "2018-01-01",
+      "year": "2018",
+      "doi": "10.1145/3267357.3267359",
+      "website": "https://dl.acm.org/doi/10.1145/3267357.3267359",
+      "group": "other"
+    },
+    {
+      "bib_key": "divide-and-conquer",
+      "name": "Divide and Conquer: Multimodal Video Deepfake Detection via Cross-Modal Fusion and Localization",
+      "authors": [
+        "Qingcao Li",
+        "Miao He",
+        "Liang Yi",
+        "Qing Wen",
+        "Yitao Zhang",
+        "Hongshuo Jin",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Li Lu",
+        "Kui Ren"
+      ],
+      "publisher": "arXiv preprint arXiv:2602.00209",
+      "releaseDate": "2026-01-01",
+      "year": "2026",
+      "doi": "10.48550/arXiv.2602.00209",
+      "website": "https://arxiv.org/abs/2602.00209",
+      "group": "preprint"
+    },
+    {
+      "name": "Bridging the Synthesis-Detection Gap: A Chinese Audio Deepfake Dataset and Industrial-Scale Retrieval-Augmented Detection",
+      "authors": [
+        "Bin Gong",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Li Lu",
+        "Jie Tang",
+        "Jinpeng Hou",
+        "Song Xue",
+        "Kui Ren"
+      ],
+      "publisher": "Under review",
+      "year": "2025",
+      "group": "preprint"
+    },
+    {
+      "bib_key": "watermark-leak",
+      "name": "Robust Watermarks Leak: Channel-Aware Feature Extraction Enables Adversarial Watermark Manipulation",
+      "authors": [
+        "Zhongjie Ba",
+        "Yitao Zhang",
+        "Peng Cheng",
+        "Bin Gong",
+        "Xinyu Zhang",
+        "Qinglong Wang",
+        "Kui Ren"
+      ],
+      "publisher": "arXiv preprint arXiv:2502.06418",
+      "releaseDate": "2025-01-01",
+      "year": "2025",
+      "doi": "10.48550/arXiv.2502.06418",
+      "website": "https://arxiv.org/abs/2502.06418",
+      "group": "preprint"
+    },
+    {
+      "name": "Test-Time Adaptation for Audio Deepfake Detection",
+      "authors": [
+        "Bin Gong",
+        "Chao Shuai",
+        "Qing Wen",
+        "Peng Cheng",
+        "Qinglong Wang",
+        "Zhongjie Ba",
+        "Zhibo Wang",
+        "Kui Ren"
+      ],
+      "publisher": "Under review",
+      "year": "2025",
+      "group": "preprint"
+    },
+    {
+      "name": "JudgeRail: Harnessing Open-Source LLMs for Fast Harmful Text Detection with Judicial Prompting and Logit Rectification",
+      "authors": [
+        "Zhongjie Ba",
+        "Hao Fu",
+        "Yiming Yang",
+        "Hengzhi Chen",
+        "Qinglong Wang",
+        "Peng Cheng",
+        "Zhan Qin",
+        "Kui Ren"
+      ],
+      "publisher": "Under review",
+      "year": "2025",
+      "group": "preprint"
+    },
+    {
+      "name": "CLINDA: A Cross-lingual Domain Adaptation Framework for Challenging Audio Deepfake Detection Tasks across Languages",
+      "authors": [
+        "Qing Wen",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Liang Yi",
+        "Zhan Qin",
+        "Li Lu",
+        "Qinglong Wang",
+        "Kui Ren"
+      ],
+      "publisher": "Under review",
+      "year": "2024",
+      "group": "preprint"
+    },
+    {
+      "bib_key": "masked-diffusion",
+      "name": "Masked Diffusion Models Are Fast Distribution Learners",
+      "authors": [
+        "Jiachen Lei",
+        "Qinglong Wang",
+        "Peng Cheng",
+        "Zhongjie Ba",
+        "Zhan Qin",
+        "Zhibo Wang",
+        "Zhenguang Liu",
+        "Kui Ren"
+      ],
+      "publisher": "arXiv preprint arXiv:2306.11363",
+      "releaseDate": "2023-01-01",
+      "year": "2023",
+      "doi": "10.48550/arXiv.2306.11363",
+      "website": "https://arxiv.org/abs/2306.11363",
+      "group": "preprint"
+    },
+    {
+      "name": "Acoustic-Channel Attack and Defence Methods for Personal Voice Assistants",
+      "authors": [
+        "Peng Cheng"
+      ],
+      "publisher": "Ph.D. Dissertation, Lancaster University",
+      "year": "2020",
+      "group": "thesis"
     }
   ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
+  "presentations": [],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "CS4615: Computer Systems Security",
+      "institution": "University College Cork, Ireland",
+      "role": "Teaching Assistant",
+      "date": ""
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "SCC110: Software Development",
+      "institution": "Lancaster University, UK",
+      "role": "Teaching Assistant",
+      "date": ""
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "interests": [],
+  "references": []
 }
