@@ -378,6 +378,13 @@ def render(cv, bib, include_patents):
             L.append(r"\textbf{Media Recognition}")
             itemize(imp["media"])
 
+    # Google Scholar link (as in the original CV footer)
+    scholar = next((p.get("url", "") for p in b.get("profiles", [])
+                    if p.get("network", "").lower() == "google scholar"), "")
+    if scholar:
+        section("Google Scholar")
+        L.append(r"\url{" + latex_escape(scholar) + r"}")
+
     L.append(TEX_END)
     return "\n".join(L)
 
