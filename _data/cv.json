@@ -124,18 +124,12 @@
   ],
   "projects": [
     {
-      "name": "Total Research Funding",
-      "organization": "Multiple funders",
-      "summary": "Total Funding: £7.01M (British Pounds; all figures in GBP)",
-      "highlights": []
-    },
-    {
       "name": "Research on Speech Synthesis Data Compliance Management Technology Based on Intrinsic Characteristics of Audio Signals",
       "organization": "National Natural Science Foundation of China (NSFC)",
       "role": "Principal Investigator",
       "startDate": "2025",
       "endDate": "2028",
-      "summary": "NSFC General Program Project, £54K",
+      "summary": "50万元",
       "highlights": []
     },
     {
@@ -144,7 +138,7 @@
       "role": "Participant",
       "startDate": "2023",
       "endDate": "2026",
-      "summary": "£59K",
+      "summary": "59万元",
       "highlights": []
     },
     {
@@ -153,7 +147,7 @@
       "role": "Participant",
       "startDate": "2023",
       "endDate": "2027",
-      "summary": "NSFC Key Project, £309K",
+      "summary": "59万元",
       "highlights": []
     },
     {
@@ -162,7 +156,7 @@
       "role": "Participant",
       "startDate": "2022",
       "endDate": "2025",
-      "summary": "£64K",
+      "summary": "59万元",
       "highlights": []
     },
     {
@@ -171,7 +165,7 @@
       "role": "Participant",
       "startDate": "2024",
       "endDate": "2027",
-      "summary": "£1.64M",
+      "summary": "1501万元",
       "highlights": []
     },
     {
@@ -180,7 +174,7 @@
       "role": "Participant",
       "startDate": "2021",
       "endDate": "2025",
-      "summary": "£1.51M",
+      "summary": "1382万元",
       "highlights": []
     },
     {
@@ -189,16 +183,17 @@
       "role": "Participant",
       "startDate": "2022",
       "endDate": "2024",
-      "summary": "£1.60M",
+      "summary": "1464万元",
       "highlights": []
     },
     {
       "name": "Key R&D Programme of Zhejiang Province",
       "organization": "Provincial, Municipal, and University-Level Projects",
       "role": "Participant",
-      "startDate": "2025",
-      "summary": "£272K",
-      "highlights": []
+      "startDate": "2024",
+      "summary": "250万元",
+      "highlights": [],
+      "endDate": "2026"
     },
     {
       "name": "Key Technologies and Platform Development for Security Detection of Large AI Models",
@@ -206,7 +201,7 @@
       "role": "Participant",
       "startDate": "2024",
       "endDate": "2027",
-      "summary": "£1.83M",
+      "summary": "1674万元",
       "highlights": []
     },
     {
@@ -215,7 +210,7 @@
       "role": "Principal Investigator",
       "startDate": "2024",
       "endDate": "2026",
-      "summary": "£33K",
+      "summary": "30万元",
       "highlights": []
     },
     {
@@ -224,7 +219,7 @@
       "role": "Principal Investigator",
       "startDate": "2025",
       "endDate": "2026",
-      "summary": "£41K",
+      "summary": "37.7万元",
       "highlights": []
     },
     {
@@ -232,8 +227,9 @@
       "organization": "Zhejiang University-Ant Group Joint Laboratory",
       "role": "Participant",
       "startDate": "2025",
-      "summary": "£65K",
-      "highlights": []
+      "summary": "30万元",
+      "highlights": [],
+      "endDate": "2025"
     },
     {
       "name": "Research and Development of AI-Driven Automated Security Detection Technologies and Components for Power Systems",
@@ -241,7 +237,7 @@
       "role": "Participant",
       "startDate": "2024",
       "endDate": "2026",
-      "summary": "£255K",
+      "summary": "234万元",
       "highlights": []
     },
     {
@@ -250,7 +246,7 @@
       "role": "Participant",
       "startDate": "2024",
       "endDate": "2027",
-      "summary": "£127K",
+      "summary": "116万元",
       "highlights": []
     },
     {
@@ -259,7 +255,16 @@
       "role": "Participant",
       "startDate": "2023",
       "endDate": "2025",
-      "summary": "£163K",
+      "summary": "149万元",
+      "highlights": []
+    },
+    {
+      "name": "Multidimensional Protocol Carrying and Endogenous Security Access Technologies for Multimodal Networks",
+      "organization": "Key R&D Programs of China",
+      "role": "Participant",
+      "startDate": "2024",
+      "endDate": "2027",
+      "summary": "1500万元",
       "highlights": []
     }
   ],
