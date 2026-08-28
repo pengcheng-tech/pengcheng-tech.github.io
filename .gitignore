@@ -22,4 +22,4 @@ vendor/
 
 # Patent portfolio: real patent data contains application/publication
 # numbers and is private (user backup only) — keep local, never commit.
-_data/patents.yml
+_data/patents.yml.DS_Store
