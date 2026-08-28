@@ -352,7 +352,7 @@ def render(cv, bib, show_funding=False, show_patents=True):
             section("Granted Patents")
             L.append(r"\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]")
             for p in granted:
-                bits = [p.get("title", "")]
+                bits = [p.get("title_en") or p.get("title", "")]
                 if p.get("number"):
                     bits.append("Patent No. " + p["number"])
                 if p.get("grant_number"):

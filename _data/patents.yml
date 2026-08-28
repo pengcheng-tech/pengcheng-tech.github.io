@@ -1,118 +1,132 @@
 # patents.yml — patent portfolio.
 # Granted patents are public information (published by the patent office),
 # so this file is committed to the repository. The website does NOT render
-# patents (data only; reserved for cv.json generation and future pages).
+# patents (data only; reserved for CV generation and future pages).
 #
 # Fields:
-#   no           serial number used in the research record (序号, optional)
-#   title        patent name
-#   number       application number (申请号, e.g. 2022109965917)
-#   grant_number publication/grant number (授权公告号 or 申请公布号, e.g. CN 115208507 B)
-#   status       granted | published (已授权 | 已公布/审查中)
-#   grant_date   grant/publication date (YYYY-MM or YYYY-MM-DD)
-#   apply_date   application date (YYYY-MM-DD, optional)
-#   rank         inventor rank (e.g. "1/6"; empty when unknown)
+#   "no"          serial number used in the research record (序号, optional)
+#   title         patent name (Chinese)
+#   title_en      English translation of the patent name (used by CV generation)
+#   number        application number (申请号, e.g. 2022109965917)
+#   grant_number  publication/grant number (授权公告号 or 申请公布号)
+#   status        granted | published (已授权 | 已公布/审查中)
+#   grant_date    grant/publication date (YYYY-MM or YYYY-MM-DD)
+#   apply_date    application date (YYYY-MM-DD, optional)
+#   rank          inventor rank (e.g. "1/6"; empty when unknown)
 
 patents:
   # ---- 已授权 (granted) ----
-  - no: "15"
+  - "no": "15"
     title: "基于白盒语音对抗样本的隐私保护方法与装置"
+    title_en: "Privacy Protection Method and Device Using White-Box Speech Adversarial Examples"
     number: "2022109965917"
     grant_number: "CN 115208507 B"
     status: granted
     grant_date: "2024-12-03"
     apply_date: "2022-08-19"
     rank: "1/6"
-  - no: "17"
+  - "no": "17"
     title: "基于硬件特性的非线性注入攻击检测方法与装置"
+    title_en: "Method and Device for Detecting Nonlinear Injection Attacks Based on Hardware Characteristics"
     number: "2022113990841"
     grant_number: "CN115862670B"
     status: granted
     grant_date: "2026-01-09"
     apply_date: "2022-11-09"
     rank: "1/8"
-  - no: "18"
+  - "no": "18"
     title: "一种基于人类语音结构的语音干扰噪声设计方法"
+    title_en: "Method for Designing Voice Jamming Noise Based on Human Speech Structure"
     number: "2022114278110"
     grant_number: ""
     status: granted
     grant_date: "2026-03-02"
     apply_date: "2022-11-15"
     rank: "1/8"
-  - no: "22"
+  - "no": "22"
     title: "一种针对链接攻击与伪造攻击的相机指纹隐私保护方法"
+    title_en: "Camera Fingerprint Privacy Protection Method against Linkage and Forgery Attacks"
     number: "202211674524X"
     grant_number: ""
     status: granted
     grant_date: "2025-11-28"
     apply_date: "2022-12-26"
     rank: "1/8"
-  - no: "29"
+  - "no": "29"
     title: "一种基于语义空间扰动的语音识别模型安全性测评方法"
+    title_en: "Security Evaluation Method for Speech Recognition Models via Semantic Space Perturbation"
     number: "2023110087782"
     grant_number: "CN116758899B"
     status: granted
     grant_date: "2023-10-13"
     apply_date: "2023-08-11"
     rank: "1/7"
-  - no: "40"
+  - "no": "40"
     title: "基于对抗生成网络的深度合成图像检测增强方法及装置"
+    title_en: "Enhanced Deepfake Image Detection Method and Device Based on Generative Adversarial Networks (GANs)"
     number: "2024100814592"
     grant_number: "CN117593311B"
     status: granted
     grant_date: "2024-06-21"
     apply_date: "2024-01-19"
     rank: ""
-  - no: "45"
+  - "no": "45"
     title: "基于自监督辅助任务的深度合成音频跨域检测方法和装置"
+    title_en: "Cross-Domain Detection Method and Device for Deep Synthetic Audio Based on Self-Supervised Auxiliary Tasks"
     number: "2025100324916"
     grant_number: "CN 119479611 B"
     status: granted
     grant_date: "2025-04-29"
     apply_date: "2025-01-09"
     rank: "3/5"
-  - no: "46"
+  - "no": "46"
     title: "基于语音混淆的语音通信隐私保护方法、系统和介质"
+    title_en: "Privacy Protection Method, System, and Medium for Voice Communication Based on Voice Obfuscation"
     number: "2025100324174"
     grant_number: "CN 119449493 B"
     status: granted
     grant_date: "2025-07-08"
     apply_date: "2025-01-09"
     rank: "2/5"
-  - no: "47"
+  - "no": "47"
     title: "一种图像敏感元素的审查系统、方法、计算机设备及介质"
+    title_en: "Review System, Method, Computer Device, and Medium for Image Sensitive Elements"
     number: "2025101488133"
     grant_number: "CN119625437B"
     status: granted
     grant_date: "2025-04-22"
     apply_date: "2025-02-11"
     rank: "4/7"
-  - no: "50"
+  - "no": "50"
     title: "一种基于扩散模型生成路径偏转的AIGC图像水印方法及系统"
+    title_en: "AIGC Image Watermarking Method and System via Diffusion-Model Generation-Path Deflection"
     number: "2025108297832"
     grant_number: "CN 120339030 B"
     status: granted
     grant_date: "2025-08-26"
     apply_date: "2025-06-20"
     rank: "3/7"
-  - no: "58"
+  - "no": "58"
     title: "一种基于黑盒对抗样本的隐私保护噪声生成方法"
+    title_en: "Privacy-Protecting Noise Generation Method Based on Black-Box Adversarial Examples"
     number: "2025112567923"
     grant_number: "CN120748435B"
     status: granted
     grant_date: "2025-11-04"
     apply_date: "2025-09-04"
     rank: "3/5"
-  - no: "61"
+  - "no": "61"
     title: "一种基于扩散模型的水印防伪评估方法、系统、电子设备及存储介质"
+    title_en: "Watermark Anti-Counterfeiting Evaluation Method, System, Electronic Device, and Storage Medium Based on Diffusion Models"
     number: "202511477887.8"
     grant_number: "CN120931468B"
     status: granted
     grant_date: "2026-01"
     apply_date: "2025-09-12"
     rank: "3/5"
-  - no: "19"
+  - "no": "19"
     title: "基于跨领域自适应的深度伪造语音检测方法"
+    title_en: "Cross-Domain Adaptive Deepfake Speech Detection Method"
     number: "2022115339855"
     grant_number: "CN116153331A"
     status: granted
@@ -121,104 +135,117 @@ patents:
     rank: "1/8"
 
   # ---- 已公布（审查中）(published / under examination) ----
-  - no: "32"
+  - "no": "32"
     title: "一种基于隐空间仿射的文生图模型测评方法"
+    title_en: "Text-to-Image Model Evaluation Method Based on Latent-Space Affine Transformations"
     number: "2023117710825"
     grant_number: "CN117494118A"
     status: published
     grant_date: "2024-02-02"
     apply_date: "2023-12-21"
     rank: ""
-  - no: "33"
+  - "no": "33"
     title: "基于信息瓶颈的深度伪造图像检测方法、系统及装置"
+    title_en: "Deepfake Image Detection Method, System, and Device Based on Information Bottleneck"
     number: "2023118131321"
     grant_number: "CN117877129A"
     status: published
     grant_date: "2024-04-12"
     apply_date: "2023-12-26"
     rank: ""
-  - no: "34"
+  - "no": "34"
     title: "一种基于神经网络的语音干扰噪声授权消除方法"
+    title_en: "Neural-Network-Based Method for Authorized Cancellation of Voice Jamming Noise"
     number: "2023118183773"
     grant_number: "CN117877501A"
     status: published
     grant_date: "2024-04-12"
     apply_date: "2023-12-27"
     rank: ""
-  - no: "35"
+  - "no": "35"
     title: "基于掩码的人脸图像生成模型隐私保护方法、系统及装置"
+    title_en: "Masked Face Image Generation Model Privacy Protection Method, System, and Device"
     number: "2023118257936"
     grant_number: "CN117633899A"
     status: published
     grant_date: "2024-03-01"
     apply_date: "2023-12-27"
     rank: ""
-  - no: "36"
+  - "no": "36"
     title: "基于特征一致性的联邦学习攻击检测方法、系统及装置"
+    title_en: "Federated Learning Attack Detection Method, System, and Device Based on Feature Consistency"
     number: "2023118355680"
     grant_number: "CN117892340A"
     status: published
     grant_date: "2024-04-16"
     apply_date: "2023-12-27"
     rank: ""
-  - no: "38"
+  - "no": "38"
     title: "一种基于掩码的图像生成模型训练效率提升方法"
+    title_en: "Method for Improving Training Efficiency of Masked Image Generation Models"
     number: "2024100551347"
     grant_number: "CN117876520A"
     status: published
     grant_date: "2024-04-12"
     apply_date: "2024-01-15"
     rank: ""
-  - no: "39"
+  - "no": "39"
     title: "一种基于模型密钥的图像深度区域篡改主动取证方法"
+    title_en: "Model-Key-Based Proactive Forensics Method for Deep Image Region Tampering"
     number: "2024100551351"
     grant_number: "CN117876204A"
     status: published
     grant_date: "2024-04-12"
     apply_date: "2024-01-15"
     rank: ""
-  - no: "51"
+  - "no": "51"
     title: "图像敏感内容的检测方法、装置、电子装置和存储介质"
+    title_en: "Image Sensitive Content Detection Method, Device, Electronic Device, and Storage Medium"
     number: "2024119427854"
     grant_number: "CN119904866A"
     status: published
     grant_date: "2025-04-29"
     apply_date: "2024-12-25"
     rank: "3/5"
-  - no: "52"
+  - "no": "52"
     title: "图像水印处理网络的训练方法和水印嵌入方法"
+    title_en: "Training Method for Image Watermark Processing Networks and Watermark Embedding Method"
     number: "2024119469946"
     grant_number: "CN119887489A"
     status: published
     grant_date: "2025-04-25"
     apply_date: "2024-12-26"
     rank: "2/5"
-  - no: "53"
+  - "no": "53"
     title: "可拓展的大语言模型越狱攻击方法、装置、介质和产品"
+    title_en: "Scalable Large Language Model Jailbreak Attack Method, Device, Medium, and Product"
     number: "2024119480894"
     grant_number: "CN119884311A"
     status: published
     grant_date: "2025-04-25"
     apply_date: "2024-12-26"
     rank: ""
-  - no: "54"
+  - "no": "54"
     title: "基于思维链的大模型敏感内容审查方法和装置"
+    title_en: "Chain-of-Thought-Based Sensitive Content Review Method and Device for Large Models"
     number: "2024119215475"
     grant_number: "CN119862872A"
     status: published
     grant_date: "2025-04-22"
     apply_date: "2024-12-25"
     rank: "3/5"
-  - no: "62"
+  - "no": "62"
     title: "一种结合副语言信息的有害语音检测方法"
+    title_en: "Harmful Speech Detection Method Incorporating Paralinguistic Information"
     number: "2025115004696"
     grant_number: "CN120998231A"
     status: published
     grant_date: "2025-11-21"
     apply_date: "2025-10-21"
     rank: "3/5"
-  - no: "67"
+  - "no": "67"
     title: "一种融合模型压缩与数据增强的轻量化深度伪造语音检测方法"
+    title_en: "Lightweight Deepfake Speech Detection Method Fusing Model Compression and Data Augmentation"
     number: "2025118055454"
     grant_number: "CN121438868A"
     status: published
