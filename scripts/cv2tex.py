@@ -10,17 +10,19 @@ Data flow (single source):
                              publications (with `bib_key` where applicable)
   publications.bib         — authoritative metadata (DOI, pages) for papers
                              referenced by `bib_key`
-  _data/patents.yml        — optional; granted patents section (LOCAL file,
-                             gitignored) only when --patents is given
+  _data/patents.yml        — granted patents (included by default; granted
+                             patents are public information). Disable with
+                             --no-patents.
         |
         v
-  LaTeX -> pdflatex -> <out>.pdf
+  LaTeX -> pdflatex -> <out>.pdf   (default: <repo>/build/CV_Peng_Cheng.pdf)
 
 Usage:
   python3 scripts/cv2tex.py --dry-run            # write the .tex only, no compile
-  python3 scripts/cv2tex.py                      # compile to files/CV_Peng_Cheng.pdf
-  python3 scripts/cv2tex.py --out /tmp/cv.pdf
-  python3 scripts/cv2tex.py --patents            # include Granted Patents (local file)
+  python3 scripts/cv2tex.py                      # compile to build/CV_Peng_Cheng.pdf
+  python3 scripts/cv2tex.py --out files/CV_Peng_Cheng.pdf   # final PDF into files/
+  python3 scripts/cv2tex.py --funding            # include per-project funding amounts
+  python3 scripts/cv2tex.py --no-patents         # omit the Granted Patents section
   python3 scripts/cv2tex.py --keep-tex           # keep the generated .tex next to the PDF
 """
 
@@ -42,8 +44,8 @@ PATENTS_YML = ROOT / "_data" / "patents.yml"
 
 TEX_PREAMBLE = r"""\documentclass[10pt,a4paper]{article}
 \usepackage[margin=1.6cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\setmainfont{PingFang SC}
 \usepackage{textcomp}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -181,14 +183,16 @@ def fmt_pub(pub, bib):
     return line
 
 
-def find_pdflatex():
+def find_latex_engine():
+    """Prefer xelatex (UTF-8/CJK-capable), fall back to pdflatex."""
     candidates = [
-        os.environ.get("PDFLATEX", ""),
+        os.environ.get("LATEX_ENGINE", ""),
+        shutil.which("xelatex") or "",
+        "/Library/TeX/texbin/xelatex",
+        "/usr/local/texlive/2026/bin/universal-darwin/xelatex",
         shutil.which("pdflatex") or "",
         "/Library/TeX/texbin/pdflatex",
         "/usr/local/texlive/2026/bin/universal-darwin/pdflatex",
-        "/usr/local/texlive/2025/bin/universal-darwin/pdflatex",
-        "/opt/homebrew/bin/pdflatex",
     ]
     for c in candidates:
         if c and Path(c).exists():
@@ -200,7 +204,7 @@ def find_pdflatex():
 # CV rendering
 # --------------------------------------------------------------------------
 
-def render(cv, bib, include_patents):
+def render(cv, bib, show_funding=False, show_patents=True):
     L = [TEX_PREAMBLE]
 
     b = cv.get("basics", {})
@@ -253,11 +257,8 @@ def render(cv, bib, include_patents):
         if e.get("summary"):
             L.append(latex_escape(e["summary"]))
 
-    # Research Projects
+    # Research Projects (amounts only with --funding; no cross-currency total)
     section("Research Projects")
-    total = [p for p in cv.get("projects", []) if "Total Research Funding" in p.get("name", "")]
-    if total:
-        L.append(latex_escape(total[0].get("summary", "")))
     by_org = {}
     for p in cv.get("projects", []):
         if "Total Research Funding" in p.get("name", ""):
@@ -273,7 +274,7 @@ def render(cv, bib, include_patents):
                 bits.append(f"({role})")
             if years:
                 bits.append(f"{years}")
-            if p.get("summary"):
+            if show_funding and p.get("summary"):
                 bits.append(p["summary"])
             L.append(r"\begin{itemize}[leftmargin=1.2em,itemsep=1pt,topsep=2pt]")
             L.append(r"\item " + latex_escape(", ".join(bits)))
@@ -338,8 +339,9 @@ def render(cv, bib, include_patents):
             L.append(r"\textbf{" + latex_escape(heading) + r"}")
             itemize(items)
 
-    # Granted Patents (optional, from the LOCAL gitignored file)
-    if include_patents and PATENTS_YML.exists():
+    # Granted Patents (granted patents are public info; included by default,
+    # disable with --no-patents)
+    if show_patents and PATENTS_YML.exists():
         try:
             import yaml
             data = yaml.safe_load(PATENTS_YML.read_text(encoding="utf-8")) or {}
@@ -393,16 +395,20 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--cv", default=str(DEFAULT_CV))
     ap.add_argument("--bib", default=str(DEFAULT_BIB))
-    ap.add_argument("--out", default=str(DEFAULT_OUT))
+    ap.add_argument("--out", default=str(ROOT / "build" / "CV_Peng_Cheng.pdf"),
+                    help="output PDF (default: <repo>/build/CV_Peng_Cheng.pdf)")
     ap.add_argument("--tex-out", default="", help="write the .tex to this path")
     ap.add_argument("--dry-run", action="store_true", help="only write/print the .tex, do not compile")
     ap.add_argument("--keep-tex", action="store_true", help="keep the .tex next to the output PDF")
-    ap.add_argument("--patents", action="store_true", help="include Granted Patents from the local (gitignored) _data/patents.yml")
+    ap.add_argument("--funding", action="store_true",
+                    help="show per-project funding amounts (from cv.json summaries; default: hidden)")
+    ap.add_argument("--no-patents", action="store_true",
+                    help="omit the Granted Patents section (granted patents are included by default)")
     args = ap.parse_args()
 
     cv = json.loads(Path(args.cv).read_text(encoding="utf-8"))
     bib = parse_bib(args.bib)
-    tex = render(cv, bib, args.patents)
+    tex = render(cv, bib, show_funding=args.funding, show_patents=not args.no_patents)
 
     if args.tex_out:
         Path(args.tex_out).write_text(tex, encoding="utf-8")
@@ -413,9 +419,9 @@ def main():
         print("[dry-run] 未编译。去掉 --dry-run 编译 PDF。")
         return
 
-    pdflatex = find_pdflatex()
-    if not pdflatex:
-        print("[error] 未找到 pdflatex（可设 PDFLATEX 环境变量或安装 MacTeX）", file=sys.stderr)
+    engine = find_latex_engine()
+    if not engine:
+        print("[error] 未找到 xelatex/pdflatex（可设 LATEX_ENGINE 环境变量或安装 MacTeX）", file=sys.stderr)
         sys.exit(1)
 
     out = Path(args.out)
@@ -424,13 +430,13 @@ def main():
         tex_path = Path(tmp) / "cv.tex"
         tex_path.write_text(tex, encoding="utf-8")
         proc = subprocess.run(
-            [pdflatex, "-interaction=nonstopmode", "-halt-on-error", "cv.tex"],
+            [engine, "-interaction=nonstopmode", "-halt-on-error", "cv.tex"],
             cwd=tmp, capture_output=True, text=True,
         )
         pdf = Path(tmp) / "cv.pdf"
         if not pdf.exists():
             print(proc.stdout[-2000:], file=sys.stderr)
-            print("[error] pdflatex 编译失败", file=sys.stderr)
+            print("[error] LaTeX 编译失败", file=sys.stderr)
             sys.exit(1)
         shutil.copy(pdf, out)
     print(f"[pdf] {out} ({out.stat().st_size} bytes)")

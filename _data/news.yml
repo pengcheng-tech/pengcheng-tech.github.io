@@ -72,7 +72,7 @@
 - date_display: "September 2025"
   date_sort: "2025-09"
   type: award
-  text: "Our team achieved 3rd Place in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)"
+  text: "Our team achieved **3rd Place Award** in IJCAI 2025 Deepfake Detection and Localization Challenge (DDL Challenge)"
 - date_display: "October 2024"
   date_sort: "2024-10"
   type: award
