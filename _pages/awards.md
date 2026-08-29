@@ -33,7 +33,9 @@ author_profile: true
 
 {% else %}<img src="{{ img.src }}" alt="{{ img.alt }}" width="{{ img.width }}">
 
-{% endif %}{% endfor %}{% endif %}
+{% endif %}{% endfor %}{% endif %}{% if a.certificate %}**{{ a.certificate.label }}** [Download Certificate]({{ a.certificate.url }})
+
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endif %}{% endfor %}

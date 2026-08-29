@@ -83,10 +83,15 @@ def check_award_news(news, awards, errors):
     for item in news:
         if not isinstance(item, dict) or item.get("type") != "award":
             continue
+        if item.get("awards_entry") is False:
+            # explicit exemption: the news is an award-type announcement that is
+            # intentionally NOT listed on the /awards/ page (e.g. honorary
+            # memberships) — kept typed "award" so other checks still apply.
+            continue
         nt = tokens(item.get("text", ""))
         if not any(len(nt & tokens(t)) >= 2 for t in award_texts):
             errors.append(
-                f"news award 无对应 awards.yml 条目: {item.get('date_display','?')} - {item.get('text','')[:60]}"
+                f"news award 无对应 awards.yml 条目（如需豁免请加 awards_entry: false）: {item.get('date_display','?')} - {item.get('text','')[:60]}"
             )
 
 
@@ -111,20 +116,30 @@ def check_publication_news(news, bib_keys, errors):
             errors.append(f"news 提及的论文未在 publications.bib 找到: {m.group(1)[:60]}")
 
 
+def _walk_refs(node, refs):
+    """Recursively collect /files/ and /images/ references from yml structures."""
+    if isinstance(node, str):
+        if node.startswith(("/files/", "/images/")):
+            refs.add(node)
+        return
+    if isinstance(node, dict):
+        for v in node.values():
+            _walk_refs(v, refs)
+    elif isinstance(node, list):
+        for v in node:
+            _walk_refs(v, refs)
+
+
 def check_file_refs(*datasets, errors):
-    refs = []
+    """Every /files/ and /images/ path referenced from the yml data must exist."""
+    refs = set()
     for ds in datasets:
-        for item in ds if isinstance(ds, list) else []:
-            if not isinstance(item, dict):
-                continue
-            for k, v in item.items():
-                if isinstance(v, str) and v.startswith(("/files/", "/images/")):
-                    refs.append(v)
-                if k == "links" and isinstance(v, list):
-                    for link in v:
-                        if isinstance(link, dict) and str(link.get("url", "")).startswith(("/files/", "/images/")):
-                            refs.append(link["url"])
-    for ref in sorted(set(refs)):
+        if isinstance(ds, list):
+            for item in ds:
+                _walk_refs(item, refs)
+        elif isinstance(ds, dict):
+            _walk_refs(ds, refs)
+    for ref in sorted(refs):
         rel = ref.lstrip("/")
         if not (ROOT / rel).exists():
             errors.append(f"引用的文件不存在: {ref}")

@@ -49,12 +49,9 @@
     text: AIGVDete (Zhejiang University)
   - label: Achievement
     text: Silver Award in General AIGC Audio-Video Detection
-  images:
-  - src: /files/ijcai2026_ddl_certificate.pdf
-    alt: IJCAI 2026 DDL 2.0 Challenge Certificate
-    width: '450'
-    label: 'Official Certificate:'
-    inline: true
+  certificate:
+    label: "Official Certificate:"
+    url: "/files/ijcai2026_ddl_certificate.pdf"
   featured: true
 - category: research
   title: Top 5 Nationwide
