@@ -54,12 +54,13 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 [See all →](/activities/)
 
-<!--## Awards & Recognition
+## Awards
 
-- **National Grand Prize** (Top-Tier Award), 19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024), Advisor
-- **Top 5 Nationwide**, 3rd China Artificial Intelligence Competition (2021), Primary Advisor for Audio Deepfake Detection tracks
-- **Finalist for "Most Innovative Research" Pwnie Award**, Black Hat USA 2019, for "SonarSnoop: Active Acoustic Side-Channel Attacks"
-- **Postdoctoral Excellence Grant** (Second Class), Zhejiang Provincial Department of Human Resources and Social Security (2021)-->
+{% for a in site.data.awards %}{% if a.featured -%}
+- **{{ a.title }}**{% if a.event %} — {{ a.event }}{% endif %}
+{% endif %}{% endfor %}
+
+[See all →](/awards/)
 
 ## Industry Impact
 

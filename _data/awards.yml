@@ -1,181 +1,193 @@
-# awards.yml — awards & recognition, rendered on /awards/ (Liquid).
-# Each entry: category (research|reviewer|academic|mentorship|industry|media),
-# title, event, year, date, plus optional display fields.
-# Adding an award = adding an entry here; the page updates automatically.
-
 - category: research
-  title: "National Grand Prize"
-  event: '19th "Challenge Cup" National Competition (2024)'
+  title: National Grand Prize
+  event: 19th "Challenge Cup" National Competition (2024)
   year: 2024
   bullets:
-    - label: "Role"
-      text: "Advisor (Ranked 2nd among 3 advisors)"
-    - label: "Project"
-      text: '"Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform"'
-    - label: "Recognition"
-      text: "Top-Tier Award"
-
+  - label: Role
+    text: Advisor (Ranked 2nd among 3 advisors)
+  - label: Project
+    text: '"Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation
+      Platform"'
+  - label: Recognition
+    text: Top-Tier Award
+  featured: true
 - category: research
-  title: "3rd Place Award"
-  event: "IJCAI 2025 Deepfake Detection Challenge"
+  title: 3rd Place Award
+  event: IJCAI 2025 Deepfake Detection Challenge
   year: 2025
   bullets:
-    - label: "Competition"
-      text: "Workshop on Deepfake Detection, Localization, and Interpretability (co-located with IJCAI 2025)"
-    - label: "Track"
-      text: "Track 2 - Audio-Visual Detection and Localization (DDL-AV)"
-    - label: "Team"
-      text: "会赢的 (Zhejiang University)"
-    - label: "Achievement"
-      text: "3rd Place Award in Audio-Video Detection and Localization Track"
-    - label: "Technical Focus"
-      text: 'Complex multi-modal attacks including "forged audio + authentic video" scenarios'
-    - label: "Venue"
-      text: "IJCAI 2025, Montreal/Guangzhou (August 16, 2025)"
+  - label: Competition
+    text: Workshop on Deepfake Detection, Localization, and Interpretability (co-located
+      with IJCAI 2025)
+  - label: Track
+    text: Track 2 - Audio-Visual Detection and Localization (DDL-AV)
+  - label: Team
+    text: 会赢的 (Zhejiang University)
+  - label: Achievement
+    text: 3rd Place Award in Audio-Video Detection and Localization Track
+  - label: Technical Focus
+    text: Complex multi-modal attacks including "forged audio + authentic video" scenarios
+  - label: Venue
+    text: IJCAI 2025, Montreal/Guangzhou (August 16, 2025)
   images:
-    - src: "/images/ijcai_ddl_certificate.jpg"
-      alt: "IJCAI 2025 DDL Challenge Certificate"
-      width: "450"
-      label: "Official Certificate:"
-      inline: true
-
+  - src: /images/ijcai_ddl_certificate.jpg
+    alt: IJCAI 2025 DDL Challenge Certificate
+    width: '450'
+    label: 'Official Certificate:'
+    inline: true
+  featured: true
 - category: research
-  title: "Silver Award"
-  event: "IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)"
+  title: Silver Award
+  event: IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)
   year: 2026
   bullets:
-    - label: "Competition"
-      text: "DDL 2.0: AIGC Safety from Dual Perspectives of Model and Content"
-    - label: "Track"
-      text: "General AIGC Audio-Video Detection"
-    - label: "Team"
-      text: "AIGVDete (Zhejiang University)"
-    - label: "Achievement"
-      text: "Silver Award in General AIGC Audio-Video Detection"
+  - label: Competition
+    text: 'DDL 2.0: AIGC Safety from Dual Perspectives of Model and Content'
+  - label: Track
+    text: General AIGC Audio-Video Detection
+  - label: Team
+    text: AIGVDete (Zhejiang University)
+  - label: Achievement
+    text: Silver Award in General AIGC Audio-Video Detection
   images:
-    - src: "/files/ijcai2026_ddl_certificate.pdf"
-      alt: "IJCAI 2026 DDL 2.0 Challenge Certificate"
-      width: "450"
-      label: "Official Certificate:"
-      inline: true
-
+  - src: /files/ijcai2026_ddl_certificate.pdf
+    alt: IJCAI 2026 DDL 2.0 Challenge Certificate
+    width: '450'
+    label: 'Official Certificate:'
+    inline: true
+  featured: true
 - category: research
-  title: "Top 5 Nationwide"
-  event: "3rd China Artificial Intelligence Competition (2021)"
+  title: Top 5 Nationwide
+  event: 3rd China Artificial Intelligence Competition (2021)
   year: 2021
   bullets:
-    - label: "Role"
-      text: "Primary Advisor (Ranked 1st among 2 advisors)"
-    - label: "Track 1"
-      text: "Audio Deepfake Detection Under Open-Speaker Scenarios"
-    - label: "Track 2"
-      text: "Speaker-Specific Audio Deepfake Detection"
-    - label: "Achievement"
-      text: "Dual track excellence in AI security research"
-
+  - label: Role
+    text: Primary Advisor (Ranked 1st among 2 advisors)
+  - label: Track 1
+    text: Audio Deepfake Detection Under Open-Speaker Scenarios
+  - label: Track 2
+    text: Speaker-Specific Audio Deepfake Detection
+  - label: Achievement
+    text: Dual track excellence in AI security research
 - category: research
-  title: 'Finalist for "Most Innovative Research" Pwnie Award'
-  event: "Black Hat USA 2019"
+  title: Finalist for "Most Innovative Research" Pwnie Award
+  event: Black Hat USA 2019
   year: 2019
   bullets:
-    - label: "Role"
-      text: "First Author (1st of 4 contributors)"
-    - label: "Research"
-      text: '"SonarSnoop: Active Acoustic Side-Channel Attacks"'
-    - label: "Significance"
-      text: "International recognition at one of the world's most prestigious cybersecurity conferences"
-    - label: "Impact"
-      text: "Praised by renowned security experts including Bruce Schneier and Prof. Ross Anderson"
-  quote_label: "Official Citation (2019):"
-  quote: "\"Ok, you know we're down when the paper reads like it is out of a James Bond book, or at least that in some dark corner of the NSA there is a scientist who's pissed about it. In this paper, the researchers use speakers to emit human inaudible sounds as part of a sonar system to track victim's finger movements. Doing this while the victim unlocks their phone doesn't give them the exact unlock pattern but does greatly reduce the number of patterns to try. Straight off the sci-fi channel when it still played had sci fi shows, the only minor issue is they only tested it against 10 subjects and since it is an academic paper, it's probably entirely impractical.\""
+  - label: Role
+    text: First Author (1st of 4 contributors)
+  - label: Research
+    text: '"SonarSnoop: Active Acoustic Side-Channel Attacks"'
+  - label: Significance
+    text: International recognition at one of the world's most prestigious cybersecurity
+      conferences
+  - label: Impact
+    text: Praised by renowned security experts including Bruce Schneier and Prof.
+      Ross Anderson
+  quote_label: 'Official Citation (2019):'
+  quote: '"Ok, you know we''re down when the paper reads like it is out of a James
+    Bond book, or at least that in some dark corner of the NSA there is a scientist
+    who''s pissed about it. In this paper, the researchers use speakers to emit human
+    inaudible sounds as part of a sonar system to track victim''s finger movements.
+    Doing this while the victim unlocks their phone doesn''t give them the exact unlock
+    pattern but does greatly reduce the number of patterns to try. Straight off the
+    sci-fi channel when it still played had sci fi shows, the only minor issue is
+    they only tested it against 10 subjects and since it is an academic paper, it''s
+    probably entirely impractical."'
   historical:
-    label: "Historical Reference"
-    text: "Original Pwnie Award Nominations (Internet Archive)"
-    url: "https://web.archive.org/web/20190919051259/https://pwnies.com/nominations/"
-
+    label: Historical Reference
+    text: Original Pwnie Award Nominations (Internet Archive)
+    url: https://web.archive.org/web/20190919051259/https://pwnies.com/nominations/
+  featured: true
 - category: reviewer
-  title: "ICML 2026 Silver Reviewer"
+  title: ICML 2026 Silver Reviewer
   year: 2026
-  subtitle: "International Conference on Machine Learning (ICML 2026)"
+  subtitle: International Conference on Machine Learning (ICML 2026)
   bullets:
-    - label: "Recognition"
-      text: "Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs"
-    - label: "Significance"
-      text: "Highly selective honor recognizing exceptional quality and contribution to the peer review process at one of the world's premier machine learning conferences"
-
+  - label: Recognition
+    text: Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs
+  - label: Significance
+    text: Highly selective honor recognizing exceptional quality and contribution
+      to the peer review process at one of the world's premier machine learning conferences
+  featured: true
 - category: academic
-  title: "Postdoctoral Excellence Grant (Second Class)"
+  title: Postdoctoral Excellence Grant (Second Class)
   year: 2021
-  subtitle: "Zhejiang Provincial Department of Human Resources and Social Security (August 2021)"
-
+  subtitle: Zhejiang Provincial Department of Human Resources and Social Security
+    (August 2021)
 - category: academic
-  title: "Ph.D. Scholarship"
+  title: Ph.D. Scholarship
   year: 2016
-  subtitle: "Faculty of Science and Technology, Lancaster University, UK (2016–2020)"
-  note: "Full doctoral scholarship covering tuition and living expenses"
-
+  subtitle: Faculty of Science and Technology, Lancaster University, UK (2016–2020)
+  note: Full doctoral scholarship covering tuition and living expenses
 - category: mentorship
-  title: "National Graduate Scholarship Achievement (October 2024)"
+  title: National Graduate Scholarship Achievement (October 2024)
   year: 2024
   bullets:
-    - label: "Achievement"
-      text: "Co-supervised Master's student won the National Graduate Scholarship (China)"
-    - label: "Significance"
-      text: "Highest-level scholarship awarded to Master's students in China"
-
+  - label: Achievement
+    text: Co-supervised Master's student won the National Graduate Scholarship (China)
+  - label: Significance
+    text: Highest-level scholarship awarded to Master's students in China
 - category: industry
-  title: "Commercial AI Model Security - SurrogatePrompt Research"
+  title: Commercial AI Model Security - SurrogatePrompt Research
   bullets:
-    - label: "Findings"
-      text: "Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)"
-    - label: "Impact"
-      text: "Contributed to security improvements in commercial text-to-image AI models"
-
+  - label: Findings
+    text: Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)
+  - label: Impact
+    text: Contributed to security improvements in commercial text-to-image AI models
 - category: industry
-  title: "Watermarking System Vulnerabilities - Amazon Collaboration (2025)"
+  title: Watermarking System Vulnerabilities - Amazon Collaboration (2025)
   bullets:
-    - label: "Research Impact"
-      text: "Developed WMCopier attack method that identified critical vulnerabilities in Amazon's watermarking systems (Titan Image Generator and Amazon Nova Canvas)"
-    - label: "Collaborative Partnership"
-      text: "Amazon's Responsible AI Team acknowledged the research contribution and collaborated on security improvements"
-    - label: "Recognition"
-      text: "Received official statement and thank you letter from AWS Security Outreach Team"
-  quote_label: "Official Amazon Statement (March 28, 2025):"
-  quote: "\"We appreciate the researchers from the State Key Laboratory of Blockchain and Data Security at Zhejiang University for reporting this issue and collaborating with us... We are grateful for reports from the security community, and your report was an excellent example of a positive coordinated disclosure.\""
+  - label: Research Impact
+    text: Developed WMCopier attack method that identified critical vulnerabilities
+      in Amazon's watermarking systems (Titan Image Generator and Amazon Nova Canvas)
+  - label: Collaborative Partnership
+    text: Amazon's Responsible AI Team acknowledged the research contribution and
+      collaborated on security improvements
+  - label: Recognition
+    text: Received official statement and thank you letter from AWS Security Outreach
+      Team
+  quote_label: 'Official Amazon Statement (March 28, 2025):'
+  quote: '"We appreciate the researchers from the State Key Laboratory of Blockchain
+    and Data Security at Zhejiang University for reporting this issue and collaborating
+    with us... We are grateful for reports from the security community, and your report
+    was an excellent example of a positive coordinated disclosure."'
   images:
-    - src: "/images/amazon_statement.png"
-      alt: "Amazon Official Statement"
-      width: "400"
-    - src: "/images/amazon_thank_you.jpg"
-      alt: "Amazon Thank You Letter"
-      width: "500"
-      label: "AWS Security Team Acknowledgment:"
-      inline: true
-
+  - src: /images/amazon_statement.png
+    alt: Amazon Official Statement
+    width: '400'
+  - src: /images/amazon_thank_you.jpg
+    alt: Amazon Thank You Letter
+    width: '500'
+    label: 'AWS Security Team Acknowledgment:'
+    inline: true
 - category: industry
-  title: "Open-Source Contributions - ALIF Framework"
+  title: Open-Source Contributions - ALIF Framework
   bullets:
-    - label: "Adoption"
-      text: "NVIDIA integrated ALIF into their official AI security toolkit"
-    - label: "Status"
-      text: "Under active development for red teaming capabilities enhancement"
-
+  - label: Adoption
+    text: NVIDIA integrated ALIF into their official AI security toolkit
+  - label: Status
+    text: Under active development for red teaming capabilities enhancement
 - category: media
-  title: "International Media Coverage - SonarSnoop Research Impact"
+  title: International Media Coverage - SonarSnoop Research Impact
   bullets:
-    - label: "Media Coverage"
-      text: "Pocketnow, Motherboard, ZDNet, Naked Security, Slashdot, eldiario.es (Spain), and many more (in various languages including Chinese, German and Russian)"
-    - label: "Research Significance"
-      text: "First active acoustic side-channel attack demonstrating novel smartphone exploitation methods through acoustic profiling"
-    - label: "Source"
-      text: "As documented on [Prof. Jeff Yan's homepage](https://prof-jeffyan.github.io)"
-
+  - label: Media Coverage
+    text: Pocketnow, Motherboard, ZDNet, Naked Security, Slashdot, eldiario.es (Spain),
+      and many more (in various languages including Chinese, German and Russian)
+  - label: Research Significance
+    text: First active acoustic side-channel attack demonstrating novel smartphone
+      exploitation methods through acoustic profiling
+  - label: Source
+    text: As documented on [Prof. Jeff Yan's homepage](https://prof-jeffyan.github.io)
 - category: media
-  title: "Expert Endorsements from Security Community Leaders"
+  title: Expert Endorsements from Security Community Leaders
   bullets:
-    - label: ""
-      text: "**Prof. Ross Anderson** (University of Cambridge): *\"Truly spooky new method of remote surveillance\"*"
-    - label: ""
-      text: "**Bruce Schneier** (Renowned Cryptographer & Security Expert): *\"It's amazing that this is even possible\"*"
-    - label: ""
-      text: "**Technical Media**: *\"This is the coolest Android hack we've seen\"* - Pocketnow"
+  - label: ''
+    text: '**Prof. Ross Anderson** (University of Cambridge): *"Truly spooky new method
+      of remote surveillance"*'
+  - label: ''
+    text: '**Bruce Schneier** (Renowned Cryptographer & Security Expert): *"It''s
+      amazing that this is even possible"*'
+  - label: ''
+    text: '**Technical Media**: *"This is the coolest Android hack we''ve seen"* -
+      Pocketnow'

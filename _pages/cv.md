@@ -35,6 +35,7 @@ Education
 
 {% for edu in cv.education %}
 **{{ edu.degree }}{% if edu.major %}, {{ edu.major }}{% endif %} — {{ edu.institution }}{% if edu.location %}, {{ edu.location }}{% endif %}**
+
 *{{ edu.startDate }} – {{ edu.endDate }}*
 
 {% if edu.details %}{{ edu.details }}{% endif %}
