@@ -12,7 +12,7 @@ redirect_from:
 {% assign cv = site.data.cv %}
 
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/CV_Peng_Cheng.pdf" class="btn btn--primary">Download CV as PDF</a>
+  <a href="{{ base_path }}/files/CV_Peng_Cheng.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="btn btn--primary">Download CV as PDF</a>
 </div>
 
 Professional Experience
@@ -34,10 +34,11 @@ Education
 ======
 
 {% for edu in cv.education %}
-**{{ edu.area }} — {{ edu.institution }}**
+**{{ edu.degree }}{% if edu.major %}, {{ edu.major }}{% endif %} — {{ edu.institution }}{% if edu.location %}, {{ edu.location }}{% endif %}**
+
 *{{ edu.startDate }} – {{ edu.endDate }}*
 
-{% if edu.summary %}{{ edu.summary }}{% endif %}
+{% if edu.details %}{{ edu.details }}{% endif %}
 
 ---
 {% endfor %}

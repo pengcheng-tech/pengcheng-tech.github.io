@@ -52,6 +52,7 @@ def normalize(text):
         return ""
     t = str(text)
     t = re.sub(r"\*\*|__|\*|_", "", t)
+    t = re.sub(r"\[\[[^\]]*\]\]\([^)]*\)", "", t)  # markdown links -> label only
     t = re.sub(r"<[^>]+>", " ", t)
     t = re.sub(r"\s+([,.;:)\]])", r"\1", t)  # tag stripping leaves "word ," -> "word,"
     t = html.unescape(t)
@@ -82,10 +83,15 @@ def check_award_news(news, awards, errors):
     for item in news:
         if not isinstance(item, dict) or item.get("type") != "award":
             continue
+        if item.get("awards_entry") is False:
+            # explicit exemption: the news is an award-type announcement that is
+            # intentionally NOT listed on the /awards/ page (e.g. honorary
+            # memberships) — kept typed "award" so other checks still apply.
+            continue
         nt = tokens(item.get("text", ""))
         if not any(len(nt & tokens(t)) >= 2 for t in award_texts):
             errors.append(
-                f"news award 无对应 awards.yml 条目: {item.get('date_display','?')} - {item.get('text','')[:60]}"
+                f"news award 无对应 awards.yml 条目（如需豁免请加 awards_entry: false）: {item.get('date_display','?')} - {item.get('text','')[:60]}"
             )
 
 
@@ -110,45 +116,103 @@ def check_publication_news(news, bib_keys, errors):
             errors.append(f"news 提及的论文未在 publications.bib 找到: {m.group(1)[:60]}")
 
 
+def _walk_refs(node, refs):
+    """Recursively collect /files/ and /images/ references from yml structures."""
+    if isinstance(node, str):
+        if node.startswith(("/files/", "/images/")):
+            refs.add(node)
+        return
+    if isinstance(node, dict):
+        for v in node.values():
+            _walk_refs(v, refs)
+    elif isinstance(node, list):
+        for v in node:
+            _walk_refs(v, refs)
+
+
 def check_file_refs(*datasets, errors):
-    refs = []
+    """Every /files/ and /images/ path referenced from the yml data must exist."""
+    refs = set()
     for ds in datasets:
-        for item in ds if isinstance(ds, list) else []:
-            if not isinstance(item, dict):
-                continue
-            for k, v in item.items():
-                if isinstance(v, str) and v.startswith(("/files/", "/images/")):
-                    refs.append(v)
-                if k == "links" and isinstance(v, list):
-                    for link in v:
-                        if isinstance(link, dict) and str(link.get("url", "")).startswith(("/files/", "/images/")):
-                            refs.append(link["url"])
-    for ref in sorted(set(refs)):
+        if isinstance(ds, list):
+            for item in ds:
+                _walk_refs(item, refs)
+        elif isinstance(ds, dict):
+            _walk_refs(ds, refs)
+    for ref in sorted(refs):
         rel = ref.lstrip("/")
         if not (ROOT / rel).exists():
             errors.append(f"引用的文件不存在: {ref}")
 
 
 def check_service_rendered(service, site_dir, errors):
-    idx = Path(site_dir) / "index.html"
+    """Every service.yml bullet must appear in the rendered /activities/ page."""
+    idx = Path(site_dir) / "activities" / "index.html"
     if not idx.exists():
         errors.append(f"站点未构建: {idx}（先运行 bundle exec jekyll build）")
         return
-    text = idx.read_text(encoding="utf-8")
-    m = re.search(r'<h2 id="professional-services">(.*?)<h2 id="industry-impact">', text, re.S)
-    if not m:
-        errors.append("首页未找到 Professional Services 区块")
-        return
-    rendered = normalize(m.group(1))
+    rendered = normalize(idx.read_text(encoding="utf-8"))
     for section in service.get("sections", []):
-        for entry in section.get("entries", []):
-            items = entry.get("items") if entry.get("type") == "list" else [entry.get("text", "")]
-            for it in items:
-                norm = normalize(it)
+        for group in section.get("groups", []):
+            for b in group.get("bullets", []):
+                norm = normalize(b)
                 if not norm:
                     continue
                 if norm not in rendered:
-                    errors.append(f"service.yml 条目未出现在渲染结果: {it[:60]}")
+                    errors.append(f"service.yml 条目未出现在 /activities/ 渲染结果: {b[:60]}")
+
+
+def yml_values(news, awards, service, patents):
+    """Collect normalized, substantial string values from the yml data files."""
+    values = []
+    for item in news if isinstance(news, list) else []:
+        if not isinstance(item, dict):
+            continue
+        if item.get("text"):
+            values.append(item["text"])
+        for link in item.get("links", []) if isinstance(item.get("links"), list) else []:
+            if link.get("label"):
+                values.append(link["label"])
+    for a in awards if isinstance(awards, list) else []:
+        if not isinstance(a, dict):
+            continue
+        for k in ("title", "event", "subtitle"):
+            if a.get(k):
+                values.append(a[k])
+        for b in a.get("bullets", []) if isinstance(a.get("bullets"), list) else []:
+            if b.get("text"):
+                values.append(b["text"])
+        if a.get("note"):
+            values.append(a["note"])
+        if a.get("quote"):
+            values.append(a["quote"])
+    for f in service.get("featured", []) if isinstance(service, dict) else []:
+        values.append(f)
+    for section in service.get("sections", []) if isinstance(service, dict) else []:
+        for group in section.get("groups", []):
+            for b in group.get("bullets", []):
+                values.append(b)
+    return [normalize(v) for v in values if v]
+
+
+def check_hardcoded_duplication(values, pages_dir, errors):
+    """Flag _pages/*.md that hardcode content already in _data/*.yml.
+
+    A page that renders from yml (Liquid) never contains the value literally;
+    a literal occurrence means the content is duplicated by hand and the page
+    would drift from the data source (this is the bug that let USENIX / IJCAI
+    stay missing from pages).
+    """
+    pages_dir = Path(pages_dir)
+    if not pages_dir.is_dir():
+        return
+    for page in sorted(pages_dir.glob("*.md")):
+        content = normalize(page.read_text(encoding="utf-8"))
+        for v in values:
+            if len(v) < 25:  # skip short values to avoid noise
+                continue
+            if v in content:
+                errors.append(f"{page.name} 硬编码了 _data/*.yml 的内容: {v[:70]}")
 
 
 def main():
@@ -174,6 +238,7 @@ def main():
     check_publication_news(news, bib_keys, errors)
     check_file_refs(news, awards, service, patents, errors=errors)
     check_service_rendered(service, site_dir, errors)
+    check_hardcoded_duplication(yml_values(news, awards, service, patents), ROOT / "_pages", errors)
 
     print(f"news: {len(news)} | awards: {len(awards)} | service sections: {len(service.get('sections', []))} | patents: {len(patents.get('patents', []))}")
     if errors:

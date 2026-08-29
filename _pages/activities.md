@@ -18,53 +18,22 @@ author_profile: true
 
 ---
 
-## Editorial Services
-
-### Guest Editor - Journal of Cyber Security (2025)
-- **Special Issue**: "Intelligent Voice Security and Defense Technologies"
-- **Role**: Special Issue Initiator and Guest Editor
-- **Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security systems
-
-**Journal Profile:**
-<img src="/images/cyber_security_journal.jpg" alt="Journal of Cyber Security Profile" width="500">
-
-<!-- **Journal Recognition:**
-- CCF计算领域高质量期刊 T2类
-- 通信学会信息通信领域高质量科技期刊 T2级
-- 计算机学会会刊
-- CSCD核心期刊
-- 中国科技核心期刊
-- Scopus收录期刊
-- JST收录期刊 -->
-
-## Conference Reviewer
-
-### Program Committee Membership
-- **AAAI 2027** — AAAI Conference on Artificial Intelligence (Program Committee Member)
-
-### Conference Reviewer - International Conferences
-- **ICML 2026** — International Conference on Machine Learning
-- **ICLR 2026** — International Conference on Learning Representations
-- **ACM MM 2026** — ACM International Conference on Multimedia
-- **IEEE SLT 2026** — IEEE Spoken Language Technology Workshop
-- **Interspeech 2026** — ISCA Interspeech 2026 [[Reviewer Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)
-- **AAAI 2026** — AAAI Conference on Artificial Intelligence
-- **ACM Web Conference (WWW 2025)**
-
-### Reviewer Recognition
-- **ICML 2026 Silver Reviewer** — Top-tier recognition awarded by the ICML 2026 Program Chairs to reviewers who demonstrated exceptional quality in their reviews. This is a highly selective honor recognizing outstanding contribution to the peer review process.
-
-## Journal Reviewer Activities
-
-### International Peer Review Service
-- **Proceedings of the IEEE** (Impact Factor: 25.9) - Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science
-- **IEEE Transactions on Information Forensics and Security (TIFS)** (JCR Q1)
-- **IEEE Transactions on Dependable and Secure Computing (TDSC)** (JCR Q1)
-- **ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)
-- **IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)
-
-### Chinese Academic Service
-- **Journal of Information Network Security**
+{% for section in site.data.service.sections %}
+## {{ section.heading }}
+{% for group in section.groups %}
+### {{ group.title }}
+{% for b in group.bullets -%}
+- {{ b }}
+{% endfor %}
+{% if group.images %}
+{% for img in group.images -%}
+**{{ img.label }}**
+<img src="{{ img.src }}" alt="{{ img.alt }}" width="{{ img.width }}">
+{% endfor %}
+{% endif %}
+{% if group.comment %}{{ group.comment }}
+{% endif %}{% endfor %}
+{% endfor %}
 
 ## Research Collaboration & Grant Activities
 

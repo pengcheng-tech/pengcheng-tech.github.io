@@ -18,7 +18,8 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
-{% for item in site.data.news %}
+{% assign news_sorted = site.data.news | sort: "date_sort" | reverse %}
+{% for item in news_sorted %}
 {%- if item.commented -%}
 <!--- **{{ item.date_display }}**: {{ item.text }}-->
 {%- else -%}
@@ -48,26 +49,19 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 ## Professional Services
 
-{% capture listsep %}
-- {% endcapture %}
-{% for section in site.data.service.sections %}
-### {{ section.heading }}
-{% for entry in section.entries %}
-{%- if entry.type == "list" -%}
-- {{ entry.items | join: listsep }}
-{%- else -%}
-{{ entry.text }}
-{%- endif %}
-
-{% endfor %}
+{% for item in site.data.service.featured -%}
+- {{ item }}
 {% endfor %}
 
-<!--## Awards & Recognition
+[See all →](/activities/)
 
-- **National Grand Prize** (Top-Tier Award), 19th "Challenge Cup" National Competition for Extracurricular Academic Science and Technology Works (2024), Advisor
-- **Top 5 Nationwide**, 3rd China Artificial Intelligence Competition (2021), Primary Advisor for Audio Deepfake Detection tracks
-- **Finalist for "Most Innovative Research" Pwnie Award**, Black Hat USA 2019, for "SonarSnoop: Active Acoustic Side-Channel Attacks"
-- **Postdoctoral Excellence Grant** (Second Class), Zhejiang Provincial Department of Human Resources and Social Security (2021)-->
+## Awards
+
+{% for a in site.data.awards %}{% if a.featured -%}
+- **{{ a.title }}**{% if a.event %} — {{ a.event }}{% endif %}
+{% endif %}{% endfor %}
+
+[See all →](/awards/)
 
 ## Industry Impact
 

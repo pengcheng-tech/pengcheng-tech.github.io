@@ -240,22 +240,37 @@ def render(cv, bib, show_funding=False, show_patents=True):
     section("Professional Experience")
     for w in cv.get("work", []):
         dates = " – ".join(x for x in [w.get("startDate", ""), w.get("endDate", "")] if x)
-        L.append(r"\textbf{" + latex_escape(w.get("position", "")) + r"}, " +
-                 latex_escape(w.get("organization", "")) +
-                 (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else ""))
+        head = r"\textbf{" + latex_escape(w.get("position", "")) + r"}, " + \
+               latex_escape(w.get("organization", "")) + \
+               (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else "")
+        parts = [head]
         if w.get("summary"):
-            L.append(latex_escape(w["summary"]))
+            parts.append(latex_escape(w["summary"]))
+        L.append(r"\\".join(parts))
         itemize(w.get("highlights", []))
+        L.append(r"\par\vspace{3pt}")
 
     # Education
     section("Education")
     for e in cv.get("education", []):
         dates = " – ".join(x for x in [e.get("startDate", ""), e.get("endDate", "")] if x)
-        L.append(r"\textbf{" + latex_escape(e.get("area", "")) + r"}, " +
-                 latex_escape(e.get("institution", "")) +
-                 (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else ""))
-        if e.get("summary"):
-            L.append(latex_escape(e["summary"]))
+        degree = e.get("degree", "")
+        major = e.get("major", "")
+        inst = e.get("institution", "")
+        loc = e.get("location", "")
+        head = r"\textbf{" + latex_escape(degree)
+        if major:
+            head += r", " + latex_escape(major)
+        head += r"}" + r" — " + latex_escape(inst)
+        if loc:
+            head += r", " + latex_escape(loc)
+        parts = [head]
+        if dates:
+            parts.append(r"\textit{" + latex_escape(dates) + r"}")
+        if e.get("details"):
+            parts.append(latex_escape(e["details"]))
+        L.append(r"\\[2pt]".join(parts))
+        L.append(r"\par\vspace{4pt}")
 
     # Research Projects (amounts only with --funding; no cross-currency total)
     section("Research Projects")
