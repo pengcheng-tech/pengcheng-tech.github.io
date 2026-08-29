@@ -23,5 +23,8 @@ vendor/
 # Draft build artifacts (e.g. CV draft PDFs from scripts/cv2tex.py)
 build/
 
+# Python bytecode cache
+__pycache__/
+
 # macOS
 .DS_Store
