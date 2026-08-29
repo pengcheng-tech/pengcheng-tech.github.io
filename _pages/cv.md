@@ -12,7 +12,7 @@ redirect_from:
 {% assign cv = site.data.cv %}
 
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/CV_Peng_Cheng.pdf" class="btn btn--primary">Download CV as PDF</a>
+  <a href="{{ base_path }}/files/CV_Peng_Cheng.pdf?v={{ site.time | date: '%Y%m%d%H%M%S' }}" class="btn btn--primary">Download CV as PDF</a>
 </div>
 
 Professional Experience
