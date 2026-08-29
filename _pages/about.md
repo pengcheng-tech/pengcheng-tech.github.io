@@ -18,7 +18,8 @@ Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain
 My research centers on AI-generated content (AIGC) security—securing generative systems and their outputs across the full pipeline, from model development to deployment. I work along three complementary directions: **compliance** (auditing safety filters and paralinguistic toxicity in generative models), **controllability** (robust, forgery-resistant watermarking for provenance and accountability), and **authenticity** (generalizable, robust deepfake detection across languages, generators, and modalities). Alongside this focus, I remain actively engaged in speech, acoustic, and IoT security—investigating vulnerabilities such as sensor-based eavesdropping and adversarial voice commands, and developing privacy-preserving, lightweight defenses for voice-enabled and embedded devices. My broader goal is to build AI systems that are secure against malicious manipulation, safe from unintended behaviors, and respectful of user privacy.
 
 ## Recent News
-{% for item in site.data.news %}
+{% assign news_sorted = site.data.news | sort: "date_sort" | reverse %}
+{% for item in news_sorted %}
 {%- if item.commented -%}
 <!--- **{{ item.date_display }}**: {{ item.text }}-->
 {%- else -%}
