@@ -28,3 +28,6 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Local preview override (bundle exec jekyll serve --config _config.yml,_config.local.yml)
+_config.local.yml
