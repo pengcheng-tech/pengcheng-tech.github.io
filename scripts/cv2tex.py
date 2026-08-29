@@ -240,12 +240,15 @@ def render(cv, bib, show_funding=False, show_patents=True):
     section("Professional Experience")
     for w in cv.get("work", []):
         dates = " – ".join(x for x in [w.get("startDate", ""), w.get("endDate", "")] if x)
-        L.append(r"\textbf{" + latex_escape(w.get("position", "")) + r"}, " +
-                 latex_escape(w.get("organization", "")) +
-                 (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else ""))
+        head = r"\textbf{" + latex_escape(w.get("position", "")) + r"}, " + \
+               latex_escape(w.get("organization", "")) + \
+               (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else "")
+        parts = [head]
         if w.get("summary"):
-            L.append(latex_escape(w["summary"]))
+            parts.append(latex_escape(w["summary"]))
+        L.append(r"\\".join(parts))
         itemize(w.get("highlights", []))
+        L.append(r"\par\vspace{3pt}")
 
     # Education
     section("Education")
@@ -261,12 +264,13 @@ def render(cv, bib, show_funding=False, show_patents=True):
         head += r"}" + r" — " + latex_escape(inst)
         if loc:
             head += r", " + latex_escape(loc)
+        parts = [head]
         if dates:
-            head += r" \hfill \textit{" + latex_escape(dates) + r"}"
-        L.append(head)
+            parts.append(r"\textit{" + latex_escape(dates) + r"}")
         if e.get("details"):
-            L.append(latex_escape(e["details"]))
-        L.append(r"\vspace{2pt}")
+            parts.append(latex_escape(e["details"]))
+        L.append(r"\\[2pt]".join(parts))
+        L.append(r"\par\vspace{4pt}")
 
     # Research Projects (amounts only with --funding; no cross-currency total)
     section("Research Projects")
