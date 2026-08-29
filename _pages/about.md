@@ -48,19 +48,11 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 ## Professional Services
 
-{% capture listsep %}
-- {% endcapture %}
-{% for section in site.data.service.sections %}
-### {{ section.heading }}
-{% for entry in section.entries %}
-{%- if entry.type == "list" -%}
-- {{ entry.items | join: listsep }}
-{%- else -%}
-{{ entry.text }}
-{%- endif %}
+{% for item in site.data.service.featured -%}
+- {{ item }}
+{% endfor %}
 
-{% endfor %}
-{% endfor %}
+[See all →](/activities/)
 
 <!--## Awards & Recognition
 

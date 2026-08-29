@@ -251,11 +251,22 @@ def render(cv, bib, show_funding=False, show_patents=True):
     section("Education")
     for e in cv.get("education", []):
         dates = " – ".join(x for x in [e.get("startDate", ""), e.get("endDate", "")] if x)
-        L.append(r"\textbf{" + latex_escape(e.get("area", "")) + r"}, " +
-                 latex_escape(e.get("institution", "")) +
-                 (r" \hfill \textit{" + latex_escape(dates) + r"}" if dates else ""))
-        if e.get("summary"):
-            L.append(latex_escape(e["summary"]))
+        degree = e.get("degree", "")
+        major = e.get("major", "")
+        inst = e.get("institution", "")
+        loc = e.get("location", "")
+        head = r"\textbf{" + latex_escape(degree)
+        if major:
+            head += r", " + latex_escape(major)
+        head += r"}" + r" — " + latex_escape(inst)
+        if loc:
+            head += r", " + latex_escape(loc)
+        if dates:
+            head += r" \hfill \textit{" + latex_escape(dates) + r"}"
+        L.append(head)
+        if e.get("details"):
+            L.append(latex_escape(e["details"]))
+        L.append(r"\vspace{2pt}")
 
     # Research Projects (amounts only with --funding; no cross-currency total)
     section("Research Projects")

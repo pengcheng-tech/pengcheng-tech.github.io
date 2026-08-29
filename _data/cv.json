@@ -75,28 +75,31 @@
   ],
   "education": [
     {
-      "institution": "Lancaster University, UK",
-      "area": "Ph.D. in Computer Science",
-      "studyType": "Ph.D.",
+      "degree": "Ph.D.",
+      "major": "Computer Science",
+      "institution": "Lancaster University",
+      "location": "Lancaster, UK",
       "startDate": "2016-10",
       "endDate": "2020-12",
-      "summary": "School of Computing and Communications. Thesis: Acoustic-channel Attack and Defence Methods for Personal Voice Assistants. Supervisors: Prof. Utz Roedig (University College Cork) and Prof. Jeff Yan (University of Southampton)"
+      "details": "School of Computing and Communications. Thesis: Acoustic-Channel Attack and Defence Methods for Personal Voice Assistants. Supervisors: Prof. Utz Roedig (University College Cork) and Prof. Jeff Yan (University of Southampton)"
     },
     {
-      "institution": "KU Leuven, Belgium & Tsinghua University, China",
-      "area": "Dual Master's Degree (Electrical Engineering / Integrated Circuit Engineering)",
-      "studyType": "M.S.",
+      "degree": "Dual Master's Degree",
+      "major": "Electrical Engineering (KU Leuven) & Integrated Circuit Engineering (Tsinghua)",
+      "institution": "KU Leuven & Tsinghua University",
+      "location": "Leuven, Belgium & Beijing, China",
       "startDate": "2012-09",
       "endDate": "2015-09",
-      "summary": "Department of Electrical Engineering, KU Leuven & School of Integrated Circuits, Tsinghua University. Supervisor: Prof. Guoqiang Bai (Tsinghua University)"
+      "details": "Department of Electrical Engineering, KU Leuven & School of Integrated Circuits, Tsinghua University. Supervisor: Prof. Guoqiang Bai (Tsinghua University)"
     },
     {
-      "institution": "Beijing University of Posts and Telecommunications, China",
-      "area": "B.Eng. in Electronic Science and Technology",
-      "studyType": "B.Eng.",
+      "degree": "B.Eng.",
+      "major": "Electronic Science and Technology",
+      "institution": "Beijing University of Posts and Telecommunications",
+      "location": "Beijing, China",
       "startDate": "2008-09",
       "endDate": "2012-06",
-      "summary": "School of Electronic Engineering"
+      "details": "School of Electronic Engineering"
     }
   ],
   "skills": [

@@ -39,7 +39,6 @@
   text: "Congratulations to Miao on her paper accepted at Interspeech 2026!"
 - date_display: "May 2026"
   date_sort: "2026-05"
-  type: award
   text: "Elected as **Senior Member** of the China Computer Federation (CCF)."
   links:
     - label: "Certificate"

@@ -34,10 +34,10 @@ Education
 ======
 
 {% for edu in cv.education %}
-**{{ edu.area }} — {{ edu.institution }}**
+**{{ edu.degree }}{% if edu.major %}, {{ edu.major }}{% endif %} — {{ edu.institution }}{% if edu.location %}, {{ edu.location }}{% endif %}**
 *{{ edu.startDate }} – {{ edu.endDate }}*
 
-{% if edu.summary %}{{ edu.summary }}{% endif %}
+{% if edu.details %}{{ edu.details }}{% endif %}
 
 ---
 {% endfor %}
