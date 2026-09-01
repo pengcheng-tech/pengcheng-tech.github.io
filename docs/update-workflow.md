@@ -59,7 +59,7 @@ note: <补充要求，可选>
 
 - **统一日期字段 `date_sort: YYYY-MM`**：news / service / awards 的每个条目都有；同月多条的顺序**不受保证**
   （Liquid `sort | reverse` 对同键条目无稳定序），需要确定先后时请精确到不同月份。
-  - news：事件日期（沿用现状；`sort: "date_sort" | reverse`，**与物理顺序无关**，旧新闻直接追加到文件末尾即可）
+  - news：**公告 / 得知消息的日期**（不一定是事件本身的日期——如奖项证书日期可能与 news 不同，此为设计、勿强行对齐；`sort: "date_sort" | reverse`，**与物理顺序无关**，旧新闻直接追加到文件末尾即可）
   - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
   - awards：获奖 / 认可时间
 - **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
