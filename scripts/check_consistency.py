@@ -15,6 +15,8 @@ Checks:
      actually exists in the repository.
   4. Every entry in _data/service.yml appears in the rendered
      Professional Services section of the built homepage (_site/index.html).
+  5. Every news `evidence` field contains no URL or email address (evidence
+     records source and date only, per the update-workflow security rules).
 
 Usage:
   python3 scripts/check_consistency.py
@@ -114,6 +116,28 @@ def check_publication_news(news, bib_keys, errors):
         nt = tokens(m.group(1))
         if not any(nt & tokens(k) for k in bib_keys):
             errors.append(f"news 提及的论文未在 publications.bib 找到: {m.group(1)[:60]}")
+
+
+EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+
+
+def check_evidence_security(news, errors):
+    """evidence 字段只记来源与日期：禁止 URL 与邮件地址（防泄个人授权 token / 收件人）。"""
+    for item in news:
+        if not isinstance(item, dict):
+            continue
+        ev = item.get("evidence")
+        if not ev:
+            continue
+        ev = str(ev)
+        if re.search(r"https?://|www\.", ev, re.IGNORECASE):
+            errors.append(
+                f"news 条目 evidence 含 URL（只记来源与日期）: {item.get('date_display','?')} - {ev[:60]}"
+            )
+        if EMAIL_RE.search(ev):
+            errors.append(
+                f"news 条目 evidence 含邮件地址（只记来源与日期）: {item.get('date_display','?')} - {ev[:60]}"
+            )
 
 
 def _walk_refs(node, refs):
@@ -236,6 +260,7 @@ def main():
 
     check_award_news(news, awards, errors)
     check_publication_news(news, bib_keys, errors)
+    check_evidence_security(news, errors)
     check_file_refs(news, awards, service, patents, errors=errors)
     check_service_rendered(service, site_dir, errors)
     check_hardcoded_duplication(yml_values(news, awards, service, patents), ROOT / "_pages", errors)
