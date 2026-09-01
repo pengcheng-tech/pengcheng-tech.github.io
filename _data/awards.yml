@@ -2,7 +2,7 @@
   title: National Grand Prize
   event: 19th "Challenge Cup" National Competition (2024)
   year: 2024
-  date_sort: "2024-10"
+  date_sort: "2024-11"
   bullets:
   - label: Role
     text: Advisor (Ranked 2nd among 3 advisors)
@@ -16,7 +16,7 @@
   title: 3rd Place Award
   event: IJCAI 2025 Deepfake Detection Challenge
   year: 2025
-  date_sort: "2025-09"
+  date_sort: "2025-08"
   bullets:
   - label: Competition
     text: Workshop on Deepfake Detection, Localization, and Interpretability (co-located
@@ -60,8 +60,7 @@
   title: Top 5 Nationwide
   event: 3rd China Artificial Intelligence Competition (2021)
   year: 2021
-  date_sort: "2021-01"
-  date_estimated: true
+  date_sort: "2021-12"
   bullets:
   - label: Role
     text: Primary Advisor (Ranked 1st among 2 advisors)
@@ -124,8 +123,7 @@
 - category: academic
   title: Ph.D. Scholarship
   year: 2016
-  date_sort: "2016-01"
-  date_estimated: true
+  date_sort: "2016-10"
   subtitle: Faculty of Science and Technology, Lancaster University, UK (2016–2020)
   note: Full doctoral scholarship covering tuition and living expenses
 - category: mentorship
