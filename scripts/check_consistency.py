@@ -13,10 +13,15 @@ Checks:
      publications.bib (via the `paper` key, or by quoted-title fuzzy match).
   3. Every /files/ (and /images/) path referenced from the yml data files
      actually exists in the repository.
-  4. Every entry in _data/service.yml appears in the rendered
-     Professional Services section of the built homepage (_site/index.html).
+  4. Every entry in _data/service.yml appears in the rendered /activities/
+     page (_site/activities/index.html).
   5. Every news `evidence` field contains no URL or email address (evidence
      records source and date only, per the update-workflow security rules).
+  6. Every list item has a sortable date field (`date_sort`; patents use
+     `grant_date`). WARN mode during data migration (flips to error once
+     service/awards are fully migrated).
+  7. Rendered pages show list items in descending `date_sort` order. WARN
+     mode during data migration.
 
 Usage:
   python3 scripts/check_consistency.py
@@ -140,6 +145,88 @@ def check_evidence_security(news, errors):
             )
 
 
+SERVICE_ALPHA_SORT = "alpha"  # Journal Reviewer 例外：持续性服务，按刊物名字母序，不参与时间倒序
+
+
+def _entry_text(entry):
+    """service 的 bullet / featured 条目兼容字符串与对象（迁移后为 {text, date_sort, ...}）。"""
+    if isinstance(entry, str):
+        return entry
+    if isinstance(entry, dict):
+        return entry.get("text", "")
+    return ""
+
+
+def check_dates_present(news, service, awards, patents, warnings):
+    """warn 模式：每个列表条目必须有排序日期字段（news/service/awards 用 date_sort，patents 用 grant_date）。
+
+    全部数据迁移完成后（date-sort 系列 PR 收尾）改为 error。Journal Reviewer 组（sort: alpha）豁免。
+    """
+    for item in news:
+        if not isinstance(item, dict) or item.get("commented"):
+            continue
+        if not item.get("date_sort"):
+            warnings.append(f"news 条目缺 date_sort: {item.get('date_display','?')} - {item.get('text','')[:40]}")
+    for a in awards if isinstance(awards, list) else []:
+        if isinstance(a, dict) and not a.get("date_sort"):
+            warnings.append(f"awards 条目缺 date_sort: {a.get('title','?')[:60]}")
+    featured = service.get("featured", []) if isinstance(service, dict) else []
+    for f in featured:
+        if not (isinstance(f, dict) and f.get("date_sort")):
+            warnings.append(f"service featured 条目缺 date_sort: {_entry_text(f)[:50]}")
+    sections = service.get("sections", []) if isinstance(service, dict) else []
+    for section in sections:
+        for group in section.get("groups", []):
+            if group.get("sort") == SERVICE_ALPHA_SORT:
+                continue  # 例外：期刊审稿按字母序固定排列，不参与时间排序
+            for b in group.get("bullets", []):
+                if not (isinstance(b, dict) and b.get("date_sort")):
+                    warnings.append(f"service bullet 缺 date_sort: {_entry_text(b)[:50]}")
+    patents_list = patents.get("patents", []) if isinstance(patents, dict) else []
+    for p in patents_list:
+        if isinstance(p, dict) and not p.get("grant_date"):
+            warnings.append(f"patent 条目缺 grant_date: {p.get('title','?')[:40]}")
+
+
+def check_rendering_order(items, rendered, label, warnings):
+    """warn 模式：条目在渲染产物中的出现位置必须按 date_sort 倒序。
+
+    items: list of (search_text, date_sort)；缺 date_sort 的条目由 check_dates_present 提示，此处跳过。
+    - 按 date_sort 分组（降序）：**新日期组的全部条目必须整体出现在旧日期组之前**。
+    - 同 date_sort 的条目顺序**不受保证**（Liquid `sort | reverse` 对同键条目无稳定序），不校验组内顺序。
+    - 位置用 rfind（最后一次出现）：条目文本若同时出现在更靠前的区块（如奖项名出现在新闻里），
+      取所属区块中的那次出现。
+    """
+    dated = []
+    for text, ds in items:
+        if not ds:
+            continue
+        n = normalize(text)
+        if not n:
+            continue
+        dated.append((ds, rendered.rfind(n), text))
+    dated.sort(key=lambda t: t[0], reverse=True)
+    groups = []
+    for ds, pos, text in dated:
+        if groups and groups[-1][0] == ds:
+            groups[-1][1].append((pos, text))
+        else:
+            groups.append((ds, [(pos, text)]))
+    prev_max = -1
+    for ds, members in groups:
+        positions = [p for p, _ in members if p >= 0]
+        for pos, text in members:
+            if pos < 0:
+                warnings.append(f"{label}: 条目未在渲染产物中找到: {text[:50]}")
+        if positions:
+            lo, hi = min(positions), max(positions)
+            if lo < prev_max:
+                warnings.append(
+                    f"{label}: 渲染顺序与 date_sort 倒序不符: {members[0][1][:50]} (date_sort={ds} 的条目早于更晚日期组出现)"
+                )
+            prev_max = hi
+
+
 def _walk_refs(node, refs):
     """Recursively collect /files/ and /images/ references from yml structures."""
     if isinstance(node, str):
@@ -179,11 +266,12 @@ def check_service_rendered(service, site_dir, errors):
     for section in service.get("sections", []):
         for group in section.get("groups", []):
             for b in group.get("bullets", []):
-                norm = normalize(b)
+                text = _entry_text(b)
+                norm = normalize(text)
                 if not norm:
                     continue
                 if norm not in rendered:
-                    errors.append(f"service.yml 条目未出现在 /activities/ 渲染结果: {b[:60]}")
+                    errors.append(f"service.yml 条目未出现在 /activities/ 渲染结果: {text[:60]}")
 
 
 def yml_values(news, awards, service, patents):
@@ -211,11 +299,11 @@ def yml_values(news, awards, service, patents):
         if a.get("quote"):
             values.append(a["quote"])
     for f in service.get("featured", []) if isinstance(service, dict) else []:
-        values.append(f)
+        values.append(_entry_text(f))
     for section in service.get("sections", []) if isinstance(service, dict) else []:
         for group in section.get("groups", []):
             for b in group.get("bullets", []):
-                values.append(b)
+                values.append(_entry_text(b))
     return [normalize(v) for v in values if v]
 
 
@@ -254,6 +342,7 @@ def main():
     patents = load_yaml("patents.yml") or {}
 
     errors = []
+    warnings = []
     bib_keys = set(parse_bib(bib_path))
     if not bib_keys:
         errors.append(f"publications.bib 解析为空: {bib_path}")
@@ -265,7 +354,57 @@ def main():
     check_service_rendered(service, site_dir, errors)
     check_hardcoded_duplication(yml_values(news, awards, service, patents), ROOT / "_pages", errors)
 
+    # ---- 日期字段存在性 + 渲染倒序（warn 模式；全部数据迁移完成后改为 error）----
+    check_dates_present(news, service, awards, patents, warnings)
+
+    homepage = Path(site_dir) / "index.html"
+    if homepage.exists():
+        home_html = normalize(homepage.read_text(encoding="utf-8"))
+        news_pairs = [
+            (f"{i.get('date_display','')}: {i.get('text','')}", i.get("date_sort"))
+            for i in news if isinstance(i, dict) and not i.get("commented")
+        ]
+        check_rendering_order(news_pairs, home_html, "首页 Recent News", warnings)
+        feat_pairs = []
+        if isinstance(service, dict):
+            for f in service.get("featured", []):
+                feat_pairs.append((_entry_text(f), f.get("date_sort") if isinstance(f, dict) else None))
+        check_rendering_order(feat_pairs, home_html, "首页 Professional Services", warnings)
+        aw_feat = [
+            (a.get("title", ""), a.get("date_sort"))
+            for a in awards if isinstance(a, dict) and a.get("featured")
+        ]
+        check_rendering_order(aw_feat, home_html, "首页 Awards", warnings)
+
+    activities = Path(site_dir) / "activities" / "index.html"
+    if activities.exists():
+        act_html = normalize(activities.read_text(encoding="utf-8"))
+        for section in service.get("sections", []) if isinstance(service, dict) else []:
+            for group in section.get("groups", []):
+                if group.get("sort") == SERVICE_ALPHA_SORT:
+                    continue
+                pairs = [
+                    (_entry_text(b), b.get("date_sort") if isinstance(b, dict) else None)
+                    for b in group.get("bullets", [])
+                ]
+                check_rendering_order(pairs, act_html, f"/activities/ {group.get('title','')}", warnings)
+
+    awards_page = Path(site_dir) / "awards" / "index.html"
+    if awards_page.exists():
+        aw_html = normalize(awards_page.read_text(encoding="utf-8"))
+        for cat in ("research", "reviewer", "academic", "mentorship", "industry", "media"):
+            pairs = [
+                (a.get("title", ""), a.get("date_sort"))
+                for a in awards if isinstance(a, dict) and a.get("category") == cat
+            ]
+            if pairs:
+                check_rendering_order(pairs, aw_html, f"/awards/ {cat}", warnings)
+
     print(f"news: {len(news)} | awards: {len(awards)} | service sections: {len(service.get('sections', []))} | patents: {len(patents.get('patents', []))}")
+    if warnings:
+        print(f"[WARN] {len(warnings)} 处（日期字段 / 渲染顺序：迁移期间仅警告，全部迁移完成后将改为 error）：")
+        for w in warnings:
+            print("  -", w)
     if errors:
         print(f"[FAIL] {len(errors)} 处不一致：")
         for e in errors:

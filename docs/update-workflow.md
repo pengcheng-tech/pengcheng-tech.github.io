@@ -51,11 +51,25 @@ note: <补充要求，可选>
 11. 用户在本机终端推送分支、创建并合并 PR → GitHub Pages 自动部署上线
 12. （可选）用户本地运行 `python3 scripts/export_obsidian.py` 刷新 Obsidian 只读视图
 
-## 五、news 排序保证
+## 五、列表排序全局规则（时间倒序）
 
-Recent News 由模板 `site.data.news | sort: "date_sort" | reverse` 渲染，**与 news.yml 物理顺序无关**。
-补录几个月前的旧新闻直接追加到文件末尾即可，会自动按 `date_sort` 排到正确位置。
-（相同 `date_sort` 的条目保持文件内相对顺序——稳定排序。）
+**所有页面上的内容列表一律按时间倒序**（最新在上），不依赖文件物理顺序。模板统一用
+`sort: "date_sort" | reverse` 渲染；`check_consistency.py` 校验"条目必须有日期字段 + 渲染结果倒序"
+（数据迁移期间为 warn 模式，service / awards 全部迁移完成后改为 error）。
+
+- **统一日期字段 `date_sort: YYYY-MM`**：news / service / awards 的每个条目都有；同月多条的顺序**不受保证**
+  （Liquid `sort | reverse` 对同键条目无稳定序），需要确定先后时请精确到不同月份。
+  - news：事件日期（沿用现状；`sort: "date_sort" | reverse`，**与物理顺序无关**，旧新闻直接追加到文件末尾即可）
+  - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
+  - awards：获奖 / 认可时间
+- **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
+  日后补到准确日期时需修正。**新增条目一律要求填写准确的受邀 / 获奖日期，不允许估计值**（结构化输入的
+  `date` 字段必须为真实日期）。
+- **例外 1 — Journal Reviewer（期刊审稿）**：期刊审稿是**持续性关系**而非一次性事件，该组**不参与时间倒序**：
+  组级标记 `sort: alpha`，按刊物名称字母序固定排列，并在小节下加一行注明为持续性服务。
+  理由：用"首次受邀年份"排序会让仍在活跃的服务显得陈旧。不同类数据用不同排序键（同类例子：patents 用
+  `grant_date` 而非 `date_sort`）。
+- **例外 2 — patents（专利）**：无页面渲染、仅用于 CV；CV PDF 按 `grant_date` 倒序。
 
 ## 六、PR 描述固定模板
 
