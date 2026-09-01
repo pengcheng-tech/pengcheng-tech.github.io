@@ -10,7 +10,7 @@
 type: service | award | publication | patent
 date: 2026-08
 title: Program Committee Member, ACM CCS 2027
-evidence: <官网链接 或 说明>
+evidence: <来源与日期；不记录 URL / 邮件正文>
 files: <本机文件绝对路径，可选——证书/图等我帮你复制进 files/>
 note: <补充要求，可选>
 ```
@@ -45,9 +45,10 @@ note: <补充要求，可选>
 6. 如涉及论文：`python3 scripts/bib2md.py --prune`
 7. `bundle exec jekyll build` —— 失败立即停下报告（不改 Gemfile / _config.yml）
 8. `python3 scripts/check_consistency.py` —— 失败立即停下报告
-9. 提交 → 推送 → `gh pr create`（描述见第六节）
-10. 用户合并 PR → GitHub Pages 自动部署上线
-11. （可选）用户本地运行 `python3 scripts/export_obsidian.py` 刷新 Obsidian 只读视图
+9. `git commit` 提交改动 —— **agent 到此为止**：不推送、不建 PR
+10. 提交完成后直接输出**分支名**和**用户要执行的命令**（`git push -u origin <分支>` → `gh pr create`，描述见第六节）；不要尝试 push、不要检查 gh 认证、不要建议用户重新登录 gh
+11. 用户在本机终端推送分支、创建并合并 PR → GitHub Pages 自动部署上线
+12. （可选）用户本地运行 `python3 scripts/export_obsidian.py` 刷新 Obsidian 只读视图
 
 ## 五、news 排序保证
 
@@ -66,6 +67,7 @@ PR 描述必须包含以下三块，让审阅者扫一眼即可决定是否需�
 ## 七、安全与措辞约束
 
 - 本仓库公开：**任何本机绝对路径不得出现在被提交的文件里**；本机路径只放 `.env`（gitignored），脚本用 `os.getenv(...)` 读取。
+- 含个人授权链接、收件地址的邮件内容一律**不得写入仓库文件**；`evidence` 字段只记**来源与日期**（如 `Invitation email from <会议名> Program Chairs, YYYY-MM-DD (via OpenReview)`），**不记录任何 URL**——原始邮件里的链接常含个人授权 token。
 - 职位 / 头衔 / 委员会名称 / 奖项名次措辞：以官网或用户提供为准；不确定先问，不要猜。
 - 不读写用户的 Obsidian 笔记（科研记录.md）；Obsidian 方向仅 `export_obsidian.py` 单向导出。
 - 不向用户的坚果云同步目录写文件（本会话内）。
