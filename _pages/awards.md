@@ -11,7 +11,7 @@ author_profile: true
 {% assign heads = "Research Awards & Competition Recognition|Reviewer Excellence|Academic Excellence Awards|Mentorship & Supervision Awards|Industry Impact Recognition|Media Recognition & Expert Endorsement" | split: "|" %}
 {% for i in (0..cats.size) %}{% if i < cats.size %}
 {% assign cat = cats[i] %}
-{% assign items = site.data.awards | where: "category", cat %}
+{% assign items = site.data.awards | where: "category", cat | sort: "date_sort" | reverse %}
 {% if items.size > 0 %}
 ## {{ heads[i] }}
 
