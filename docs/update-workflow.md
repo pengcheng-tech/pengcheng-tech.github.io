@@ -26,6 +26,7 @@ note: <补充要求，可选>
 
 - **award 有意不进奖项页**（如荣誉会员 CCF Senior Member）：加 `awards_entry: false`，保留 `type: award` 约束但不要求 awards.yml 有对应项；不要靠删除 type 绕过检查。
 - **patent**：`patents.yml` 在版本控制中（26 条，`.gitignore` 无排除）；数据只进该文件，绝不进 news，不上首页，仅 `scripts/cv2tex.py` 生成 CV 时使用。
+- **evidence**：以 `evidence:` 字段记录在对应条目的数据文件里（service / award 记在 news.yml 对应条目下）。模板只渲染具名字段（见 `_pages/about.md` / `_pages/activities.md`），`evidence` **不会被渲染**；用字段而非 YAML 注释，是为了让 `check_consistency.py` 等脚本能读取并校验。字段内容只记**来源与日期**（见第七节），不记录 URL / 邮件正文。
 
 ## 三、纯文字 vs 结构化（标准写死，不靠临场判断）
 

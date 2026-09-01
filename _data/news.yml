@@ -7,6 +7,7 @@
 #   type         : optional classification for scripts/check_consistency.py —
 #                  service | award | publication | patent (patent never in news)
 #   paper        : for type=publication, the publications.bib key to verify
+#   evidence     : optional provenance — source + date only, no URL / email content
 #   commented    : render this entry as an HTML comment (hidden)
 
 - date_display: "August 2026"
@@ -103,8 +104,8 @@
   date_sort: "2025-01"
   type: service
   text: 'Serving as Special Issue Guest Editor for "Intelligent Voice Security and Defense Technologies", Journal of Cyber Security'
-# evidence: Invitation email from ICLR 2027 Program Chairs, 2026-08-28 (via OpenReview)
 - date_display: "August 2026"
   date_sort: "2026-08"
   type: service
+  evidence: "Invitation email from ICLR 2027 Program Chairs, 2026-08-28 (via OpenReview)"
   text: "Invited to serve as a **Reviewer** for ICLR 2027."
