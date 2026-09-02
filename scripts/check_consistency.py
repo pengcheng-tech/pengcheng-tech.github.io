@@ -18,7 +18,7 @@ Checks:
   5. Every news `evidence` field contains no URL or email address (evidence
      records source and date only, per the update-workflow security rules).
   6. Every list item has a sortable date field (`date_sort`; patents use
-     `grant_date`). Groups marked `sort: alpha` / `sort: none` are exempt.
+     `grant_date`). Groups marked `sort: none` are exempt.
   7. Rendered pages show list items in descending `date_sort` order.
 
 Usage:
@@ -143,9 +143,7 @@ def check_evidence_security(news, errors):
             )
 
 
-SERVICE_ALPHA_SORT = "alpha"  # Journal Reviewer 例外：持续性服务，按刊物名字母序，不参与时间倒序
-SERVICE_NONE_SORT = "none"    # 描述性 bullet 组（如 Editorial 的 Special Issue/Role/Scope）：保持文件顺序
-SERVICE_UNSORTED = (SERVICE_ALPHA_SORT, SERVICE_NONE_SORT)
+SERVICE_NONE_SORT = "none"  # 手工顺序组（期刊审稿按刊物分量排序、Editorial 描述性 bullet）：不参与时间排序
 
 
 def _entry_text(entry):
@@ -160,7 +158,7 @@ def _entry_text(entry):
 def check_dates_present(news, service, awards, patents, errors):
     """每个列表条目必须有排序日期字段（news/service/awards 用 date_sort，patents 用 grant_date）。
 
-    `sort: alpha`（期刊审稿字母序）与 `sort: none`（描述性 bullet）组豁免。
+    `sort: none` 组（期刊审稿按分量手工排序、描述性 bullet）豁免。
     """
     for item in news:
         if not isinstance(item, dict) or item.get("commented"):
@@ -177,8 +175,8 @@ def check_dates_present(news, service, awards, patents, errors):
     sections = service.get("sections", []) if isinstance(service, dict) else []
     for section in sections:
         for group in section.get("groups", []):
-            if group.get("sort") in SERVICE_UNSORTED:
-                continue  # 例外：alpha（期刊审稿字母序）/ none（描述性 bullet）不参与时间排序
+            if group.get("sort") == SERVICE_NONE_SORT:
+                continue  # 例外：none（期刊审稿按分量手工排序 / 描述性 bullet）不参与时间排序
             for b in group.get("bullets", []):
                 if not (isinstance(b, dict) and b.get("date_sort")):
                     errors.append(f"service bullet 缺 date_sort: {_entry_text(b)[:50]}")
@@ -380,7 +378,7 @@ def main():
         act_html = normalize(activities.read_text(encoding="utf-8"))
         for section in service.get("sections", []) if isinstance(service, dict) else []:
             for group in section.get("groups", []):
-                if group.get("sort") in SERVICE_UNSORTED:
+                if group.get("sort") == SERVICE_NONE_SORT:
                     continue
                 pairs = [
                     (_entry_text(b), b.get("date_sort") if isinstance(b, dict) else None)

@@ -22,7 +22,7 @@ author_profile: true
 ## {{ section.heading }}
 {% for group in section.groups %}
 ### {{ group.title }}
-{% if group.sort == "alpha" or group.sort == "none" %}
+{% if group.sort == "none" %}
 {% for b in group.bullets -%}
 - {{ b.text }}
 {% endfor %}

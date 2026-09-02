@@ -9,8 +9,8 @@
 #   date_sort = 受邀时间 (YYYY-MM); date_estimated: true when the value is an
 #   estimate (e.g. year-default YYYY-01) rather than the exact invite date.
 #   Group-level `sort`: `date` (default, bullets sorted by date_sort desc) |
-#   `alpha` (kept in file order, alphabetical — Journal Reviewer) |
-#   `none` (descriptive bullets of a single service, file order kept).
+#   `none` (kept in file order — Journal Reviewer ordered by journal standing,
+#   Editorial descriptive bullets).
 #   Rendering is position-independent (sorted by date_sort); file order is
 #   kept for diff readability.
 #
@@ -91,7 +91,7 @@ sections:
   - heading: "Journal Reviewer Activities"
     groups:
       - title: "International Peer Review Service"
-        sort: "alpha"
+        sort: "none"
         bullets:
           - text: "**Proceedings of the IEEE** (Impact Factor: 25.9) - Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science"
           - text: "**IEEE Transactions on Information Forensics and Security (TIFS)** (JCR Q1)"
@@ -99,7 +99,7 @@ sections:
           - text: "**ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)"
           - text: "**IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)"
       - title: "Chinese Academic Service"
-        sort: "alpha"
-        comment: "Journal reviewing is an ongoing service; journals are listed alphabetically rather than by date."
+        sort: "none"
+        comment: "Journal reviewing is an ongoing service; journals are ordered by standing rather than by date."
         bullets:
           - text: "**Journal of Information Network Security**"

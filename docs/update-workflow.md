@@ -62,14 +62,15 @@ note: <补充要求，可选>
   - news：**公告 / 得知消息的日期**（不一定是事件本身的日期——如奖项证书日期可能与 news 不同，此为设计、勿强行对齐；`sort: "date_sort" | reverse`，**与物理顺序无关**，旧新闻直接追加到文件末尾即可）
   - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
   - awards：**事件实际发生日期**——以证书日期 / 比赛日期 / 授予日期为准，**不是公告日期**；与 news 的"得知 / 公告日期"是两个不同口径，二者不一致属正常，**勿互相对齐**
-- **service.yml 结构**：`featured` / `bullets` 是对象数组（`{text, date_sort, date_estimated?}`）；组级 `sort: date`（默认，bullets 按 `date_sort` 倒序）| `alpha`（期刊审稿，字母序固定）| `none`（单条服务的描述性 bullet，如 Editorial 的 Special Issue / Role / Scope，保持文件顺序）
+- **service.yml 结构**：`featured` / `bullets` 是对象数组（`{text, date_sort, date_estimated?}`）；组级 `sort: date`（默认，bullets 按 `date_sort` 倒序）| `none`（保持文件顺序——期刊审稿按刊物分量手工排序、Editorial 描述性 bullet 等）
 - **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
   日后补到准确日期时需修正。**新增条目一律要求填写准确的受邀 / 获奖日期，不允许估计值**（结构化输入的
   `date` 字段必须为真实日期）。
 - **例外 1 — Journal Reviewer（期刊审稿）**：期刊审稿是**持续性关系**而非一次性事件，该组**不参与时间倒序**：
-  组级标记 `sort: alpha`，按刊物名称字母序固定排列，并在小节下加一行注明为持续性服务。
-  理由：用"首次受邀年份"排序会让仍在活跃的服务显得陈旧。不同类数据用不同排序键（同类例子：patents 用
-  `grant_date` 而非 `date_sort`）。
+  组级标记 `sort: none`，**按刊物分量手工排序**（如 Proceedings of the IEEE 在最前），**新增条目由用户指定插入位置、
+  不做自动排序**；小节下加一行注明为持续性服务。
+  理由：用"首次受邀年份"排序会让仍在活跃的服务显得陈旧；按刊物分量排序便于读者一眼看到顶级刊物。
+  不同类数据用不同排序键（同类例子：patents 用 `grant_date` 而非 `date_sort`）。
 - **例外 2 — patents（专利）**：无页面渲染、仅用于 CV；CV PDF 按 `grant_date` 倒序。
 
 ## 六、PR 描述固定模板
