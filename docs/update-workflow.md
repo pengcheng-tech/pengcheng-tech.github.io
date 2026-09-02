@@ -47,7 +47,7 @@ note: <补充要求，可选>
 7. `bundle exec jekyll build` —— 失败立即停下报告（不改 Gemfile / _config.yml）
 8. `python3 scripts/check_consistency.py` —— 失败立即停下报告
 9. `git commit` 提交改动 —— **agent 到此为止**：不推送、不建 PR
-10. 提交完成后直接输出**分支名**和**用户要执行的命令**（`git push -u origin <分支>` → `gh pr create`，描述见第六节）；不要尝试 push、不要检查 gh 认证、不要建议用户重新登录 gh
+10. 提交完成后直接输出**分支名**和**用户要执行的命令**（`git push -u origin <分支>` → `gh pr create`，描述见第六节）；不要尝试 push、不要检查 gh 认证、不要建议用户重新登录 gh。**每次回报的最后必须标注远端与本地提交差异**：用 `git ls-remote origin <分支>`（或 master）核实远端实际 tip，格式如「远端 `<sha>`，本地领先 N 个提交，需要 push」；本地与远端一致时也要明确写「远端 `<sha>`，本地与远端一致」。**不要假设"上一轮提示过 push 就等于用户推过了"**——PR #15 教训：4 个提交长期只存在于本地、从未上远端，用户按提示合并 PR 时合并的是旧提交，日期修正全部丢失。
 11. 用户在本机终端推送分支、创建并合并 PR → GitHub Pages 自动部署上线
 12. （可选）用户本地运行 `python3 scripts/export_obsidian.py` 刷新 Obsidian 只读视图
 
@@ -55,13 +55,14 @@ note: <补充要求，可选>
 
 **所有页面上的内容列表一律按时间倒序**（最新在上），不依赖文件物理顺序。模板统一用
 `sort: "date_sort" | reverse` 渲染；`check_consistency.py` 校验"条目必须有日期字段 + 渲染结果倒序"
-（数据迁移期间为 warn 模式，service / awards 全部迁移完成后改为 error）。
+（`check_consistency.py` 以 error 模式校验：缺日期字段或渲染非倒序即失败）。
 
 - **统一日期字段 `date_sort: YYYY-MM`**：news / service / awards 的每个条目都有；同月多条的顺序**不受保证**
   （Liquid `sort | reverse` 对同键条目无稳定序），需要确定先后时请精确到不同月份。
   - news：**公告 / 得知消息的日期**（不一定是事件本身的日期——如奖项证书日期可能与 news 不同，此为设计、勿强行对齐；`sort: "date_sort" | reverse`，**与物理顺序无关**，旧新闻直接追加到文件末尾即可）
   - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
   - awards：**事件实际发生日期**——以证书日期 / 比赛日期 / 授予日期为准，**不是公告日期**；与 news 的"得知 / 公告日期"是两个不同口径，二者不一致属正常，**勿互相对齐**
+- **service.yml 结构**：`featured` / `bullets` 是对象数组（`{text, date_sort, date_estimated?}`）；组级 `sort: date`（默认，bullets 按 `date_sort` 倒序）| `alpha`（期刊审稿，字母序固定）| `none`（单条服务的描述性 bullet，如 Editorial 的 Special Issue / Role / Scope，保持文件顺序）
 - **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
   日后补到准确日期时需修正。**新增条目一律要求填写准确的受邀 / 获奖日期，不允许估计值**（结构化输入的
   `date` 字段必须为真实日期）。
