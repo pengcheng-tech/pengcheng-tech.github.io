@@ -117,12 +117,12 @@ def render_service(service):
     for section in service.get("sections", []):
         lines.append(f"## {section.get('heading','')}")
         lines.append("")
-        for entry in section.get("entries", []):
-            if entry.get("type") == "list":
-                for it in entry.get("items", []):
-                    lines.append(f"- {strip_md(it)}")
-            else:
-                lines.append(f"- {strip_md(entry.get('text',''))}")
+        for group in section.get("groups", []):
+            lines.append(f"### {group.get('title','')}")
+            lines.append("")
+            for b in group.get("bullets", []):
+                text = b.get("text") if isinstance(b, dict) else b
+                lines.append(f"- {strip_md(text)}")
             lines.append("")
     return "\n".join(lines)
 
