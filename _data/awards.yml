@@ -75,7 +75,7 @@
   title: Finalist for "Most Innovative Research" Pwnie Award
   event: Black Hat USA 2019
   year: 2019
-  date_sort: "2019-01"
+  date_sort: "2019-08"
   date_estimated: true
   bullets:
   - label: Role
@@ -140,11 +140,12 @@
     text: Highest-level scholarship awarded to Master's students in China
 - category: industry
   title: Commercial AI Model Security - SurrogatePrompt Research
-  date_sort: "2024-10"
-  date_estimated: true
+  date_sort: "2023-09"
   bullets:
   - label: Findings
     text: Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)
+  - label: Recognition Timeline
+    text: 'Midjourney confirmed the findings on 2023-09-14; Stability AI issued an official acknowledgment on 2024-04-26 (both by email).'
   - label: Impact
     text: Contributed to security improvements in commercial text-to-image AI models
 - category: industry
