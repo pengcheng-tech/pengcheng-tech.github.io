@@ -22,9 +22,16 @@ author_profile: true
 ## {{ section.heading }}
 {% for group in section.groups %}
 ### {{ group.title }}
+{% if group.sort == "alpha" or group.sort == "none" %}
 {% for b in group.bullets -%}
-- {{ b }}
+- {{ b.text }}
 {% endfor %}
+{% else %}
+{% assign bs = group.bullets | sort: "date_sort" | reverse %}
+{% for b in bs -%}
+- {{ b.text }}
+{% endfor %}
+{% endif %}
 {% if group.images %}
 {% for img in group.images -%}
 **{{ img.label }}**

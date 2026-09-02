@@ -49,8 +49,9 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 ## Professional Services
 
-{% for item in site.data.service.featured -%}
-- {{ item }}
+{% assign featured_sorted = site.data.service.featured | sort: "date_sort" | reverse %}
+{% for item in featured_sorted -%}
+- {{ item.text }}
 {% endfor %}
 
 [See all →](/activities/)

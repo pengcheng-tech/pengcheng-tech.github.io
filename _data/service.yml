@@ -4,22 +4,36 @@
 #                   Journal Reviewer), grouped with `groups`.
 #   Homepage      — `featured` items only, with a "See all" link to /activities/.
 #
+# Structure (global sorting rule, see docs/update-workflow.md §5):
+#   featured / bullets are object arrays: {text, date_sort, date_estimated?}
+#   date_sort = 受邀时间 (YYYY-MM); date_estimated: true when the value is an
+#   estimate (e.g. year-default YYYY-01) rather than the exact invite date.
+#   Group-level `sort`: `date` (default, bullets sorted by date_sort desc) |
+#   `alpha` (kept in file order, alphabetical — Journal Reviewer) |
+#   `none` (descriptive bullets of a single service, file order kept).
+#   Rendering is position-independent (sorted by date_sort); file order is
+#   kept for diff readability.
+#
 # Sections keep the page's original wording; USENIX Security 2027 was added
 # to Program Committee Membership (service data now drives the page).
 
 featured:
-  - "**Program Committee Member**: AAAI 2027, USENIX Security 2027"
-  - "**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
-  - "**Guest Editor**, Journal of Cyber Security (2025) - Special Issue: \"Intelligent Voice Security and Defense Technologies\""
+  - text: "**Program Committee Member**: AAAI 2027, USENIX Security 2027"
+    date_sort: "2026-08"
+  - text: "**Conference Reviewer**: ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
+    date_sort: "2026-07"
+  - text: "**Guest Editor**, Journal of Cyber Security (2025) - Special Issue: \"Intelligent Voice Security and Defense Technologies\""
+    date_sort: "2025-01"
 
 sections:
   - heading: "Editorial Services"
     groups:
       - title: "Guest Editor - Journal of Cyber Security (2025)"
+        sort: "none"
         bullets:
-          - "**Special Issue**: \"Intelligent Voice Security and Defense Technologies\""
-          - "**Role**: Special Issue Initiator and Guest Editor"
-          - "**Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security systems"
+          - text: "**Special Issue**: \"Intelligent Voice Security and Defense Technologies\""
+          - text: "**Role**: Special Issue Initiator and Guest Editor"
+          - text: "**Scope**: Leading editorial efforts for cutting-edge research in AI-driven voice security systems"
         images:
           - label: "Journal Profile:"
             src: "/images/cyber_security_journal.jpg"
@@ -38,32 +52,54 @@ sections:
   - heading: "Conference Reviewer"
     groups:
       - title: "Program Committee Membership"
+        sort: "date"
         bullets:
-          - "**AAAI 2027** — AAAI Conference on Artificial Intelligence (Program Committee Member)"
-          - "**USENIX Security 2027** — USENIX Security Symposium (USENIX Security '27) (Program Committee Member)"
+          - text: "**AAAI 2027** — AAAI Conference on Artificial Intelligence (Program Committee Member)"
+            date_sort: "2026-06"
+          - text: "**USENIX Security 2027** — USENIX Security Symposium (USENIX Security '27) (Program Committee Member)"
+            date_sort: "2026-08"
       - title: "Conference Reviewer - International Conferences"
+        sort: "date"
         bullets:
-          - "**ICML 2026** — International Conference on Machine Learning"
-          - "**ICLR 2026** — International Conference on Learning Representations"
-          - "**ICLR 2027** — International Conference on Learning Representations"
-          - "**ACM MM 2026** — ACM International Conference on Multimedia"
-          - "**IEEE SLT 2026** — IEEE Spoken Language Technology Workshop"
-          - "**Interspeech 2026** — ISCA Interspeech 2026 [[Reviewer Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)"
-          - "**AAAI 2026** — AAAI Conference on Artificial Intelligence"
-          - "**ACM Web Conference (WWW 2025)**"
+          - text: "**ICML 2026** — International Conference on Machine Learning"
+            date_sort: "2026-01"
+            date_estimated: true
+          - text: "**ICLR 2026** — International Conference on Learning Representations"
+            date_sort: "2026-01"
+            date_estimated: true
+          - text: "**ICLR 2027** — International Conference on Learning Representations"
+            date_sort: "2026-08"
+          - text: "**ACM MM 2026** — ACM International Conference on Multimedia"
+            date_sort: "2026-01"
+            date_estimated: true
+          - text: "**IEEE SLT 2026** — IEEE Spoken Language Technology Workshop"
+            date_sort: "2026-01"
+            date_estimated: true
+          - text: "**Interspeech 2026** — ISCA Interspeech 2026 [[Reviewer Certificate]](/files/Interspeech2026_ReviewerCertificate.pdf)"
+            date_sort: "2026-07"
+          - text: "**AAAI 2026** — AAAI Conference on Artificial Intelligence"
+            date_sort: "2026-01"
+            date_estimated: true
+          - text: "**ACM Web Conference (WWW 2025)**"
+            date_sort: "2025-01"
       - title: "Reviewer Recognition"
+        sort: "date"
         bullets:
-          - "**ICML 2026 Silver Reviewer** — Top-tier recognition awarded by the ICML 2026 Program Chairs to reviewers who demonstrated exceptional quality in their reviews. This is a highly selective honor recognizing outstanding contribution to the peer review process."
+          - text: "**ICML 2026 Silver Reviewer** — Top-tier recognition awarded by the ICML 2026 Program Chairs to reviewers who demonstrated exceptional quality in their reviews. This is a highly selective honor recognizing outstanding contribution to the peer review process."
+            date_sort: "2026-05"
 
   - heading: "Journal Reviewer Activities"
     groups:
       - title: "International Peer Review Service"
+        sort: "alpha"
         bullets:
-          - "**Proceedings of the IEEE** (Impact Factor: 25.9) - Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science"
-          - "**IEEE Transactions on Information Forensics and Security (TIFS)** (JCR Q1)"
-          - "**IEEE Transactions on Dependable and Secure Computing (TDSC)** (JCR Q1)"
-          - "**ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)"
-          - "**IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)"
+          - text: "**Proceedings of the IEEE** (Impact Factor: 25.9) - Leading journal providing in-depth review, survey, and tutorial coverage of technical developments in electronics, electrical engineering, and computer science"
+          - text: "**IEEE Transactions on Information Forensics and Security (TIFS)** (JCR Q1)"
+          - text: "**IEEE Transactions on Dependable and Secure Computing (TDSC)** (JCR Q1)"
+          - text: "**ACM Transactions on Internet of Things (TIOT)** (Impact Factor: 3.5)"
+          - text: "**IEEE Internet of Things Journal (IoT-J)** (Impact Factor: 8.2)"
       - title: "Chinese Academic Service"
+        sort: "alpha"
+        comment: "Journal reviewing is an ongoing service; journals are listed alphabetically rather than by date."
         bullets:
-          - "**Journal of Information Network Security**"
+          - text: "**Journal of Information Network Security**"
