@@ -2,6 +2,7 @@
   title: National Grand Prize
   event: 19th "Challenge Cup" National Competition (2024)
   year: 2024
+  date_sort: "2024-10"
   bullets:
   - label: Role
     text: Advisor (Ranked 2nd among 3 advisors)
@@ -15,6 +16,7 @@
   title: 3rd Place Award
   event: IJCAI 2025 Deepfake Detection Challenge
   year: 2025
+  date_sort: "2025-09"
   bullets:
   - label: Competition
     text: Workshop on Deepfake Detection, Localization, and Interpretability (co-located
@@ -40,6 +42,7 @@
   title: Silver Award
   event: IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)
   year: 2026
+  date_sort: "2026-08"
   bullets:
   - label: Competition
     text: 'DDL 2.0: AIGC Safety from Dual Perspectives of Model and Content'
@@ -57,6 +60,8 @@
   title: Top 5 Nationwide
   event: 3rd China Artificial Intelligence Competition (2021)
   year: 2021
+  date_sort: "2021-01"
+  date_estimated: true
   bullets:
   - label: Role
     text: Primary Advisor (Ranked 1st among 2 advisors)
@@ -70,6 +75,8 @@
   title: Finalist for "Most Innovative Research" Pwnie Award
   event: Black Hat USA 2019
   year: 2019
+  date_sort: "2019-01"
+  date_estimated: true
   bullets:
   - label: Role
     text: First Author (1st of 4 contributors)
@@ -99,6 +106,7 @@
 - category: reviewer
   title: ICML 2026 Silver Reviewer
   year: 2026
+  date_sort: "2026-05"
   subtitle: International Conference on Machine Learning (ICML 2026)
   bullets:
   - label: Recognition
@@ -110,16 +118,20 @@
 - category: academic
   title: Postdoctoral Excellence Grant (Second Class)
   year: 2021
+  date_sort: "2021-08"
   subtitle: Zhejiang Provincial Department of Human Resources and Social Security
     (August 2021)
 - category: academic
   title: Ph.D. Scholarship
   year: 2016
+  date_sort: "2016-01"
+  date_estimated: true
   subtitle: Faculty of Science and Technology, Lancaster University, UK (2016–2020)
   note: Full doctoral scholarship covering tuition and living expenses
 - category: mentorship
   title: National Graduate Scholarship Achievement (October 2024)
   year: 2024
+  date_sort: "2024-10"
   bullets:
   - label: Achievement
     text: Co-supervised Master's student won the National Graduate Scholarship (China)
@@ -127,6 +139,7 @@
     text: Highest-level scholarship awarded to Master's students in China
 - category: industry
   title: Commercial AI Model Security - SurrogatePrompt Research
+  date_sort: "2024-10"
   bullets:
   - label: Findings
     text: Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)
@@ -134,6 +147,7 @@
     text: Contributed to security improvements in commercial text-to-image AI models
 - category: industry
   title: Watermarking System Vulnerabilities - Amazon Collaboration (2025)
+  date_sort: "2025-03"
   bullets:
   - label: Research Impact
     text: Developed WMCopier attack method that identified critical vulnerabilities
@@ -160,6 +174,7 @@
     inline: true
 - category: industry
   title: Open-Source Contributions - ALIF Framework
+  date_sort: "2024-05"
   bullets:
   - label: Adoption
     text: NVIDIA integrated ALIF into their official AI security toolkit
@@ -167,6 +182,7 @@
     text: Under active development for red teaming capabilities enhancement
 - category: media
   title: International Media Coverage - SonarSnoop Research Impact
+  date_sort: "2018-09"
   bullets:
   - label: Media Coverage
     text: Pocketnow, Motherboard, ZDNet, Naked Security, Slashdot, eldiario.es (Spain),
@@ -178,6 +194,7 @@
     text: As documented on [Prof. Jeff Yan's homepage](https://prof-jeffyan.github.io)
 - category: media
   title: Expert Endorsements from Security Community Leaders
+  date_sort: "2018-09"
   bullets:
   - label: ''
     text: '**Prof. Ross Anderson** (University of Cambridge): *"Truly spooky new method

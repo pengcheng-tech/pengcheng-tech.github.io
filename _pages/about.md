@@ -57,9 +57,10 @@ For a complete list of publications, please visit my [Google Scholar profile](ht
 
 ## Awards
 
-{% for a in site.data.awards %}{% if a.featured -%}
+{% assign awards_featured = site.data.awards | where: "featured", true | sort: "date_sort" | reverse %}
+{% for a in awards_featured -%}
 - **{{ a.title }}**{% if a.event %} — {{ a.event }}{% endif %}
-{% endif %}{% endfor %}
+{% endfor %}
 
 [See all →](/awards/)
 
