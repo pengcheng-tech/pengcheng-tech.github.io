@@ -43,6 +43,7 @@
   event: IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)
   year: 2026
   date_sort: "2026-08"
+  date_estimated: true
   bullets:
   - label: Competition
     text: 'DDL 2.0: AIGC Safety from Dual Perspectives of Model and Content'
@@ -106,6 +107,7 @@
   title: ICML 2026 Silver Reviewer
   year: 2026
   date_sort: "2026-05"
+  date_estimated: true
   subtitle: International Conference on Machine Learning (ICML 2026)
   bullets:
   - label: Recognition
@@ -130,6 +132,7 @@
   title: National Graduate Scholarship Achievement (October 2024)
   year: 2024
   date_sort: "2024-10"
+  date_estimated: true
   bullets:
   - label: Achievement
     text: Co-supervised Master's student won the National Graduate Scholarship (China)
@@ -138,6 +141,7 @@
 - category: industry
   title: Commercial AI Model Security - SurrogatePrompt Research
   date_sort: "2024-10"
+  date_estimated: true
   bullets:
   - label: Findings
     text: Identified vulnerabilities in leading AI vendors (Midjourney, Stability.ai)
@@ -173,6 +177,7 @@
 - category: industry
   title: Open-Source Contributions - ALIF Framework
   date_sort: "2024-05"
+  date_estimated: true
   bullets:
   - label: Adoption
     text: NVIDIA integrated ALIF into their official AI security toolkit
