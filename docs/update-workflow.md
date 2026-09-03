@@ -63,6 +63,7 @@ note: <补充要求，可选>
   - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
   - awards：**事件实际发生日期**——以证书日期 / 比赛日期 / 授予日期为准，**不是公告日期**；与 news 的"得知 / 公告日期"是两个不同口径，二者不一致属正常，**勿互相对齐**
   - awards 的 **industry 类目**：`date_sort` 记**厂商作出认可的日期**（如厂商确认 / 致谢邮件的日期），**不是相关论文的发表日期**（SurrogatePrompt 曾误用 CCS 2024 发表月，已改为最早厂商认可 2023-09）
+  - **awards → CV（cv.json）分流**：yml awards 按 category 分流进 CV——`research` / `academic` / `mentorship` / `reviewer` → CV 的 **Honors & Awards**（cv.json `awards`）；`industry` / `media` → CV 的 **Impacts / Media 节**（cv.json `impacts`，这两类是影响力证据而非荣誉）。service 的 date 组会议代号（如 `ICLR 2027`）也须出现在 cv.json 的 service 文本里。`check_consistency.py` 检查 10 校验该映射（当前 warn，cv.json 数据整理完成后转 error）
 - **service.yml 结构**：`featured` / `bullets` 是对象数组（`{text, date_sort, date_estimated?}`）；组级 `sort: date`（默认，bullets 按 `date_sort` 倒序）| `none`（保持文件顺序——期刊审稿按刊物分量手工排序、Editorial 描述性 bullet 等）
 - **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
   日后补到准确日期时需修正。**新增条目一律要求填写准确的受邀 / 获奖日期，不允许估计值**（结构化输入的
@@ -73,6 +74,7 @@ note: <补充要求，可选>
   理由：用"首次受邀年份"排序会让仍在活跃的服务显得陈旧；按刊物分量排序便于读者一眼看到顶级刊物。
   不同类数据用不同排序键（同类例子：patents 用 `grant_date` 而非 `date_sort`）。
 - **例外 2 — patents（专利）**：无页面渲染、仅用于 CV；CV PDF 按 `grant_date` 倒序。
+- **非页面产物同样适用**：Obsidian 导出的 `成果总览.md` / `专利清单.md` / `学术服务.md` 与 CV（/cv/ 页面与 PDF）都按本规则倒序；`check_consistency.py` 检查 8/9 覆盖这些产物，防止"排序只进了模板、没进读取脚本"的漂移复发。
 
 ## 六、PR 描述固定模板
 

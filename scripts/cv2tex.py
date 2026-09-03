@@ -148,6 +148,26 @@ def parse_bib(path):
     return entries
 
 
+def _dated_desc(items, date_key):
+    """稳定倒序：按 date_key 降序；缺值沉底。CV 各节按学术惯例最近在上（docs/update-workflow.md §5）。"""
+    def key(it):
+        if not isinstance(it, dict):
+            return ""
+        v = it.get(date_key)
+        return str(v) if v else ""
+    return sorted(items, key=key, reverse=True)
+
+
+def _pub_sort_key(p, bib):
+    """论文排序键：优先 bib 的 date（YYYY-MM-DD），否则年份默认 01-01。"""
+    if isinstance(p, dict) and p.get("bib_key"):
+        f = bib.get(p["bib_key"]) or {}
+        if f.get("date"):
+            return f["date"]
+    year = p.get("year") if isinstance(p, dict) else ""
+    return (str(year) + "-01-01") if year else ""
+
+
 def bold_name(authors):
     """Bold the author's own name in an author list."""
     names = [a.strip() for a in authors if a.strip()]
@@ -238,7 +258,7 @@ def render(cv, bib, show_funding=False, show_patents=True):
 
     # Professional Experience
     section("Professional Experience")
-    for w in cv.get("work", []):
+    for w in _dated_desc(cv.get("work", []), "startDate"):
         dates = " – ".join(x for x in [w.get("startDate", ""), w.get("endDate", "")] if x)
         head = r"\textbf{" + latex_escape(w.get("position", "")) + r"}, " + \
                latex_escape(w.get("organization", "")) + \
@@ -252,7 +272,7 @@ def render(cv, bib, show_funding=False, show_patents=True):
 
     # Education
     section("Education")
-    for e in cv.get("education", []):
+    for e in _dated_desc(cv.get("education", []), "startDate"):
         dates = " – ".join(x for x in [e.get("startDate", ""), e.get("endDate", "")] if x)
         degree = e.get("degree", "")
         major = e.get("major", "")
@@ -304,7 +324,10 @@ def render(cv, bib, show_funding=False, show_patents=True):
         ("Thesis", "thesis"),
     ]
     for heading, g in groups:
-        items = [p for p in cv.get("publications", []) if p.get("group") == g]
+        items = sorted(
+            (p for p in cv.get("publications", []) if p.get("group") == g),
+            key=lambda p: _pub_sort_key(p, bib), reverse=True,
+        )
         if not items:
             continue
         L.append(r"\textbf{" + latex_escape(heading) + r"}")
@@ -322,7 +345,7 @@ def render(cv, bib, show_funding=False, show_patents=True):
     if cv.get("awards"):
         section(r"Honors \& Awards")
         L.append(r"\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]")
-        for a in cv["awards"]:
+        for a in _dated_desc(cv["awards"], "date"):
             parts = []
             if a.get("title"):
                 parts.append(r"\textbf{" + latex_escape(a["title"]) + r"}")
@@ -360,7 +383,10 @@ def render(cv, bib, show_funding=False, show_patents=True):
         try:
             import yaml
             data = yaml.safe_load(PATENTS_YML.read_text(encoding="utf-8")) or {}
-            granted = [p for p in data.get("patents", []) if p.get("status") == "granted"]
+            granted = _dated_desc(
+                [p for p in data.get("patents", []) if p.get("status") == "granted"],
+                "grant_date",
+            )
         except Exception:
             granted = []
         if granted:

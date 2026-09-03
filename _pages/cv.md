@@ -18,7 +18,8 @@ redirect_from:
 Professional Experience
 ======
 
-{% for work in cv.work %}
+{% assign work_sorted = cv.work | sort: "startDate" | reverse %}
+{% for work in work_sorted %}
 **{{ work.position }}, {{ work.organization }}**
 *{{ work.startDate }} – {{ work.endDate }}*
 
@@ -33,7 +34,8 @@ Professional Experience
 Education
 ======
 
-{% for edu in cv.education %}
+{% assign edu_sorted = cv.education | sort: "startDate" | reverse %}
+{% for edu in edu_sorted %}
 **{{ edu.degree }}{% if edu.major %}, {{ edu.major }}{% endif %} — {{ edu.institution }}{% if edu.location %}, {{ edu.location }}{% endif %}**
 
 *{{ edu.startDate }} – {{ edu.endDate }}*
@@ -50,7 +52,7 @@ Publications
 {% assign pub_headings = "Representative Publications|Other Publications (Reverse Chronological Order)|Preprints / Under Review|Thesis" | split: "|" %}
 {% for i in (0..pub_groups.size) %}{% if i < pub_groups.size %}
 {% assign g = pub_groups[i] %}
-{% assign items = cv.publications | where: "group", g %}
+{% assign items = cv.publications | where: "group", g | sort: "year" | reverse %}
 {% if items.size > 0 %}
 **{{ pub_headings[i] }}**
 {% for p in items %}
@@ -72,7 +74,8 @@ Research Projects
 Honors & Awards
 ======
 
-{% for a in cv.awards %}
+{% assign awards_sorted = cv.awards | sort: "date" | reverse %}
+{% for a in awards_sorted %}
 - **{{ a.title }}**{% if a.event %} — {{ a.event }}{% endif %}{% if a.date %} ({{ a.date }}){% endif %}{% if a.role %} — {{ a.role }}{% endif %}{% if a.summary %} — {{ a.summary }}{% endif %}
 {% endfor %}
 

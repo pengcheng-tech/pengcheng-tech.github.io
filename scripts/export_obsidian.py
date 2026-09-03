@@ -8,6 +8,11 @@ are the single source of truth; this script only *exports* a read-only
 snapshot into $OBSIDIAN_SYNC_DIR/_自动同步/. It never reads or writes the
 user's own research notes (科研记录.md).
 
+Ordering follows the global rule (docs/update-workflow.md §5): every list is
+rendered newest-first by `date_sort` (news / awards / service date-groups by
+`date_sort`, service `sort: none` groups in file order, patents by
+`grant_date`). check_consistency.py verifies this output order.
+
 Generated files (all start with a "generated, do not edit" banner):
   _自动同步/成果总览.md    — news timeline + awards + publications overview
   _自动同步/专利清单.md    — patent list from _data/patents.yml
@@ -37,6 +42,8 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTO_DIR = "_自动同步"
+
+SERVICE_NONE_SORT = "none"  # 组级标记：保持文件顺序（期刊审稿按分量手工排序、描述性 bullet）
 
 BANNER = (
     "> 本文件由 scripts/export_obsidian.py 自动生成，请勿手工编辑。\n"
@@ -69,16 +76,36 @@ def strip_md(text):
     return re.sub(r"\*\*|__", "", str(text or ""))
 
 
-def render_news(news):
+def _dated_desc(entries, key="date_sort"):
+    """稳定倒序：按 key 降序；缺 key / 空值的条目沉底（保持文件内相对顺序）。"""
+    def sortkey(e):
+        if not isinstance(e, dict):
+            return ""
+        v = e.get(key)
+        return str(v) if v else ""
+    return sorted(entries, key=sortkey, reverse=True)
+
+
+def _group_bullets_ordered(group):
+    """与 /activities/ 渲染一致：`sort: none` 组保持文件顺序，其余按 date_sort 倒序。"""
+    bullets = group.get("bullets", [])
+    if group.get("sort") == SERVICE_NONE_SORT:
+        return bullets
+    return _dated_desc(bullets)
+
+
+def awards():
+    return load_yaml("awards.yml") or []
+
+
+def render_news(news, awards_list=None):
     lines = ["# 成果总览", "", "> 最近动态（News）", ""]
-    for item in news:
-        if item.get("commented"):
-            continue
+    for item in _dated_desc([i for i in news if not (isinstance(i, dict) and i.get("commented"))]):
         lines.append(f"- **{item.get('date_display','')}**：{strip_md(item.get('text',''))}")
     lines.append("")
     lines.append("> 奖项（Awards，不展示在首页，仅存档）")
     lines.append("")
-    for a in awards():
+    for a in _dated_desc(awards_list if awards_list is not None else (awards() or [])):
         parts = [strip_md(a.get("title", ""))]
         if a.get("event"):
             parts.append(a["event"])
@@ -90,13 +117,9 @@ def render_news(news):
     return "\n".join(lines) + "\n"
 
 
-def awards():
-    return load_yaml("awards.yml") or []
-
-
 def render_patents(patents):
     lines = ["# 专利清单", ""]
-    items = patents.get("patents", [])
+    items = _dated_desc((patents.get("patents", []) or []), key="grant_date")
     if not items:
         lines.append("_（暂无条目——通过结构化输入 type: patent 添加，或手工编辑 _data/patents.yml）_")
         lines.append("")
@@ -120,7 +143,7 @@ def render_service(service):
         for group in section.get("groups", []):
             lines.append(f"### {group.get('title','')}")
             lines.append("")
-            for b in group.get("bullets", []):
+            for b in _group_bullets_ordered(group):
                 text = b.get("text") if isinstance(b, dict) else b
                 lines.append(f"- {strip_md(text)}")
             lines.append("")

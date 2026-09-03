@@ -20,6 +20,19 @@ Checks:
   6. Every list item has a sortable date field (`date_sort`; patents use
      `grant_date`). Groups marked `sort: none` are exempt.
   7. Rendered pages show list items in descending `date_sort` order.
+  8. Consumer products keep the global reverse-chronological rule:
+     export_obsidian.py outputs (news / awards / service date-groups by
+     `date_sort`, patents by `grant_date`) and the CV LaTeX render
+     (work / education by startDate, publications per group by bib date,
+     awards by date, granted patents by grant_date).
+  9. The /cv/ page renders cv.json lists newest-first (work / education /
+     awards / per-group publications).
+ 10. cv.json mirrors the site data: yml awards of categories
+     research/reviewer/academic/mentorship must appear in cv.json Honors &
+     Awards; industry/media must be represented in cv.json impacts;
+     date-sorted service venue codes (e.g. "ICLR 2027") must appear in
+     cv.json service text. WARN mode — cv.json data cleanup lands in a
+     later PR (flips to error then).
 
 Usage:
   python3 scripts/check_consistency.py
@@ -325,6 +338,222 @@ def check_hardcoded_duplication(values, pages_dir, errors):
                 errors.append(f"{page.name} 硬编码了 _data/*.yml 的内容: {v[:70]}")
 
 
+def _seq_is_desc(seq, label, errors):
+    """断言 date 序列按倒序（等于其稳定降序排序结果，含同值并列）。"""
+    if seq != sorted(seq, reverse=True):
+        for i, (a, b) in enumerate(zip(seq, sorted(seq, reverse=True))):
+            if a != b:
+                errors.append(f"{label}: 产物顺序非倒序（第 {i + 1} 项 {a!r}，期望 {b!r}）")
+                return
+
+
+def check_consumer_export_order(news, service, awards, patents, errors):
+    """export_obsidian.py 产物（Obsidian md）必须按 date_sort / grant_date 倒序。"""
+    import export_obsidian as ex
+
+    news_text2ds = {}
+    for item in news:
+        if isinstance(item, dict) and not item.get("commented"):
+            news_text2ds[normalize(ex.strip_md(item.get("text", "")))] = item.get("date_sort", "")
+    awards_title2ds = {normalize(a.get("title", "")): a.get("date_sort", "")
+                       for a in awards if isinstance(a, dict)}
+
+    md = ex.render_news(news, awards)
+    news_seq, awards_seq = [], []
+    in_news = in_awards = False
+    for line in md.splitlines():
+        if line.startswith("> 最近动态"):
+            in_news, in_awards = True, False
+            continue
+        if line.startswith("> 奖项"):
+            in_news, in_awards = False, True
+            continue
+        m = re.match(r"- \*\*(.*?)\*\*：(.*)$", line)
+        if in_news and m:
+            news_seq.append(news_text2ds.get(normalize(m.group(2).strip()), ""))
+        elif in_awards and line.startswith("- "):
+            m2 = re.match(r"- (.+?)(?: — |$)", line)
+            if m2:
+                awards_seq.append(awards_title2ds.get(normalize(m2.group(1).strip()), ""))
+    _seq_is_desc(news_seq, "export 成果总览 News", errors)
+    _seq_is_desc(awards_seq, "export 成果总览 Awards", errors)
+
+    pat_title2gd = {p.get("title", ""): p.get("grant_date", "")
+                    for p in patents.get("patents", []) if isinstance(p, dict)}
+    seq = []
+    for line in ex.render_patents(patents).splitlines():
+        if line.startswith("| ") and not line.startswith("| ---"):
+            cols = [c.strip() for c in line.strip("|").split("|")]
+            if len(cols) >= 3 and cols[0] in ("granted", "published"):
+                seq.append(pat_title2gd.get(cols[1], ""))
+    _seq_is_desc(seq, "export 专利清单 (grant_date)", errors)
+
+    # 学术服务：按组（date 组按 date_sort 倒序；none 组不校验）
+    group_order = []
+    for section in service.get("sections", []) if isinstance(service, dict) else []:
+        for group in section.get("groups", []):
+            if group.get("sort") == SERVICE_NONE_SORT:
+                continue
+            by_text = {}
+            for b in group.get("bullets", []):
+                by_text[normalize(_entry_text(b))] = b.get("date_sort") if isinstance(b, dict) else ""
+            group_order.append((group.get("title", ""), by_text))
+    seqs = {i: [] for i in range(len(group_order))}
+    cur = -1
+    for line in ex.render_service(service).splitlines():
+        if line.startswith("### "):
+            title = line[4:].strip()
+            cur = next((i for i, (t, _) in enumerate(group_order) if t == title), -1)
+        elif cur >= 0 and line.startswith("- "):
+            text = normalize(line[2:].strip())
+            seqs[cur].append(group_order[cur][1].get(text, ""))
+    for i, (title, _) in enumerate(group_order):
+        _seq_is_desc(seqs[i], f"export 学术服务 / {title}", errors)
+
+
+def check_consumer_cv_order(errors):
+    """cv2tex.py 生成的 LaTeX 各节必须倒序（work/education startDate、publications 组内
+    bib date、awards date、granted patents grant_date）。"""
+    import json
+    import cv2tex
+    cv_path = Path(cv2tex.DEFAULT_CV)
+    if not cv_path.exists():
+        return
+    cv = json.loads(cv_path.read_text(encoding="utf-8"))
+    bib = cv2tex.parse_bib(str(cv2tex.DEFAULT_BIB))
+    tex = cv2tex.render(cv, bib)
+
+    def section_text(start):
+        i = tex.find(start)
+        if i < 0:
+            return ""
+        j = tex.find(r"\section*{", i + 1)
+        return tex[i:j if j >= 0 else len(tex)]
+
+    sec = section_text(r"\section*{Professional Experience}")
+    _seq_is_desc(re.findall(r"\\textit\{(\d{4}-\d{2})[^}]*\}", sec),
+                 "CV PDF Professional Experience (startDate)", errors)
+    sec = section_text(r"\section*{Education}")
+    _seq_is_desc(re.findall(r"\\textit\{(\d{4}-\d{2})[^}]*\}", sec),
+                 "CV PDF Education (startDate)", errors)
+    sec = section_text(r"\section*{Honors \& Awards}")
+    _seq_is_desc(re.findall(r"\((\d{4}(?:-\d{2})?)\)", sec),
+                 "CV PDF Honors & Awards (date)", errors)
+    sec = section_text(r"\section*{Granted Patents}")
+    _seq_is_desc(re.findall(r"Granted: ([\d-]+)", sec),
+                 "CV PDF Granted Patents (grant_date)", errors)
+
+    for heading in ("Representative Publications", "Other Publications", "Preprints", "Thesis"):
+        i = tex.find("\\textbf{" + heading)
+        if i < 0:
+            continue
+        j = tex.find("\\textbf{", i + 1)
+        if j < 0:
+            j = tex.find(r"\section*{", i + 1)
+        if j < 0:
+            j = len(tex)
+        seq = re.findall(r"\((\d{4})\)\. ", tex[i:j])
+        if seq:
+            _seq_is_desc(seq, f"CV PDF {heading} (year)", errors)
+
+
+def check_cv_page_order(site_dir, errors):
+    """/cv/ 页面渲染的 cv.json 列表必须倒序。"""
+    cv_page = Path(site_dir) / "cv" / "index.html"
+    cv_path = DATA / "cv.json"
+    if not cv_page.exists() or not cv_path.exists():
+        return
+    import json
+    cv = json.loads(cv_path.read_text(encoding="utf-8"))
+    raw_html = cv_page.read_text(encoding="utf-8")
+    html = normalize(raw_html)
+    work_pairs = [(f"{w.get('startDate','')} – {w.get('endDate','')}", w.get("startDate", ""))
+                  for w in cv.get("work", []) if w.get("startDate")]
+    if work_pairs:
+        check_rendering_order(work_pairs, html, "/cv/ work", errors)
+    edu_pairs = [(f"{e.get('startDate','')} – {e.get('endDate','')}", e.get("startDate", ""))
+                 for e in cv.get("education", []) if e.get("startDate")]
+    if edu_pairs:
+        check_rendering_order(edu_pairs, html, "/cv/ education", errors)
+    aw_pairs = [(a.get("title", ""), a.get("date", ""))
+                for a in cv.get("awards", []) if isinstance(a, dict)]
+    if aw_pairs:
+        check_rendering_order(aw_pairs, html, "/cv/ awards", errors)
+    # publications 各组：用 raw HTML 的 <strong>组标题</strong> 切片，避免普通词（如 thesis）在正文提前出现
+    pub_groups = (("representative", "Representative Publications"), ("other", "Other Publications"),
+                  ("preprint", "Preprints / Under Review"), ("thesis", "Thesis"))
+    markers = [(g, f"<strong>{h2}</strong>") for g, h2 in pub_groups]
+    for i, (g, marker) in enumerate(markers):
+        start = raw_html.find(marker)
+        if start < 0:
+            continue
+        end = raw_html.find(markers[i + 1][1], start + 1) if i + 1 < len(markers) else len(raw_html)
+        if end < 0:
+            end = len(raw_html)
+        block = normalize(raw_html[start:end])
+        pairs = [(p.get("name", ""), str(p.get("year", "")))
+                 for p in cv.get("publications", []) if p.get("group") == g and p.get("name")]
+        if pairs:
+            check_rendering_order(pairs, block, f"/cv/ pubs/{g}", errors)
+
+
+CV_HONORS_CATS = ("research", "reviewer", "academic", "mentorship")
+_GENERIC_TOKENS = {"research", "media", "security", "impact", "international",
+                   "contributions", "system", "open", "source", "community"}
+_MEDIA_PERSONS = {"schneier", "anderson"}  # 背书以"被 X 赞扬"并入媒体串（B 期拆分后更新）
+
+
+def check_cv_yml_sync(awards, service, warnings):
+    """(warn) cv.json 与 yml 数据分流一致：
+    - awards：research/reviewer/academic/mentorship → cv.json Honors & Awards；
+      industry/media → cv.json impacts；
+    - service：date 组的会议代号（如 "ICLR 2027"）须出现在 cv.json 的 service 文本里。
+    cv.json 数据整理（B）后转 error。"""
+    cv_path = DATA / "cv.json"
+    if not cv_path.exists():
+        return
+    import json
+    cv = json.loads(cv_path.read_text(encoding="utf-8"))
+    cv_awards = cv.get("awards", []) or []
+    impacts = cv.get("impacts", {}) or {}
+    im_text = {k: " ".join(v or []) for k, v in impacts.items()}
+    for a in awards:
+        if not isinstance(a, dict):
+            continue
+        cat = a.get("category")
+        at = tokens(a.get("title", ""))
+        if cat in CV_HONORS_CATS:
+            matched = any(
+                normalize(a.get("title", "")) == normalize(c.get("title", ""))
+                or len(at & tokens(c.get("title", ""))) >= 2
+                for c in cv_awards
+            )
+            if not matched:
+                warnings.append(f"cv.json Honors & Awards 缺 yml 条目[{cat}]: {a.get('title','')[:60]}")
+        elif cat in ("industry", "media") and im_text.get(cat):
+            key = at - _GENERIC_TOKENS
+            covered = key and (key & tokens(im_text[cat])) or (cat == "media" and tokens(im_text[cat]) & _MEDIA_PERSONS)
+            if key and not covered:
+                warnings.append(f"cv.json impacts.{cat} 未体现 yml 条目: {a.get('title','')[:60]}")
+
+    sv_text = " ".join(str(x) for v in (cv.get("service", {}) or {}).values() for x in (v or []))
+    if not sv_text:
+        return
+    sv_norm = normalize(sv_text)
+    for section in service.get("sections", []) if isinstance(service, dict) else []:
+        for group in section.get("groups", []):
+            if group.get("sort") == SERVICE_NONE_SORT:
+                continue  # 期刊审稿等手工序组不在此比对范围
+            for b in group.get("bullets", []):
+                text = _entry_text(b)
+                m = re.match(r"\*\*(.+?)\*\*", text)
+                if not m:
+                    continue
+                code = normalize(m.group(1))
+                if code and code not in sv_norm:
+                    warnings.append(f"cv.json service 未体现 yml 服务条目: {code[:50]}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--site", default="", help="built site dir (default <repo>/_site)")
@@ -340,6 +569,7 @@ def main():
     patents = load_yaml("patents.yml") or {}
 
     errors = []
+    warnings = []
     bib_keys = set(parse_bib(bib_path))
     if not bib_keys:
         errors.append(f"publications.bib 解析为空: {bib_path}")
@@ -397,7 +627,19 @@ def main():
             if pairs:
                 check_rendering_order(pairs, aw_html, f"/awards/ {cat}", errors)
 
+    # ---- 消费方产物顺序（export_obsidian md / CV LaTeX / /cv/ 页面）----
+    check_consumer_export_order(news, service, awards, patents, errors)
+    check_consumer_cv_order(errors)
+    check_cv_page_order(site_dir, errors)
+
+    # ---- cv.json ↔ yml 分流一致性（warn：cv.json 数据整理（B）完成后转 error）----
+    check_cv_yml_sync(awards, service, warnings)
+
     print(f"news: {len(news)} | awards: {len(awards)} | service sections: {len(service.get('sections', []))} | patents: {len(patents.get('patents', []))}")
+    if warnings:
+        print(f"[WARN] {len(warnings)} 处（cv.json ↔ yml 分流比对：cv.json 数据整理完成后将改为 error）：")
+        for w in warnings:
+            print("  -", w)
     if errors:
         print(f"[FAIL] {len(errors)} 处不一致：")
         for e in errors:
