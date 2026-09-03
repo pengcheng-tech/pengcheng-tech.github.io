@@ -31,8 +31,7 @@ Checks:
      research/reviewer/academic/mentorship must appear in cv.json Honors &
      Awards; industry/media must be represented in cv.json impacts;
      date-sorted service venue codes (e.g. "ICLR 2027") must appear in
-     cv.json service text. WARN mode — cv.json data cleanup lands in a
-     later PR (flips to error then).
+     cv.json service text.
 
 Usage:
   python3 scripts/check_consistency.py
@@ -466,19 +465,30 @@ def check_cv_page_order(site_dir, errors):
     import json
     cv = json.loads(cv_path.read_text(encoding="utf-8"))
     raw_html = cv_page.read_text(encoding="utf-8")
-    html = normalize(raw_html)
+
+    # 按 <h1> 节切片，避免标题/日期撞到页面其它节（如 service 节里的 "ICML 2026 Silver Reviewer"）
+    h1s = [(m.start(), html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip())
+           for m in re.finditer(r"<h1[^>]*>(.*?)</h1>", raw_html, re.S)]
+
+    def block(name):
+        for i, (pos, hname) in enumerate(h1s):
+            if name in hname:
+                end = h1s[i + 1][0] if i + 1 < len(h1s) else len(raw_html)
+                return normalize(raw_html[pos:end])
+        return ""
+
     work_pairs = [(f"{w.get('startDate','')} – {w.get('endDate','')}", w.get("startDate", ""))
                   for w in cv.get("work", []) if w.get("startDate")]
     if work_pairs:
-        check_rendering_order(work_pairs, html, "/cv/ work", errors)
+        check_rendering_order(work_pairs, block("Professional Experience"), "/cv/ work", errors)
     edu_pairs = [(f"{e.get('startDate','')} – {e.get('endDate','')}", e.get("startDate", ""))
                  for e in cv.get("education", []) if e.get("startDate")]
     if edu_pairs:
-        check_rendering_order(edu_pairs, html, "/cv/ education", errors)
+        check_rendering_order(edu_pairs, block("Education"), "/cv/ education", errors)
     aw_pairs = [(a.get("title", ""), a.get("date", ""))
                 for a in cv.get("awards", []) if isinstance(a, dict)]
     if aw_pairs:
-        check_rendering_order(aw_pairs, html, "/cv/ awards", errors)
+        check_rendering_order(aw_pairs, block("Honors & Awards"), "/cv/ awards", errors)
     # publications 各组：用 raw HTML 的 <strong>组标题</strong> 切片，避免普通词（如 thesis）在正文提前出现
     pub_groups = (("representative", "Representative Publications"), ("other", "Other Publications"),
                   ("preprint", "Preprints / Under Review"), ("thesis", "Thesis"))
@@ -503,12 +513,11 @@ _GENERIC_TOKENS = {"research", "media", "security", "impact", "international",
 _MEDIA_PERSONS = {"schneier", "anderson"}  # 背书以"被 X 赞扬"并入媒体串（B 期拆分后更新）
 
 
-def check_cv_yml_sync(awards, service, warnings):
-    """(warn) cv.json 与 yml 数据分流一致：
+def check_cv_yml_sync(awards, service, errors):
+    """cv.json 与 yml 数据分流一致（error 模式）：
     - awards：research/reviewer/academic/mentorship → cv.json Honors & Awards；
       industry/media → cv.json impacts；
-    - service：date 组的会议代号（如 "ICLR 2027"）须出现在 cv.json 的 service 文本里。
-    cv.json 数据整理（B）后转 error。"""
+    - service：date 组的会议代号（如 "ICLR 2027"）须出现在 cv.json 的 service 文本里。"""
     cv_path = DATA / "cv.json"
     if not cv_path.exists():
         return
@@ -529,12 +538,12 @@ def check_cv_yml_sync(awards, service, warnings):
                 for c in cv_awards
             )
             if not matched:
-                warnings.append(f"cv.json Honors & Awards 缺 yml 条目[{cat}]: {a.get('title','')[:60]}")
+                errors.append(f"cv.json Honors & Awards 缺 yml 条目[{cat}]: {a.get('title','')[:60]}")
         elif cat in ("industry", "media") and im_text.get(cat):
             key = at - _GENERIC_TOKENS
             covered = key and (key & tokens(im_text[cat])) or (cat == "media" and tokens(im_text[cat]) & _MEDIA_PERSONS)
             if key and not covered:
-                warnings.append(f"cv.json impacts.{cat} 未体现 yml 条目: {a.get('title','')[:60]}")
+                errors.append(f"cv.json impacts.{cat} 未体现 yml 条目: {a.get('title','')[:60]}")
 
     sv_text = " ".join(str(x) for v in (cv.get("service", {}) or {}).values() for x in (v or []))
     if not sv_text:
@@ -551,7 +560,7 @@ def check_cv_yml_sync(awards, service, warnings):
                     continue
                 code = normalize(m.group(1))
                 if code and code not in sv_norm:
-                    warnings.append(f"cv.json service 未体现 yml 服务条目: {code[:50]}")
+                    errors.append(f"cv.json service 未体现 yml 服务条目: {code[:50]}")
 
 
 def main():
@@ -569,7 +578,6 @@ def main():
     patents = load_yaml("patents.yml") or {}
 
     errors = []
-    warnings = []
     bib_keys = set(parse_bib(bib_path))
     if not bib_keys:
         errors.append(f"publications.bib 解析为空: {bib_path}")
@@ -632,14 +640,10 @@ def main():
     check_consumer_cv_order(errors)
     check_cv_page_order(site_dir, errors)
 
-    # ---- cv.json ↔ yml 分流一致性（warn：cv.json 数据整理（B）完成后转 error）----
-    check_cv_yml_sync(awards, service, warnings)
+    # ---- cv.json ↔ yml 分流一致性 ----
+    check_cv_yml_sync(awards, service, errors)
 
     print(f"news: {len(news)} | awards: {len(awards)} | service sections: {len(service.get('sections', []))} | patents: {len(patents.get('patents', []))}")
-    if warnings:
-        print(f"[WARN] {len(warnings)} 处（cv.json ↔ yml 分流比对：cv.json 数据整理完成后将改为 error）：")
-        for w in warnings:
-            print("  -", w)
     if errors:
         print(f"[FAIL] {len(errors)} 处不一致：")
         for e in errors:

@@ -281,28 +281,28 @@
     {
       "title": "3rd Place Award",
       "event": "Workshop & Challenge on Deepfake Detection, Localization, and Interpretability, IJCAI 2025",
-      "date": "2025",
+      "date": "2025-08",
       "role": "Advisor",
       "summary": "Track: Audio-Video Detection and Localization (DDL-AV)"
     },
     {
       "title": "National Grand Prize (Top-Tier Award)",
       "event": "19th “Challenge Cup” National Competition for Extracurricular Academic Science and Technology Works",
-      "date": "2024",
+      "date": "2024-11",
       "role": "Advisor (Ranked 2nd among 3 advisors)",
       "summary": "Project: “Multimodal AI Audit Matrix: Deepfake Detection and NSFW Content Regulation Platform”"
     },
     {
       "title": "Top 5 Nationwide",
       "event": "3rd China Artificial Intelligence Competition",
-      "date": "2021",
+      "date": "2021-12",
       "role": "Primary Advisor (Ranked 1st among 2 advisors)",
       "summary": "Audio Deepfake Detection Under Open-Speaker Scenarios; Speaker-Specific Audio Deepfake Detection"
     },
     {
       "title": "Finalist for “Most Innovative Research” Pwnie Award",
       "event": "Black Hat USA",
-      "date": "2019",
+      "date": "2019-08",
       "role": "First Author (1st of 4 contributors)",
       "summary": "Research: “SonarSnoop: Active Acoustic Side-Channel Attacks”"
     },
@@ -315,9 +315,20 @@
     {
       "title": "Ph.D. Scholarship",
       "event": "Faculty of Science and Technology, Lancaster University, UK",
-      "date": "2016",
+      "date": "2016-10",
       "endDate": "2020",
       "summary": ""
+    },
+    {
+      "title": "ICML 2026 Silver Reviewer",
+      "event": "International Conference on Machine Learning (ICML 2026)",
+      "date": "2026-05",
+      "summary": "Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs"
+    },
+    {
+      "title": "National Graduate Scholarship Achievement (October 2024)",
+      "date": "2024-10",
+      "summary": "Co-supervised Master's student won the National Graduate Scholarship (China)"
     }
   ],
   "service": {
@@ -328,7 +339,7 @@
       "Program Committee Member: AAAI 2027, USENIX Security 2027"
     ],
     "conference_reviewer": [
-      "ICML 2026, ICLR 2026, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
+      "ICML 2026, ICLR 2026, ICLR 2027, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
     ],
     "journal_reviewer": [
       "English Journals: Proceedings of the IEEE, IEEE Transactions on Information Forensics and Security (TIFS), IEEE Transactions on Dependable and Secure Computing (TDSC), IEEE Internet of Things Journal (IoT-J), ACM Transactions on Internet of Things (TIOT)",
