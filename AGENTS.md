@@ -21,6 +21,10 @@
 3. `gh pr create` 提 PR，绝不直接 push 到 master
 4. 在 PR 描述里列出：改了哪些文件、新增/修改了哪些条目
 
+**禁止项**：`git commit --no-verify` —— 该参数会跳过 pre-commit 钩子
+（拒绝在 master 上直接提交的防线，见 docs/update-workflow.md §四）。
+提交失败时排查并修复原因后重试，**不得**用 --no-verify 绕过钩子。
+
 ## 内容风格
 - 新闻日期格式：**Month YYYY**，倒序，最新在最上
 - 我的名字在作者列表中加粗，通讯作者在名字后加 *
