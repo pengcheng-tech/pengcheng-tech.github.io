@@ -63,7 +63,8 @@ note: <补充要求，可选>
   - service：**受邀时间**（PC 当选 / 审稿邀请 / 客座编辑的日期）
   - awards：**事件实际发生日期**——以证书日期 / 比赛日期 / 授予日期为准，**不是公告日期**；与 news 的"得知 / 公告日期"是两个不同口径，二者不一致属正常，**勿互相对齐**
   - awards 的 **industry 类目**：`date_sort` 记**厂商作出认可的日期**（如厂商确认 / 致谢邮件的日期），**不是相关论文的发表日期**（SurrogatePrompt 曾误用 CCS 2024 发表月，已改为最早厂商认可 2023-09）
-  - **awards → CV（cv.json）分流**：yml awards 按 category 分流进 CV——`research` / `academic` / `mentorship` / `reviewer` → CV 的 **Honors & Awards**（cv.json `awards`）；`industry` / `media` → CV 的 **Impacts / Media 节**（cv.json `impacts`，这两类是影响力证据而非荣誉）。service 的 date 组会议代号（如 `ICLR 2027`）也须出现在 cv.json 的 service 文本里。`check_consistency.py` 检查 10 以 **error 模式**校验该映射；cv.json 的 awards `date` 一律 **YYYY-MM** 且与 yml `date_sort` 一致
+  - **awards → CV（cv.json）分流**：yml awards 按 category 分流进 CV——`research` / `academic` / `mentorship` / `reviewer` → CV 的 **Honors & Awards**（cv.json `awards`）；`industry` / `media` → CV 的 **Impacts / Media 节**（cv.json `impacts`，这两类是影响力证据而非荣誉）。service 的 date 组会议代号（如 `ICLR 2027`）也须出现在 cv.json 的 service 文本里。`check_consistency.py` 检查 10 以 **error 模式**校验该映射；cv.json 的 awards `date` 一律 **YYYY-MM** 且与 yml `date_sort` 一致、`date_estimated` 标志与 yml 一致
+  - **cv.json service 结构与比对口径**：cv.json 的 `editorial` / `program_committees` / `conference_reviewer` / `recognition` 是**对象数组**（`{name, date_sort}`），`journal_reviewer` 保留两组（`{group, items:[{name}]}`、无日期）；渲染时同组条目按 `date_sort` 倒序后 **join 成一行**显示（CV 版面紧凑，不逐条展开）。cv.json 与 yml 的**措辞可以不同**（yml bullet 带全称、cv 用紧凑代号如 `ICLR 2027`），检查 10 的比对基于**会议代号**（yml bullet 的粗体段）+ **年份**，`date_sort` 必须与 yml 一致
 - **service.yml 结构**：`featured` / `bullets` 是对象数组（`{text, date_sort, date_estimated?}`）；组级 `sort: date`（默认，bullets 按 `date_sort` 倒序）| `none`（保持文件顺序——期刊审稿按刊物分量手工排序、Editorial 描述性 bullet 等）
 - **估计日期标记 `date_estimated: true`**：历史条目查不到精确日期时，用年份默认值 `YYYY-01` 并加该标记，
   日后补到准确日期时需修正。**新增条目一律要求填写准确的受邀 / 获奖日期，不允许估计值**（结构化输入的

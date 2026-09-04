@@ -90,29 +90,25 @@ Academic Services
 ======
 
 **Journal Editorial Roles**
-{% for e in cv.service.editorial %}
-- {{ e }}
-{% endfor %}
+{% assign ed_svc = cv.service.editorial | sort: "date_sort" | reverse %}
+- {{ ed_svc | map: "name" | join: ", " }}
 
 **Conference Program Committees**
-{% for p in cv.service.program_committees %}
-- {{ p }}
-{% endfor %}
+{% assign pc_svc = cv.service.program_committees | sort: "date_sort" | reverse %}
+- {{ pc_svc | map: "name" | join: ", " }}
 
 **Conference Reviewer**
-{% for r in cv.service.conference_reviewer %}
-- {{ r }}
-{% endfor %}
+{% assign cr_svc = cv.service.conference_reviewer | sort: "date_sort" | reverse %}
+- {{ cr_svc | map: "name" | join: ", " }}
 
 **Journal Reviewer**
-{% for j in cv.service.journal_reviewer %}
-- {{ j }}
+{% for g in cv.service.journal_reviewer %}
+- {{ g.group }}: {{ g.items | map: "name" | join: ", " }}
 {% endfor %}
 
 **Reviewer Recognition**
-{% for r in cv.service.recognition %}
-- {{ r }}
-{% endfor %}
+{% assign rc_svc = cv.service.recognition | sort: "date_sort" | reverse %}
+- {{ rc_svc | map: "name" | join: ", " }}
 
 Other Academic Activities
 ======
