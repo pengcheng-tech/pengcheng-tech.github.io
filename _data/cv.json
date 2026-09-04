@@ -276,7 +276,8 @@
       "title": "Silver Award",
       "event": "IJCAI 2026 Deepfake Detection and Localization Challenge (DDL 2.0)",
       "date": "2026-08",
-      "summary": "Team AIGVDete (Zhejiang University)"
+      "summary": "Team AIGVDete (Zhejiang University)",
+      "date_estimated": true
     },
     {
       "title": "3rd Place Award",
@@ -304,7 +305,8 @@
       "event": "Black Hat USA",
       "date": "2019-08",
       "role": "First Author (1st of 4 contributors)",
-      "summary": "Research: “SonarSnoop: Active Acoustic Side-Channel Attacks”"
+      "summary": "Research: “SonarSnoop: Active Acoustic Side-Channel Attacks”",
+      "date_estimated": true
     },
     {
       "title": "Postdoctoral Excellence Grant (Second Class)",
@@ -323,30 +325,102 @@
       "title": "ICML 2026 Silver Reviewer",
       "event": "International Conference on Machine Learning (ICML 2026)",
       "date": "2026-05",
-      "summary": "Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs"
+      "summary": "Top-tier Silver Reviewer distinction awarded by the ICML 2026 Program Chairs",
+      "date_estimated": true
     },
     {
       "title": "National Graduate Scholarship Achievement (October 2024)",
       "date": "2024-10",
-      "summary": "Co-supervised Master's student won the National Graduate Scholarship (China)"
+      "summary": "Co-supervised Master's student won the National Graduate Scholarship (China)",
+      "date_estimated": true
     }
   ],
   "service": {
     "editorial": [
-      "Special Issue Initiator and Guest Editor-in-Chief: “Intelligent Voice Security and Defense Technologies”, Journal of Cyber Security, 2025"
+      {
+        "name": "Special Issue Initiator and Guest Editor-in-Chief: “Intelligent Voice Security and Defense Technologies”, Journal of Cyber Security, 2025",
+        "date_sort": "2025-01"
+      }
     ],
     "program_committees": [
-      "Program Committee Member: AAAI 2027, USENIX Security 2027"
+      {
+        "name": "AAAI 2027",
+        "date_sort": "2026-06"
+      },
+      {
+        "name": "USENIX Security 2027",
+        "date_sort": "2026-08"
+      }
     ],
     "conference_reviewer": [
-      "ICML 2026, ICLR 2026, ICLR 2027, ACM MM 2026, IEEE SLT 2026, Interspeech 2026, AAAI 2026, ACM Web Conference (WWW 2025)"
+      {
+        "name": "ICML 2026",
+        "date_sort": "2026-01"
+      },
+      {
+        "name": "ICLR 2026",
+        "date_sort": "2026-01"
+      },
+      {
+        "name": "ICLR 2027",
+        "date_sort": "2026-08"
+      },
+      {
+        "name": "ACM MM 2026",
+        "date_sort": "2026-01"
+      },
+      {
+        "name": "IEEE SLT 2026",
+        "date_sort": "2026-01"
+      },
+      {
+        "name": "Interspeech 2026",
+        "date_sort": "2026-07"
+      },
+      {
+        "name": "AAAI 2026",
+        "date_sort": "2026-01"
+      },
+      {
+        "name": "ACM Web Conference (WWW 2025)",
+        "date_sort": "2025-01"
+      }
     ],
     "journal_reviewer": [
-      "English Journals: Proceedings of the IEEE, IEEE Transactions on Information Forensics and Security (TIFS), IEEE Transactions on Dependable and Secure Computing (TDSC), IEEE Internet of Things Journal (IoT-J), ACM Transactions on Internet of Things (TIOT)",
-      "Chinese Journal: Journal of Information Network Security"
+      {
+        "group": "English Journals",
+        "items": [
+          {
+            "name": "Proceedings of the IEEE"
+          },
+          {
+            "name": "IEEE Transactions on Information Forensics and Security (TIFS)"
+          },
+          {
+            "name": "IEEE Transactions on Dependable and Secure Computing (TDSC)"
+          },
+          {
+            "name": "IEEE Internet of Things Journal (IoT-J)"
+          },
+          {
+            "name": "ACM Transactions on Internet of Things (TIOT)"
+          }
+        ]
+      },
+      {
+        "group": "Chinese Journal",
+        "items": [
+          {
+            "name": "Journal of Information Network Security"
+          }
+        ]
+      }
     ],
     "recognition": [
-      "ICML 2026 Silver Reviewer — top-tier recognition awarded by the ICML 2026 Program Chairs"
+      {
+        "name": "ICML 2026 Silver Reviewer",
+        "date_sort": "2026-05"
+      }
     ]
   },
   "supervision": [

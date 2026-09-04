@@ -360,22 +360,28 @@ def render(cv, bib, show_funding=False, show_patents=True):
             L.append(r"\item " + " | ".join(parts))
         L.append(r"\end{itemize}")
 
-    # Academic Services
+    # Academic Services（service 节为对象数组：date 块按 date_sort 倒序后 join 一行显示；
+    # journal_reviewer 保留两组标签，无日期）
     sv = cv.get("service", {})
     if any(sv.values()):
         section("Academic Services")
         blocks = [
-            ("Journal Editorial Roles", sv.get("editorial", [])),
-            ("Conference Program Committees", sv.get("program_committees", [])),
-            ("Conference Reviewer", sv.get("conference_reviewer", [])),
-            ("Journal Reviewer Roles", sv.get("journal_reviewer", [])),
-            ("Reviewer Recognition", sv.get("recognition", [])),
+            ("Journal Editorial Roles", sv.get("editorial", []), "date"),
+            ("Conference Program Committees", sv.get("program_committees", []), "date"),
+            ("Conference Reviewer", sv.get("conference_reviewer", []), "date"),
+            ("Journal Reviewer Roles", sv.get("journal_reviewer", []), "groups"),
+            ("Reviewer Recognition", sv.get("recognition", []), "date"),
         ]
-        for heading, items in blocks:
+        for heading, items, kind in blocks:
             if not items:
                 continue
             L.append(r"\textbf{" + latex_escape(heading) + r"}")
-            itemize(items)
+            if kind == "groups":
+                lines = [f"{g.get('group','')}: " + ", ".join(
+                    it.get("name", "") for it in g.get("items", [])) for g in items]
+            else:
+                lines = [", ".join(it.get("name", "") for it in _dated_desc(items, "date_sort"))]
+            itemize(lines)
 
     # Granted Patents (granted patents are public info; included by default,
     # disable with --no-patents)

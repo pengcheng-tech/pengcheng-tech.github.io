@@ -346,6 +346,16 @@ def _seq_is_desc(seq, label, errors):
                 return
 
 
+def _verify_joined_service_line(items, joined, label, errors):
+    """cv service date 块的 join 渲染行校验：每段名字都在块内且顺序按 date_sort 倒序。
+    单条目块（editorial / recognition）跳过顺序校验。"""
+    if len(items) <= 1:
+        return
+    name2ds = {it.get("name", ""): it.get("date_sort", "") for it in items if isinstance(it, dict)}
+    seq = [name2ds.get(n.strip(), "") for n in joined.split(",")]
+    _seq_is_desc(seq, label, errors)
+
+
 def check_consumer_export_order(news, service, awards, patents, errors):
     """export_obsidian.py 产物（Obsidian md）必须按 date_sort / grant_date 倒序。"""
     import export_obsidian as ex
@@ -455,6 +465,27 @@ def check_consumer_cv_order(errors):
         if seq:
             _seq_is_desc(seq, f"CV PDF {heading} (year)", errors)
 
+    # Academic Services：date 块渲染为 join 一行，块内须按 date_sort 倒序
+    sv_tex = section_text(r"\section*{Academic Services}")
+    cv_svc = cv.get("service", {}) or {}
+    for label, block in (("Journal Editorial Roles", "editorial"), ("Conference Program Committees", "program_committees"),
+                         ("Conference Reviewer", "conference_reviewer"), ("Reviewer Recognition", "recognition")):
+        items = [it for it in (cv_svc.get(block) or []) if isinstance(it, dict)]
+        if not items:
+            continue
+        i = sv_tex.find("\\textbf{" + label)
+        if i < 0:
+            errors.append(f"CV PDF 缺 Academic Services 块: {label}")
+            continue
+        j = sv_tex.find("\\textbf{", i + 1)
+        if j < 0:
+            j = len(sv_tex)
+        m = re.search(r"\\item\s+(.+?)\\end\{itemize\}", sv_tex[i:j], re.S)
+        if not m:
+            continue
+        _verify_joined_service_line(items, m.group(1).strip(),
+                                    f"CV PDF Academic Services / {label}", errors)
+
 
 def check_cv_page_order(site_dir, errors):
     """/cv/ 页面渲染的 cv.json 列表必须倒序。"""
@@ -500,11 +531,33 @@ def check_cv_page_order(site_dir, errors):
         end = raw_html.find(markers[i + 1][1], start + 1) if i + 1 < len(markers) else len(raw_html)
         if end < 0:
             end = len(raw_html)
-        block = normalize(raw_html[start:end])
+        pub_block = normalize(raw_html[start:end])
         pairs = [(p.get("name", ""), str(p.get("year", "")))
                  for p in cv.get("publications", []) if p.get("group") == g and p.get("name")]
         if pairs:
-            check_rendering_order(pairs, block, f"/cv/ pubs/{g}", errors)
+            check_rendering_order(pairs, pub_block, f"/cv/ pubs/{g}", errors)
+
+    # Academic Services：date 块 join 行内须按 date_sort 倒序
+    svc_block = block("Academic Services")
+    if svc_block:
+        cv_svc = cv.get("service", {}) or {}
+        page_heads = (("Journal Editorial Roles", "editorial"), ("Conference Program Committees", "program_committees"),
+                      ("Conference Reviewer", "conference_reviewer"), ("Reviewer Recognition", "recognition"))
+        for label, key in page_heads:
+            items = [it for it in (cv_svc.get(key) or []) if isinstance(it, dict)]
+            if not items:
+                continue
+            hi = svc_block.find(normalize(label))
+            if hi < 0:
+                errors.append(f"/cv/ 页缺 Academic Services 块: {label}")
+                continue
+            nxt = [x for x in (svc_block.find(normalize(h2)) for h2, _ in page_heads if h2 != label) if x > hi]
+            seg = svc_block[hi:min(nxt) if nxt else len(svc_block)]
+            bi = seg.find("- ")
+            if bi < 0:
+                continue
+            joined = seg[bi + 2:].split("\n")[0].strip()
+            _verify_joined_service_line(items, joined, f"/cv/ {label}", errors)
 
 
 CV_HONORS_CATS = ("research", "reviewer", "academic", "mentorship")
@@ -513,11 +566,22 @@ _GENERIC_TOKENS = {"research", "media", "security", "impact", "international",
 _MEDIA_PERSONS = {"schneier", "anderson"}  # 背书以"被 X 赞扬"并入媒体串（B 期拆分后更新）
 
 
+def _cv_service_date_map(cv):
+    """cv.json service 的 date 块 → {normalize(name): date_sort}。"""
+    m = {}
+    for block in ("editorial", "program_committees", "conference_reviewer", "recognition"):
+        for it in (cv.get("service", {}) or {}).get(block, []) or []:
+            if isinstance(it, dict) and it.get("name"):
+                m.setdefault(normalize(it["name"]), it.get("date_sort", ""))
+    return m
+
+
 def check_cv_yml_sync(awards, service, errors):
     """cv.json 与 yml 数据分流一致（error 模式）：
-    - awards：research/reviewer/academic/mentorship → cv.json Honors & Awards；
-      industry/media → cv.json impacts；
-    - service：date 组的会议代号（如 "ICLR 2027"）须出现在 cv.json 的 service 文本里。"""
+    - awards：research/reviewer/academic/mentorship → cv.json Honors & Awards（须存在，
+      且 cv `date` == yml `date_sort`、`date_estimated` 标志一致）；industry/media → cv.json impacts；
+    - service：yml date 组条目按**会议代号**比对（cv 措辞可不同，如 yml bullet 带全称、cv 只写代号），
+      日期必须与 yml date_sort 一致（规则见 docs/update-workflow.md 第五节）。"""
     cv_path = DATA / "cv.json"
     if not cv_path.exists():
         return
@@ -532,35 +596,40 @@ def check_cv_yml_sync(awards, service, errors):
         cat = a.get("category")
         at = tokens(a.get("title", ""))
         if cat in CV_HONORS_CATS:
-            matched = any(
-                normalize(a.get("title", "")) == normalize(c.get("title", ""))
-                or len(at & tokens(c.get("title", ""))) >= 2
-                for c in cv_awards
-            )
-            if not matched:
+            best = next((c for c in cv_awards
+                         if normalize(a.get("title", "")) == normalize(c.get("title", ""))
+                         or len(at & tokens(c.get("title", ""))) >= 2), None)
+            if best is None:
                 errors.append(f"cv.json Honors & Awards 缺 yml 条目[{cat}]: {a.get('title','')[:60]}")
+            else:
+                if (best.get("date") or "") != (a.get("date_sort") or ""):
+                    errors.append(f"cv.json 条目日期与 yml date_sort 不一致: {a.get('title','')[:50]} "
+                                  f"(cv {best.get('date','')} vs yml {a.get('date_sort','')})")
+                if bool(best.get("date_estimated")) != bool(a.get("date_estimated")):
+                    errors.append(f"cv.json 条目 date_estimated 与 yml 不一致: {a.get('title','')[:50]}")
         elif cat in ("industry", "media") and im_text.get(cat):
             key = at - _GENERIC_TOKENS
             covered = key and (key & tokens(im_text[cat])) or (cat == "media" and tokens(im_text[cat]) & _MEDIA_PERSONS)
             if key and not covered:
                 errors.append(f"cv.json impacts.{cat} 未体现 yml 条目: {a.get('title','')[:60]}")
 
-    sv_text = " ".join(str(x) for v in (cv.get("service", {}) or {}).values() for x in (v or []))
-    if not sv_text:
-        return
-    sv_norm = normalize(sv_text)
+    cv_svc_map = _cv_service_date_map(cv)
     for section in service.get("sections", []) if isinstance(service, dict) else []:
         for group in section.get("groups", []):
             if group.get("sort") == SERVICE_NONE_SORT:
-                continue  # 期刊审稿等手工序组不在此比对范围
+                continue  # 期刊审稿（alpha/none）等手工序组不在此比对范围
             for b in group.get("bullets", []):
                 text = _entry_text(b)
                 m = re.match(r"\*\*(.+?)\*\*", text)
                 if not m:
                     continue
                 code = normalize(m.group(1))
-                if code and code not in sv_norm:
-                    errors.append(f"cv.json service 未体现 yml 服务条目: {code[:50]}")
+                ds = b.get("date_sort") if isinstance(b, dict) else ""
+                if code not in cv_svc_map:
+                    errors.append(f"cv.json service 缺 yml 服务条目（代号比对）: {code[:50]}")
+                elif ds and cv_svc_map[code] != ds:
+                    errors.append(f"cv.json service 条目日期与 yml 不一致: {code[:40]} "
+                                  f"(cv {cv_svc_map[code]} vs yml {ds})")
 
 
 def main():
