@@ -38,18 +38,36 @@ note: <补充要求，可选>
 
 1. 解析结构化输入（type / date / title / evidence / files / note）
 2. 查联动映射，确定要改的数据文件
-3. `git checkout master && git pull` → 切分支 `agent/<任务名>`
+3. `git checkout master && git pull` → 切分支 `agent/<任务名>`，**并确认 `git branch --show-current` 输出为该分支**（PR #21 教训：漏切分支、直接在 master 上编辑并提交，靠提交输出的 `[master …]` 才被发现）
 4. 更新数据文件：
    - `news.yml` **追加**即可（**位置无关**——模板按 `date_sort` 倒序渲染，见第五节）
    - `service.yml` / `awards.yml` / `publications.bib` 对应位置
 5. `files:` 里的本机文件 → 复制进 `files/` 并重命名（文件名不含本机路径）
 6. 如涉及论文：`python3 scripts/bib2md.py --prune`
 7. `bundle exec jekyll build` —— 失败立即停下报告（不改 Gemfile / _config.yml）
-8. `python3 scripts/check_consistency.py` —— 失败立即停下报告
+8. `python3 scripts/check_consistency.py` —— 失败立即停下报告（**含检查 11：在 master 且有未提交改动会直接报错**）
 9. `git commit` 提交改动 —— **agent 到此为止**：不推送、不建 PR
 10. 提交完成后直接输出**分支名**和**用户要执行的命令**（`git push -u origin <分支>` → `gh pr create`，描述见第六节）；不要尝试 push、不要检查 gh 认证、不要建议用户重新登录 gh。**每次回报的最后必须标注远端与本地提交差异**：用 `git ls-remote origin <分支>`（或 master）核实远端实际 tip，格式如「远端 `<sha>`，本地领先 N 个提交，需要 push」；本地与远端一致时也要明确写「远端 `<sha>`，本地与远端一致」。**不要假设"上一轮提示过 push 就等于用户推过了"**——PR #15 教训：4 个提交长期只存在于本地、从未上远端，用户按提示合并 PR 时合并的是旧提交，日期修正全部丢失。
 11. 用户在本机终端推送分支、创建并合并 PR → GitHub Pages 自动部署上线
 12. （可选）用户本地运行 `python3 scripts/export_obsidian.py` 刷新 Obsidian 只读视图
+
+**防线：拒绝在 master 直接提交的 pre-commit 钩子**（hooks 不进版本控制，**本机安装一次**）：
+
+```bash
+cat > .git/hooks/pre-commit <<'EOF'
+#!/bin/sh
+# 拒绝在 master 上直接提交（docs/update-workflow.md §四）
+branch="$(git branch --show-current 2>/dev/null)"
+if [ "$branch" = "master" ]; then
+  echo "[pre-commit] 禁止直接在 master 上提交：先切到 agent/<任务名> 分支" >&2
+  exit 1
+fi
+exit 0
+EOF
+chmod +x .git/hooks/pre-commit
+```
+
+安装后测试：在 master 上随便改一个文件再 `git commit`，应被钩子拒绝。
 
 ## 五、列表排序全局规则（时间倒序）
 
