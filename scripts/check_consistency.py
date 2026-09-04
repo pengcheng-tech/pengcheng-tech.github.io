@@ -32,6 +32,8 @@ Checks:
      Awards; industry/media must be represented in cv.json impacts;
      date-sorted service venue codes (e.g. "ICLR 2027") must appear in
      cv.json service text.
+ 11. Development happens on feature branches: running on `master` with
+     uncommitted changes is an error (commit-on-master guard).
 
 Usage:
   python3 scripts/check_consistency.py
@@ -42,6 +44,7 @@ import argparse
 import html
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -632,6 +635,25 @@ def check_cv_yml_sync(awards, service, errors):
                                   f"(cv {cv_svc_map[code]} vs yml {ds})")
 
 
+def check_no_master_dev(errors):
+    """禁止在 master 分支带未提交改动工作（开发必须切 agent/* 分支，见 workflow §四-3）。
+
+    检查在本流程第 8 步（提交前）运行，因此在 master 上的未提交改动会被拦住——
+    PR #21 教训：漏切分支直接改在 master 上并提交。
+    """
+    try:
+        branch = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True, timeout=5
+        ).stdout.strip()
+        dirty = subprocess.run(
+            ["git", "status", "--porcelain"], capture_output=True, text=True, timeout=5
+        ).stdout.strip()
+    except Exception:
+        return  # git 不可用（如 CI 无 .git）则跳过
+    if branch == "master" and dirty:
+        errors.append("当前在 master 分支且有未提交改动——请先切到 agent/<任务> 分支再继续（见 docs/update-workflow.md §四-3）")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--site", default="", help="built site dir (default <repo>/_site)")
@@ -647,6 +669,7 @@ def main():
     patents = load_yaml("patents.yml") or {}
 
     errors = []
+    check_no_master_dev(errors)
     bib_keys = set(parse_bib(bib_path))
     if not bib_keys:
         errors.append(f"publications.bib 解析为空: {bib_path}")
