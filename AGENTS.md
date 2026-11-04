@@ -1,5 +1,7 @@
 # 本仓库 Agent 工作规则
 
+> 跨项目通用规则、新机器 bootstrap 清单与历史失效记录见 private 仓库 `pengcheng-tech/agent-playbook`；本仓库的更新工作流见 `docs/update-workflow.md`。
+
 这是 Peng Cheng 的学术个人主页，Jekyll + AcademicPages，
 部署在 GitHub Pages（pengcheng-tech.github.io）。
 
