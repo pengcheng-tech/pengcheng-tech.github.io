@@ -20,8 +20,9 @@
 1. 从 master 切出分支：agent/<任务简称>
 2. 改完运行 `bundle exec jekyll build`，构建失败就停下报告，
    不要自作主张去改配置或依赖来"修好"它
-3. `gh pr create` 提 PR，绝不直接 push 到 master
-4. 在 PR 描述里列出：改了哪些文件、新增/修改了哪些条目
+3. `git commit` 提交后**停手**：不 push、不建 PR，把分支名和推送 / 建 PR 命令交给我
+   执行（`git push -u origin <分支>` → `gh pr create`）；绝不直接 push 到 master
+4. PR 描述里列出：改了哪些文件、新增/修改了哪些条目
 
 **禁止项**：`git commit --no-verify` —— 该参数会跳过 pre-commit 钩子
 （拒绝在 master 上直接提交的防线，见 docs/update-workflow.md §四）。
