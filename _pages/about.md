@@ -77,7 +77,6 @@ My research has made significant contributions to industry security:
 <!--## Contact
 
 - **Email**: pcheng@hbku.edu.qa
-- **Phone**: (86) 15057169279
 - **Website**: https://pengcheng-tech.github.io/
-- **Location**: Hangzhou, Zhejiang, China
+- **Location**: Doha, Qatar
 - **Google Scholar**: https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en-->
