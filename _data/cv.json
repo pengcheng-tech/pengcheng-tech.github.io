@@ -1,15 +1,15 @@
 {
   "basics": {
     "name": "Peng Cheng",
-    "label": "Researcher, State Key Laboratory of Blockchain and Data Security, Zhejiang University",
+    "label": "Assistant Professor, College of Science and Engineering, Hamad Bin Khalifa University",
     "email": "pengcheng326@hotmail.com",
     "phone": "(86) 15057169279",
     "website": "https://pengcheng-tech.github.io/",
     "summary": "Research Interests: AIGC security, IoT security",
     "location": {
-      "city": "Hangzhou",
-      "region": "Zhejiang",
-      "countryCode": "CN"
+      "city": "Doha",
+      "region": "Qatar",
+      "countryCode": "QA"
     },
     "profiles": [
       {
@@ -40,10 +40,16 @@
   },
   "work": [
     {
+      "position": "Assistant Professor",
+      "organization": "College of Science and Engineering, Hamad Bin Khalifa University",
+      "startDate": "2026-11",
+      "endDate": "Present"
+    },
+    {
       "position": "Researcher",
       "organization": "State Key Laboratory of Blockchain and Data Security, Zhejiang University",
       "startDate": "2024-06",
-      "endDate": "Present",
+      "endDate": "2026-11",
       "summary": "Member of the AI Data Security Team",
       "highlights": [
         "Conducting research on AI-generated content (AIGC) security",
