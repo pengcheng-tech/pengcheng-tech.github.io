@@ -10,6 +10,9 @@
 #   evidence     : optional provenance — source + date only, no URL / email content
 #   commented    : render this entry as an HTML comment (hidden)
 
+- date_display: "November 2026"
+  date_sort: "2026-11"
+  text: 'I joined **Hamad Bin Khalifa University (HBKU)**, Qatar, as an **Assistant Professor**. **I am recruiting** PhD students, postdocs, and research interns — see Latest Update above for details.'
 - date_display: "August 2026"
   date_sort: "2026-08"
   type: service

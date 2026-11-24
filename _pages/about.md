@@ -7,11 +7,12 @@ redirect_from:
 ---
 
 ## Latest Update
+- 📣 **PhD / Postdoc / Intern Openings — Generative AI Security & Privacy at HBKU, Qatar**. I am recruiting one fully funded PhD student (Fall 2027), a postdoc, and remote research interns to work on generative AI security and privacy, including deepfake detection, AI watermarking, jailbreak and guardrail security, privacy risks in generative AI, and how well multimodal large models understand physical laws. Outstanding interns will be given priority consideration for future PhD openings. If you are interested, please email me at pcheng@hbku.edu.qa with the subject line "[Fall 2027] Your Name: PhD/Postdoc/Intern Application", and attach your CV, representative work, a brief introduction, and the research questions you would like to explore. Formal PhD applications must be submitted through the HBKU admission system. Due to the large volume of emails, I may not be able to reply to every message.
 - 📢 **Postdoc Opening — Computer Vision & Deep Learning at HBKU, Qatar**. The A-Sense: Autism Sensing Center of Excellence at the College of Science and Engineering (https://www.hbku.edu.qa/en/cse/a-sense), Hamad Bin Khalifa University (Doha, Qatar) is recruiting a Postdoctoral Researcher with strong expertise in Computer Vision, Deep Learning, and Machine Learning, focused on behavioral analysis from video data for autism assessment, classification, detection, and intervention. Requirements include a PhD in Computer Science or related field with a strong expertise on Computer Vision and Deep Learning/Machine Learning, proficiency in Python (PyTorch/TensorFlow/Keras/OpenCV), and a strong publication record. Initial 1-year appointment, renewable, based in Doha. Apply portal: https://lnkd.in/dAyYsdy5 — please share with anyone who might be interested.
 
 ## Short Bio
 
-Peng Cheng is currently a researcher with the State Key Laboratory of Blockchain and Data Security at Zhejiang University, Hangzhou, China. He received his Ph.D. degree in Computer Science from Lancaster University, Lancaster, UK. He was a visiting researcher at University College Cork, Cork, Ireland, from 2019 to 2020. He was a postdoctoral research associate at the School of Cyber Science and Technology, Zhejiang University, Hangzhou, China.  His research interests include audio deepfake detection, speech privacy preservation, and IoT security. Results have been published in renowned international journals and conferences such as Proc. IEEE, CCS, S&P, and WWW. His research was a finalist for the 2019 Black Hat Conference Pwnie Award for Innovative Research.
+Peng Cheng is an Assistant Professor in the College of Science and Engineering at Hamad Bin Khalifa University (HBKU), Qatar, which he joined in November 2026. Previously, he was a Qiushi Research Fellow at the State Key Laboratory of Blockchain and Data Security, Zhejiang University, Hangzhou, China. He received his Ph.D. degree in Computer Science from Lancaster University, Lancaster, UK. He was a visiting researcher at University College Cork, Cork, Ireland, from 2019 to 2020. He was a postdoctoral research associate at the School of Cyber Science and Technology, Zhejiang University, Hangzhou, China.  His research interests include audio deepfake detection, speech privacy preservation, and IoT security. Results have been published in renowned international journals and conferences such as Proc. IEEE, CCS, S&P, and WWW. His research was a finalist for the 2019 Black Hat Conference Pwnie Award for Innovative Research.
 
 ## Research Interests
 
@@ -76,8 +77,7 @@ My research has made significant contributions to industry security:
 
 <!--## Contact
 
-- **Email**: pengcheng326@hotmail.com
-- **Phone**: (86) 15057169279
+- **Email**: pcheng@hbku.edu.qa
 - **Website**: https://pengcheng-tech.github.io/
-- **Location**: Hangzhou, Zhejiang, China
+- **Location**: Doha, Qatar
 - **Google Scholar**: https://scholar.google.com/citations?user=hz3kfCEAAAAJ&hl=en-->
