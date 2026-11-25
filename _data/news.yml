@@ -10,6 +10,12 @@
 #   evidence     : optional provenance — source + date only, no URL / email content
 #   commented    : render this entry as an HTML comment (hidden)
 
+- date_display: "September 2026"
+  date_sort: "2026-09"
+  type: publication
+  paper: ghosts-beneath-textures
+  text: 'Congratulations to Haoyu on the acceptance of our paper "Ghosts Beneath Textures: Texture-Relation Cues for Cross-Paradigm AI-Generated Image Detection" at NDSS 2027!'
+  evidence: "Acceptance notification email from NDSS 2027, 2026-09-24"
 - date_display: "November 2026"
   date_sort: "2026-11"
   text: 'I joined **Hamad Bin Khalifa University (HBKU)**, Qatar, as an **Assistant Professor**. **I am recruiting** PhD students, postdocs, and research interns — see Latest Update above for details.'
