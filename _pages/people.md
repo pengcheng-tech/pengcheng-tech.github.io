@@ -11,7 +11,7 @@ I am honored to work with a group of talented students and researchers dedicated
 
 <div style="display: flex; gap: 16px; overflow-x: auto; padding: 4px 0 14px; margin: 24px 0 10px; scroll-snap-type: x proximity;">
   <figure style="flex: 0 0 46%; min-width: 240px; margin: 0; text-align: center; scroll-snap-align: start;">
-    <img src="{{ base_path }}/images/group_photo.jpg" alt="Group photo, Teacher's Day 2025" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="{{ base_path }}/images/group_photo_2025.jpg" alt="Group photo, Teacher's Day 2025" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <figcaption style="margin-top: 8px; font-size: 0.9em; color: gray;">Teacher's Day &middot; 10 September 2025</figcaption>
   </figure>
   <figure style="flex: 0 0 46%; min-width: 240px; margin: 0; text-align: center; scroll-snap-align: start;">
