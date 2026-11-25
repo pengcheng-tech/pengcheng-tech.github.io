@@ -9,8 +9,15 @@ author_profile: true
 
 I am honored to work with a group of talented students and researchers dedicated to advancing AI safety, AI security and multimodal data protection. Our lab focuses on building trustworthy AI ecosystems through innovative research and collaborative learning.
 
-<div style="text-align: center; margin: 30px 0;">
-  <img src="{{ base_path }}/images/group_photo.jpg" alt="Group Photo" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<div style="display: flex; gap: 16px; overflow-x: auto; padding: 4px 0 14px; margin: 24px 0 10px; scroll-snap-type: x proximity;">
+  <figure style="flex: 0 0 46%; min-width: 240px; margin: 0; text-align: center; scroll-snap-align: start;">
+    <img src="{{ base_path }}/images/group_photo_2025.jpg" alt="Group photo, Teacher's Day 2025" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: gray;">Teacher's Day &middot; 10 September 2025</figcaption>
+  </figure>
+  <figure style="flex: 0 0 46%; min-width: 240px; margin: 0; text-align: center; scroll-snap-align: start;">
+    <img src="{{ base_path }}/images/group_photo_2026.jpg" alt="Group photo, Teacher's Day 2026" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <figcaption style="margin-top: 8px; font-size: 0.9em; color: gray;">Teacher's Day &middot; 10 September 2026</figcaption>
+  </figure>
 </div>
 
 ---
