@@ -34,6 +34,10 @@ Checks:
      cv.json service text.
  11. Development happens on feature branches: running on `master` with
      uncommitted changes is an error (commit-on-master guard).
+ 12. The CV PDF (files/CV_Peng_Cheng.pdf) is not stale: it must be
+     regenerated whenever _data/cv.json changes (commit timestamp of
+     cv.json must not be newer than the PDF's), and a dirty cv.json without
+     a dirty PDF is an error.
 
 Usage:
   python3 scripts/check_consistency.py
@@ -46,6 +50,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -635,6 +640,72 @@ def check_cv_yml_sync(awards, service, errors):
                                   f"(cv {cv_svc_map[code]} vs yml {ds})")
 
 
+def _git(args, cwd=ROOT):
+    """Run a git command, returning stripped stdout or None when git fails."""
+    try:
+        proc = subprocess.run(["git", *args], cwd=str(cwd), capture_output=True, text=True, timeout=10)
+    except Exception:
+        return None
+    if proc.returncode != 0:
+        return None
+    return proc.stdout.strip()
+
+
+def check_cv_pdf_freshness(errors):
+    """CV PDF 必须与 _data/cv.json 同步（消费者产物守卫，error 模式）。
+
+    files/CV_Peng_Cheng.pdf 是 cv.json 的下游产物：cv.json 改了而 PDF 没重新生成，
+    线上 /cv/ 页面是新的、别人下载到的 PDF 是旧的（HBKU 那一轮就是这样漏掉的）。
+    规则：
+      - cv.json 有未提交改动、PDF 没有，且 PDF 比 cv.json 旧 → 报错（必须跑
+        `python3 scripts/cv2tex.py --out files/CV_Peng_Cheng.pdf`）
+      - 两者都干净时，比较最后提交时间：cv.json 晚于 PDF → 报错
+      - PDF 不存在 → 报错
+    两者同时有未提交改动视为“一并重新生成并一起提交”，不报错。
+    """
+    cv_path = DATA / "cv.json"
+    pdf_path = ROOT / "files" / "CV_Peng_Cheng.pdf"
+    if not pdf_path.exists():
+        errors.append("files/CV_Peng_Cheng.pdf 不存在——请运行 python3 scripts/cv2tex.py --out files/CV_Peng_Cheng.pdf")
+        return
+    if not cv_path.exists():
+        return
+
+    cv_dirty = bool(_git(["status", "--porcelain", "--", str(cv_path.relative_to(ROOT))]))
+    pdf_dirty = bool(_git(["status", "--porcelain", "--", str(pdf_path.relative_to(ROOT))]))
+
+    if cv_dirty and not pdf_dirty:
+        cv_mtime = cv_path.stat().st_mtime
+        pdf_mtime = pdf_path.stat().st_mtime
+        if pdf_mtime < cv_mtime:
+            errors.append(
+                "cv.json 有未提交改动但 CV PDF 没有重新生成——请运行 "
+                "`python3 scripts/cv2tex.py --out files/CV_Peng_Cheng.pdf`，并把两者放进同一个提交"
+            )
+        return
+
+    if cv_dirty or pdf_dirty:
+        return  # 一起改动，等提交后由下面的提交时间比较把关
+
+    def commit_ts(rel_path):
+        out = _git(["log", "-1", "--format=%ct", "--", rel_path])
+        try:
+            return int(out) if out else None
+        except (TypeError, ValueError):
+            return None
+
+    cv_ts = commit_ts(str(cv_path.relative_to(ROOT)))
+    pdf_ts = commit_ts(str(pdf_path.relative_to(ROOT)))
+    if cv_ts is None or pdf_ts is None:
+        return  # 无历史（新文件 / 浅克隆 / 非 git 环境）则不判断
+    if cv_ts > pdf_ts:
+        fmt = lambda ts: datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
+        errors.append(
+            f"CV PDF 比 cv.json 旧：cv.json 最后提交 {fmt(cv_ts)}，PDF 最后提交 {fmt(pdf_ts)}"
+            "——请运行 `python3 scripts/cv2tex.py --out files/CV_Peng_Cheng.pdf` 并提交新的 PDF"
+        )
+
+
 def check_no_master_dev(errors):
     """禁止在 master 分支带未提交改动工作（开发必须切 agent/* 分支，见 workflow §四-3）。
 
@@ -734,6 +805,9 @@ def main():
 
     # ---- cv.json ↔ yml 分流一致性 ----
     check_cv_yml_sync(awards, service, errors)
+
+    # ---- 消费者产物新鲜度：CV PDF 必须跟得上 cv.json ----
+    check_cv_pdf_freshness(errors)
 
     print(f"news: {len(news)} | awards: {len(awards)} | service sections: {len(service.get('sections', []))} | patents: {len(patents.get('patents', []))}")
     if errors:
