@@ -61,6 +61,8 @@ sections:
       - title: "Conference Reviewer - International Conferences"
         sort: "date"
         bullets:
+          - text: "**ICML 2027** — International Conference on Machine Learning"
+            date_sort: "2026-11"
           - text: "**ICML 2026** — International Conference on Machine Learning"
             date_sort: "2026-01"
             date_estimated: true

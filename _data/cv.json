@@ -359,6 +359,10 @@
     ],
     "conference_reviewer": [
       {
+        "name": "ICML 2027",
+        "date_sort": "2026-11"
+      },
+      {
         "name": "ICML 2026",
         "date_sort": "2026-01"
       },
