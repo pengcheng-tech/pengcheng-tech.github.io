@@ -224,6 +224,46 @@ def find_latex_engine():
 # CV rendering
 # --------------------------------------------------------------------------
 
+def _join_parts(parts, sep=" • "):
+    """Join only the parts that exist, so dropping a field never leaves a stray separator."""
+    return sep.join(p for p in parts if p)
+
+
+COUNTRY_NAMES = {
+    "CN": "China",
+    "QA": "Qatar",
+    "AE": "United Arab Emirates",
+    "US": "United States",
+    "GB": "United Kingdom",
+    "IE": "Ireland",
+    "DE": "Germany",
+    "FR": "France",
+    "NL": "Netherlands",
+    "CH": "Switzerland",
+    "SG": "Singapore",
+    "HK": "Hong Kong",
+    "TW": "Taiwan",
+    "JP": "Japan",
+    "KR": "Korea",
+    "AU": "Australia",
+    "CA": "Canada",
+}
+
+
+def _location_line(loc):
+    """City, region, country — country code mapped to a name and dropped when it repeats the region.
+
+    e.g. {Doha, Qatar, QA} -> "Doha, Qatar"; {Hangzhou, Zhejiang, CN} -> "Hangzhou, Zhejiang, China".
+    """
+    code = (loc.get("countryCode") or "").strip()
+    country = COUNTRY_NAMES.get(code.upper(), code)
+    region = (loc.get("region") or "").strip()
+    parts = [loc.get("city", ""), region]
+    if country and country.lower() != region.lower():
+        parts.append(country)
+    return ", ".join(p for p in parts if p)
+
+
 def render(cv, bib, show_funding=False, show_patents=True):
     L = [TEX_PREAMBLE]
 
@@ -232,13 +272,12 @@ def render(cv, bib, show_funding=False, show_patents=True):
     L.append(r"\begin{center}")
     L.append(r"\cvname{" + latex_escape(b.get("name", "")) + r"}")
     L.append(r"\\[2pt]")
-    contact = " • ".join(x for x in [
+    contact = _join_parts([
         b.get("email", ""),
         b.get("phone", ""),
         b.get("website", ""),
-        ", ".join(x for x in [loc.get("city", ""), loc.get("region", ""),
-                              {"CN": "China"}.get(loc.get("countryCode", ""), loc.get("countryCode", ""))] if x),
-    ] if x)
+        _location_line(loc),
+    ])
     L.append(r"\cvcontact{" + latex_escape(contact) + r"}")
     if b.get("summary"):
         L.append(r"\\[2pt]")
